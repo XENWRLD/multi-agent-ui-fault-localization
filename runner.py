@@ -74,3 +74,30 @@ try:
 except Exception as e:
     print(f"FATAL SYSTEM CRASH: {e}")
     traceback.print_exc()
+
+
+# =========================================================
+# COLAB FILE DOWNLOADER
+# =========================================================
+def download_results(results_dir=None):
+    """Trigger browser download of output files (Colab only).
+
+    Call this after app.invoke() completes to pull result files to your local machine.
+    Safe outside Colab — prints a warning and exits gracefully.
+    """
+    try:
+        from google.colab import files
+    except ImportError:
+        print("[download_results] Not running in Colab — skipping.")
+        return
+    if results_dir is None:
+        results_dir = os.path.join(PROJECT_PATH, "results")
+    if not os.path.isdir(results_dir):
+        print(f"[download_results] Directory not found: {results_dir}")
+        return
+    downloaded = 0
+    for fname in sorted(os.listdir(results_dir)):
+        if fname.endswith(".txt") or fname.endswith(".json"):
+            files.download(os.path.join(results_dir, fname))
+            downloaded += 1
+    print(f"[download_results] Triggered {downloaded} download(s).")

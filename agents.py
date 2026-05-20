@@ -12,7 +12,10 @@ import time
 from openai import OpenAI
 from langchain_core.runnables import RunnableLambda
 
-from models import VisionObservation, FinalDecision, LogObservation, robust_json_extract
+from models import (
+    VisionObservation, FinalDecision, LogObservation, robust_json_extract,
+    ChainLink, RootCauseReport, rank_suspicious_steps, _resolve_root,
+)
 from input_adapter import detect_mime_from_b64
 
 
@@ -596,6 +599,138 @@ FIELD MAPPING (log entries may use nested objects):
         return LogObservation(**parsed)
     except Exception as e:
         return LogObservation(has_logs=True, log_summary=f"Log parsing validation failed: {e}")
+
+
+# =========================================================
+# ROOT CAUSE ANALYSIS AGENT
+# =========================================================
+def run_root_cause_agent(
+    step_results: list,
+    detected_errors: list,
+) -> "RootCauseReport | None":
+    """Run a single GPT-4o call to identify causal chains across all failures.
+
+    Uses rank_suspicious_steps() as a preprocessing hint (mechanical chains already
+    detected), then asks the LLM to reason freely — including long-gap semantic chains
+    that find_likely_cause() misses. After the LLM identifies chain_links, the fixed
+    _resolve_root() computes exact hop distances on the LLM-identified graph.
+
+    Returns None if there are no failures or the agent call fails.
+    """
+    if not detected_errors:
+        return None
+
+    # Preprocessing: mechanical ranking as a context hint for the LLM
+    preprocessed = rank_suspicious_steps(step_results, detected_errors)
+    preprocess_lines = []
+    for entry in preprocessed:
+        dist_str = (
+            f"dist: 0 ({'root' if entry['distance_to_root'] == 0 else '?'})"
+            if entry["distance_to_root"] == 0
+            else f"dist: {entry['distance_to_root']} -> root: Step {entry['root_step_index']}"
+        )
+        preprocess_lines.append(
+            f"  Step {entry['step_index']} | conf: {entry['confidence']:.2f} | "
+            f"type: {entry['failure_type']} | {dist_str}"
+        )
+
+    # All steps sequence — lets the LLM understand the full execution context
+    all_steps_lines = [
+        f"  Step {r['step_index']} [{'FAIL' if r['verdict'] == 'FAIL' else 'pass'}]"
+        f" {r['action']}: {str(r.get('instruction', ''))[:80]}"
+        for r in step_results
+    ]
+
+    # Detailed failure entries
+    fail_lines = [
+        f"  Step {r['step_index']} | type: {r['failure_type']} | conf: {r['confidence']:.2f}\n"
+        f"    Instruction:  {str(r.get('instruction', ''))}\n"
+        f"    Expected:     {str(r.get('expected_behavior', ''))}\n"
+        f"    Observed:     {str(r.get('observed_behavior', ''))}\n"
+        f"    Root cause:   {str(r.get('root_cause', ''))}"
+        for r in step_results
+        if r["verdict"] == "FAIL"
+    ]
+
+    prompt = f"""You are a Root Cause Analysis expert for automated UI test failures.
+
+[ALL STEPS — EXECUTION SEQUENCE]
+{chr(10).join(all_steps_lines)}
+
+[FAILURES — DETAILED]
+{chr(10).join(fail_lines)}
+
+[PREPROCESSED SUSPICIOUS STEP RANKING — mechanical hint only]
+{chr(10).join(preprocess_lines) if preprocess_lines else "  (no mechanical chains detected)"}
+Note: this ranking only captures chains where the scoring threshold was met.
+It may miss long-gap semantic chains. You are NOT limited by it.
+
+[TASK]
+Identify the true causal chain of failures:
+1. Which step is the TRUE root? (first failure that caused or enabled downstream failures)
+2. Build chain_links: each downstream failure caused by which upstream step.
+   Include chains the mechanical ranking missed (failures many steps apart but clearly
+   linked by shared state, data, or application flow).
+3. What application state was corrupted by the root failure?
+4. How did that corruption propagate to downstream failures?
+5. What should the developer investigate first to fix the root cause?
+
+OUTPUT VALID JSON ONLY:
+{{
+    "chain_links": [
+        {{"from_step": <downstream_step_index>, "caused_by": <upstream_step_index>}}
+    ],
+    "root_step": <step_index_of_true_root>,
+    "chain_summary": "2-3 sentences: what broke and how it propagated.",
+    "corrupted_state": "What app state was corrupted (e.g. cart, balance, booking, session).",
+    "downstream_impact": "How the corrupted state caused downstream failures.",
+    "recommended_investigation": "What the developer should check first.",
+    "confidence": <0.0-1.0>
+}}
+
+Rules:
+- chain_links must only reference step indices present in [FAILURES — DETAILED].
+- If all failures are isolated (no causal connection), set chain_links to [].
+- root_step must appear in [FAILURES — DETAILED].
+- Do NOT include passing steps in chain_links.
+- confidence reflects certainty about the identified causal chain."""
+
+    try:
+        response = _api_call_with_retry(lambda: _get_client().chat.completions.create(
+            model="gpt-4o",
+            temperature=0,
+            max_tokens=700,
+            response_format={"type": "json_object"},
+            messages=[{"role": "user", "content": prompt}],
+        ))
+        parsed = robust_json_extract(response.choices[0].message.content)
+        if not parsed:
+            return None
+
+        raw_links = parsed.get("chain_links") or []
+        chain_links = [
+            ChainLink(from_step=int(lnk["from_step"]), caused_by=int(lnk["caused_by"]))
+            for lnk in raw_links
+            if "from_step" in lnk and "caused_by" in lnk
+        ]
+
+        # Validate root_step is an actual failure index
+        fail_indices = {err["step_index"] for err in detected_errors}
+        root_step = int(parsed.get("root_step", -1))
+        if root_step not in fail_indices:
+            root_step = detected_errors[0]["step_index"]
+
+        return RootCauseReport(
+            chain_links=chain_links,
+            root_step=root_step,
+            chain_summary=str(parsed.get("chain_summary", "")),
+            corrupted_state=str(parsed.get("corrupted_state", "")),
+            downstream_impact=str(parsed.get("downstream_impact", "")),
+            recommended_investigation=str(parsed.get("recommended_investigation", "")),
+            confidence=float(parsed.get("confidence", 0.5)),
+        )
+    except Exception:
+        return None
 
 
 # =========================================================
