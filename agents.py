@@ -141,6 +141,13 @@ Describe what changed between PREV and POST.
   panel loading. Report it explicitly as: "New content appeared: [describe the new
   sections/elements and how they differ from PREV]." Do NOT conclude "no change"
   when new content sections are visible in POST.
+- TRIGGER-BUTTON DISMISSED (check third): If a button whose purpose is to submit,
+  search, filter, or reveal results — present in PREV — is ABSENT in POST, AND the
+  content area on screen shows items, results, or a list (even if a similar list was
+  already visible in PREV with fewer items), report this explicitly as: "Trigger button
+  dismissed: [button name] is gone from POST; [content area] now displays [description
+  of visible results/items]." Do NOT describe this as "no significant change" or "similar
+  to previous screen." The button's disappearance after a click is itself the UI response.
 - OVERLAY DETECTION: If a system dialog appeared (notification permission, location
   access, app rating, etc.), state that explicitly AND describe what is visible on the
   underlying screen behind it.
@@ -411,6 +418,10 @@ CONTENT EXPANSION SUCCESS: If the Observer reports "New content appeared" (new s
 cards, category selectors, or price panels visible in POST that were absent in PREV), the action
 produced a meaningful UI response and is SUCCESS — even if the clicked button is still visible
 in POST (it may remain as a contextual element within the expanded view).
+TRIGGER-DISMISS SUCCESS (click steps only): If ACTION TYPE is "click" AND the Observer
+reports the target button as present in PREV but absent in POST AND the SCREEN STATE SUMMARY
+describes results, items, or content being shown on screen (not an error state) — the button
+activated its purpose and dismissed itself upon completion → is_failure = false, failure_type = "none".
 {log_rules}
 
 [BEHAVIORAL COMPARISON — Required for ALL steps, including passes.]
