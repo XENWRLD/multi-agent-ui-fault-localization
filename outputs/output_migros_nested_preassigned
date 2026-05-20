@@ -1,0 +1,78 @@
+CURRENT OUTPUT (CORRECT)
+DESCRIBER-DECIDER SCAN STARTED... /content/drive/MyDrive/Grad Project/ Migros
+Log parser: format=nested, mode=preassigned
+  Pre-assigned entries across 8 step bucket(s).
+
+--- Analyzing Step 0 ---
+   [LOG] Step 0: 1 entries [preassigned:nested]
+   [LOG] Observer: The logs indicate that the application was launched successfully at the specified timestamp. There are no errors or network failures recorded during this step.
+ PASSED: The Migros Logo appeared as expected on the splash screen.
+
+--- Analyzing Step 1 ---
+   [LOG] Step 1: 1 entries [preassigned:nested]
+   [LOG] Observer: The logs indicate that the service selection dashboard has successfully rendered, confirming that the Migros main dashboard has loaded with the expected service categories and search bar. No errors or network failures were detected during this step.
+ PASSED: The Migros main dashboard loaded successfully with the expected elements visible.
+
+--- Analyzing Step 2 ---
+   [LOG] Step 2: 1 entries [preassigned:nested]
+   [LOG] Observer: The logs indicate that the user successfully clicked on the 'Categories' tab in the DashboardActivity, as evidenced by the info log stating 'User selected Categories tab.' No errors or network failures were recorded during this interaction.
+ PASSED: The action succeeded as the 'Categories' tab was clicked and the app navigated to the correct screen.
+
+--- Analyzing Step 3 ---
+   [LOG] Step 3: 1 entries [preassigned:nested]
+   [LOG] Observer: The logs indicate a successful network request to search for 'Raffaello' using the top search bar, returning a 200 OK status. This suggests that the search functionality is working as intended without any errors.
+ PASSED: The search for 'Raffaello' was successful, displaying the correct results.
+
+--- Analyzing Step 4 ---
+   [LOG] Step 4: 1 entries [preassigned:nested]
+   [LOG] Observer: The logs indicate that the 'Add to Cart' modal was successfully triggered when the user clicked the 'Add to Cart' button for the Ferrero Raffaello 150 G. There are no errors or network failures reported during this step.
+ PASSED: The action successfully triggered the delivery method selection overlay as expected.
+
+--- Analyzing Step 5 ---
+   [LOG] Step 5: 1 entries [preassigned:nested]
+   [LOG] Observer: The logs indicate that the 'Yurt' delivery address was successfully selected and synced during the address selection step. There are no errors or network failures reported in this log entry.
+ PASSED: The action successfully navigated to the product detail screen after selecting the 'Yurt' delivery address.
+
+--- Analyzing Step 6 ---
+   [LOG] Step 6: 1 entries [preassigned:nested]
+   [LOG] Observer: The logs indicate that the 'Cart' icon was successfully clicked, resulting in the CartActivity being opened with one item detected. No errors or network failures were recorded during this step.
+ PASSED: The click action successfully navigated to the cart view, displaying the expected items and prompts.
+
+--- Analyzing Step 7 ---
+   [LOG] Step 7: 4 entries [preassigned:nested]
+   [LOG] Observer: The logs indicate that the user attempted to click the 'Confirm' button to proceed with the payment, but encountered multiple errors. The local cart state showed an item, while the session validation indicated that the cart was empty, leading to a 400 Bad Request response from the server. [NET_FAIL, SYS_ERR]
+ FAILED: 400 Bad Request due to session validation error indicating an empty cart despite local state showing items.
+    Expected: Clicking the 'Confirm' button should proceed to the payment phase for the items in the cart.
+    Observed: The 'Confirm' button was not present in POST, and the screen showed an empty cart message with options to add items.
+
+========================================
+TEST COMPLETE. Scanned 8 steps.
+========================================
+
+FAILURE CHAIN ANALYSIS
+======================
+
+ISOLATED FAILURE:
+  Step 7 [system_error]: 400 Bad Request due to session validation error indicating an empty cart despite local state showing items.
+    Expected: Clicking the 'Confirm' button should proceed to the payment phase for the items in the cart.
+    Observed: The 'Confirm' button was not present in POST, and the screen showed an empty cart message with options to add items.
+
+Summary: 1 failures across 1 isolated
+
+
+SUMMARY
+=======
+Total steps:   8
+  Analyzed:    8
+  Skipped:     0
+  Passed:      7   (87.5%)
+  Failed:      1   (12.5%)
+
+Confidence Distribution (analyzed steps):
+  High   (>=0.85):  8 steps
+  Medium (>=0.60):  0 steps
+  Low    (<0.60):   0 steps
+  Avg confidence: 0.95
+
+Failure Type Breakdown:
+  system_error           1

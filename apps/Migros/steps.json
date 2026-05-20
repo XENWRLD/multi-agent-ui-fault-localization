@@ -1,0 +1,98 @@
+[
+  {
+    "action": "waitUntil",
+    "stepInstruction": "Wait until the Migros orange splash screen appears.",
+    "condition": {
+      "action": "verifyElement",
+      "element": "Migros Logo",
+      "intent": "Confirm the application has successfully launched and displayed the branding",
+      "exactMatch": false,
+      "stepInstruction": "Verify that the Migros branding and orange theme are visible."
+    },
+    "step_idx": 0
+},
+  {
+    "action": "waitUntil",
+    "stepInstruction": "Wait until the Migros main dashboard loads, displaying the service categories (Sanalmarket, Hemen, Yemek) and the search bar.",
+    "condition": {
+      "action": "verifyElement",
+      "element": "Service Selection Dashboard",
+      "intent": "Confirm the app has navigated to the main menu where different shopping services can be selected",
+      "exactMatch": false,
+      "stepInstruction": "Verify that the service icons like 'Migros Sanalmarket' and the top search bar are visible."
+    },
+    "step_idx": 1
+  },
+  {
+    "action": "click",
+    "stepInstruction": "Navigate to the Migros Sanalmarket service and click on the 'Categories' tab in the bottom navigation bar.",
+    "condition": {
+      "action": "verifyElement",
+      "element": "Product Categories Grid",
+      "intent": "Confirm the user has successfully entered the category browsing view to select product types",
+      "exactMatch": false,
+      "stepInstruction": "Verify that category icons like 'Fruits, Vegetables' and 'Dairy, Breakfast Items' are visible."
+    },
+    "step_idx": 2
+  },
+  {
+    "action": "type",
+    "stepInstruction": "Search for 'Raffaello' using the top search bar and view the results.",
+    "condition": {
+      "action": "verifyElement",
+      "element": "Search Results List",
+      "intent": "Confirm the application successfully filtered products based on the search query",
+      "exactMatch": false,
+      "stepInstruction": "Verify that Raffaello products, such as 'Raffaello T24', are visible in the search results."
+    },
+    "step_idx": 3
+  },
+  {
+    "action": "click",
+    "stepInstruction": "Click the 'Add to Cart' button for the Ferrero Raffaello 150 G and wait for the delivery method selection.",
+    "condition": {
+      "action": "verifyElement",
+      "element": "Delivery Method Modal",
+      "intent": "Confirm that the application requires the user to select a delivery preference before adding the item to the cart",
+      "exactMatch": false,
+      "stepInstruction": "Verify that the 'Choose Delivery Method' popup is visible with options for 'Deliver to My Address' and 'Order Pickup'."
+    },
+    "step_idx": 4
+  },
+  {
+    "action": "click",
+    "stepInstruction": "Select the 'Yurt' delivery address from the list to proceed with adding the item to the cart.",
+    "condition": {
+      "action": "verifyElement",
+      "element": "Product Detail Page",
+      "intent": "Confirm the address selection is complete and the user has been returned to the product view",
+      "exactMatch": false,
+      "stepInstruction": "Verify that the 'Select Delivery Address' screen has closed and the Raffaello product page is visible again."
+    },
+    "step_idx": 5
+  },
+  {
+    "action": "click",
+    "stepInstruction": "Click on the 'Cart' icon in the top right corner to review the added items and proceed to checkout.",
+    "condition": {
+      "action": "verifyElement",
+      "element": "Cart Summary Screen",
+      "intent": "Confirm the user can see the list of items in their cart and the total price before confirming the order",
+      "exactMatch": false,
+      "stepInstruction": "Verify that the Ferrero Raffaello is listed in the cart and the 'Confirm' button is visible at the bottom."
+    },
+    "step_idx": 6
+  },
+  {
+    "action": "click",
+    "stepInstruction": "Click the 'Confirm' button to proceed to the payment phase for the items in the cart.",
+    "condition": {
+      "action": "verifyElement",
+      "element": "Payment Selection Screen",
+      "intent": "Confirm the application transitions to the payment method selection after the cart is confirmed",
+      "exactMatch": false,
+      "stepInstruction": "Verify that the payment options or credit card entry fields are displayed."
+    },
+    "step_idx": 7
+  }
+]

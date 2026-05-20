@@ -1,0 +1,149 @@
+[
+  {
+  "action": "waitUntil",
+  "stepInstruction": "Verify that the Yemeksepeti splash screen has loaded.",
+  "condition": {
+    "action": "verifyElement",
+    "element": "Yemeksepeti Logo",
+    "intent": "Confirm the app has started and the splash screen is visible",
+    "exactMatch": false,
+    "stepInstruction": "Wait until the red splash screen with the 'y' logo appears."
+  },
+  "step_idx": 0
+  },
+  {
+    "action": "waitUntil",
+    "stepInstruction": "Verify that the login or onboarding screen has loaded.",
+    "condition": {
+      "action": "verifyElement",
+      "element": "Sign up or log in",
+      "intent": "Confirm the onboarding/login screen is visible",
+      "exactMatch": false,
+      "stepInstruction": "Wait until the 'Sign up or log in' options or the 'Skip' button appear."
+    },
+    "maxDuration": 30000,
+    "repeatCycle": 10000,
+    "repeatCnt": 2,
+    "requiresVLM": false,
+    "routeTo": "aom",
+    "step_idx": 1
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "Close Banner",
+    "intent": "Close the Flash Deals popup to reveal the restaurant list",
+    "stepInstruction": "Click the 'X' on the Flash Deals banner.",
+    "useVLMCoordinates": true,
+    "step_idx": 2
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "Address Bar",
+    "intent": "Open the address selection menu",
+    "stepInstruction": "Click on the delivery address at the top of the home screen to change or add an address.",
+    "useVLMCoordinates": true,
+    "step_idx": 3
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "Orta Sabanci Universitesi A4",
+    "intent": "Select the existing address to continue to the home screen",
+    "stepInstruction": "Click on the 'Orta Sabanci Universitesi A4' address option.",
+    "useVLMCoordinates": true,
+    "step_idx": 4
+  },
+  {
+  "action": "type",
+  "type": "type",
+  "element": "Search Field",
+  "value": "little ceasers pizza",
+  "intent": "Search for Little Caesars Pizza and view the results",
+  "stepInstruction": "Type 'little ceasers pizza' into the search bar and press enter.",
+  "useVLMCoordinates": true,
+  "step_idx": 5
+  },
+  {
+  "action": "click",
+  "type": "click",
+  "element": "Little Caesars Pizza Card",
+  "intent": "Open the Little Caesars menu",
+  "stepInstruction": "Click on the Little Caesars Pizza restaurant card in the search results.",
+  "useVLMCoordinates": true,
+  "step_idx": 6
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "Mixed (Medium) Pizza",
+    "intent": "Select the Mixed (Medium) pizza product",
+    "stepInstruction": "Click on the 'Mixed (Medium) Pizza' item in the menu.",
+    "useVLMCoordinates": true,
+    "step_idx": 7
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "Normal Dough",
+    "intent": "Select Normal Dough for the Mixed (Medium) pizza",
+    "stepInstruction": "On the Mixed (Medium) pizza screen, select 'Normal Dough'.",
+    "useVLMCoordinates": true,
+    "step_idx": 8
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "Less Pizza Sauce",
+    "intent": "Select the sauce option to complete the requirements",
+    "stepInstruction": "Select 'Less Pizza Sauce' from the customization menu.",
+    "useVLMCoordinates": true,
+    "step_idx": 9
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "Remove Ingredients",
+    "intent": "Remove Mushrooms and Black Olives from the Mixed (Medium) pizza",
+    "stepInstruction": "On the Mixed (Medium) pizza customization screen, select 'I Don't Want Mushrooms' and 'I Don't Want Black Olives'.",
+    "useVLMCoordinates": true,
+    "step_idx": 10
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "Add to cart",
+    "intent": "Add the Mixed (Medium) pizza to the cart and verify the indicator",
+    "stepInstruction": "Click 'Add to cart' and confirm the cart bar shows '1' Mixed (Medium) pizza.",
+    "useVLMCoordinates": true,
+    "step_idx": 11
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "View your cart",
+    "intent": "Open the cart to review the 'Mixed (Medium) Pizza' before checking out",
+    "stepInstruction": "Click the 'View your cart' red bar at the bottom to see your selection.",
+    "useVLMCoordinates": true,
+    "step_idx": 12
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "Confirm basket",
+    "intent": "Proceed to checkout with the Mixed (Medium) pizza",
+    "stepInstruction": "Click 'Confirm basket' to proceed to the payment screen for your Mixed (Medium) pizza.",
+    "useVLMCoordinates": true,
+    "step_idx": 13
+
+  },
+  {
+    "action": "abstractVerification",
+    "intent": "The screenshot shows the 'Mediterranean (Central)' pizza and its customizations in the order summary, but there is no visible information about the 'Mixed (Medium)' pizza that was requested.",
+    "instruction": "Visually inspect the checkout screen and confirm that the 'Mixed (Medium)' pizza from 'Little Caesars' is selected.",
+    "useFromCache": false,
+    "stepInstruction": "Visually verify the 'Mixed (Medium)' pizza selection and the Little Caesars restaurant from the checkout summary.",
+    "step_idx": 14
+  }
+]

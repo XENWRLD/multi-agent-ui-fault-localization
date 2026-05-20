@@ -1,0 +1,156 @@
+[
+    {
+        "timestamp": "2026-04-14T03:42:00",
+        "level": "INFO",
+        "step": 1,
+        "event": "navigation",
+        "message": "Opened 'Kartlar' (Cards) screen"
+    },
+    {
+        "timestamp": "2026-04-14T03:42:02",
+        "level": "INFO",
+        "step": 2,
+        "event": "user_action",
+        "message": "Tapped 'Banka Kartlarım'"
+    },
+    {
+        "timestamp": "2026-04-14T03:42:03",
+        "level": "INFO",
+        "step": 2,
+        "event": "ui_render",
+        "message": "'Banka Kartlarım' screen displayed"
+    },
+{
+  "timestamp": "2026-04-21T03:42:59.001Z",
+  "level": "INFO",
+  "step": 3,
+  "event": "user_action",
+  "message": "Tap detected on element: 'Back Button'"
+},
+{
+  "timestamp": "2026-04-21T03:42:59.120Z",
+  "level": "INFO",
+  "step": 3,
+  "event": "navigation",
+  "message": "Navigating from 'Sanal Banka Kartı Başvuru' screen to 'Banka Kartlarım' screen"
+},
+{
+  "timestamp": "2026-04-21T03:43:00.010Z",
+  "level": "INFO",
+  "step": 3,
+  "event": "ui_render",
+  "message": "'Banka Kartlarım' screen rendered with card options list"
+},
+{
+  "timestamp": "2026-04-21T03:43:00.080Z",
+  "level": "INFO",
+  "step": 3,
+  "event": "assertion",
+  "message": "Step 3 passed: Returned to Banka Kartlarım screen successfully"
+},
+    {
+        "timestamp": "2026-04-14T03:42:08",
+        "level": "INFO",
+        "step": 4,
+        "event": "user_action",
+        "message": "Tapped 'Limit Geçerlilik Süresi'"
+    },
+    {
+        "timestamp": "2026-04-14T03:42:09",
+        "level": "INFO",
+        "step": 5,
+        "event": "ui_render",
+        "message": "Limit duration modal opened"
+    },
+    {
+        "timestamp": "2026-04-14T03:42:11",
+        "level": "INFO",
+        "step": 6,
+        "event": "user_action",
+        "message": "Selected 'Günlük' option"
+    },
+  {
+    "timestamp": "2026-04-21T03:47:12.001Z",
+    "level": "INFO",
+    "step": 7,
+    "event": "user_action",
+    "message": "Tap detected on element: 'Back Button' (Banka Kartlarım screen)"
+  },
+  {
+    "timestamp": "2026-04-21T03:47:12.145Z",
+    "level": "INFO",
+    "step": 7,
+    "event": "navigation",
+    "message": "Navigating from 'Banka Kartlarım' screen to 'Kartlar' main menu"
+  },
+  {
+    "timestamp": "2026-04-21T03:47:12.980Z",
+    "level": "INFO",
+    "step": 7,
+    "event": "ui_render",
+    "message": "'Kartlar' screen rendered with full card services list"
+  },
+  {
+    "timestamp": "2026-04-21T03:47:13.020Z",
+    "level": "INFO",
+    "step": 7,
+    "event": "ui_elements_detected",
+    "message": "Detected elements: ['Kredi Kartlarım', 'Kredi Kartı Başvuru & Başvuru Gözlem', 'Kredi Kartı Ödeme', 'Kredi Kartı Ayarları', 'Nakit ve Ödeme Çözümleri', 'Mil İşlemleri', 'Kredi Kartım Nerede', 'Masterpass İşlemleri', 'Kart Avantajları', 'Kampanyalar', 'Banka Kartlarım']"
+  },
+  {
+    "timestamp": "2026-04-21T03:47:13.080Z",
+    "level": "INFO",
+    "step": 7,
+    "event": "assertion",
+    "message": "Step 7 passed: Successfully returned to 'Kartlar' main menu screen"
+  },
+    {
+        "timestamp": "2026-04-14T03:42:14",
+        "level": "INFO",
+        "step": 8,
+        "event": "user_action",
+        "message": "Focused on 'İşlem Limitiniz' input field"
+    },
+    {
+        "timestamp": "2026-04-14T03:42:16",
+        "level": "INFO",
+        "step": 9,
+        "event": "input",
+        "message": "Entered value '0'"
+    },
+    {
+        "timestamp": "2026-04-14T03:42:18",
+        "level": "INFO",
+        "step": 10,
+        "event": "user_action",
+        "message": "Tapped 'Uygula' button"
+    },
+    {
+        "timestamp": "2026-04-14T03:42:19",
+        "level": "INFO",
+        "step": 11,
+        "event": "ui_render",
+        "message": "Confirmation popup displayed"
+    },
+  {
+    "timestamp": "2026-04-21T03:42:11Z",
+    "level": "INFO",
+    "step": 12,
+    "event": "user_action",
+    "message": "Tapped 'Onayla' button"
+  },
+  {
+    "timestamp": "2026-04-21T03:42:11Z",
+    "level": "INFO",
+    "step": 12,
+    "event": "network",
+    "message": "Limit update request sent"
+  },
+  {
+    "timestamp": "2026-04-21T03:42:12Z",
+    "level": "INFO",
+    "step": 12,
+    "event": "ui_render",
+    "message": "Render the card page with updated limits"
+  }
+]

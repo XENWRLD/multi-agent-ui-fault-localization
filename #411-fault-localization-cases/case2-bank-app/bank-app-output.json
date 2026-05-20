@@ -1,0 +1,116 @@
+{
+  "processed_step_count": 8,
+  "status_summary": {
+    "pass": 5,
+    "fail": 3,
+    "unknown": 0,
+    "confidence": {
+      "high": 8,
+      "medium": 0,
+      "low": 0
+    }
+  },
+  "steps": [
+    {
+      "step_index": 1,
+      "status": "PASS",
+      "confidence": 0.85,
+      "confidence_label": "high",
+      "reason": "The instruction to verify the starting balance of 5250.00 TL is valid. Both pre and post images show the balance as 5250.00 TL, matching the instruction. Logs confirm the balance retrieval without errors.",
+      "pre_ocr_text": "BankApp Total Balance 5250.00 TL > Para Gönder",
+      "post_ocr_text": "BankApp Total Balance 5250.00 TL > Para Gönder",
+      "console_log_text": "[CONSOLE_LOG] Balance_Fetched: TotalBalance=5250.00 TL",
+      "network_log_text": "[NETWORK_LOG] GET /v1/account/balance - Status: 200 OK"
+    },
+    {
+      "step_index": 2,
+      "status": "PASS",
+      "confidence": 0.85,
+      "confidence_label": "high",
+      "reason": "The instruction to click 'Para Gönder' is valid as the button is visible in the Pre-Image. The Post-Image shows a transition to a new screen with fields for 'Alıcı Adı' and 'Tutar', indicating a successful navigation to the transfer screen.",
+      "pre_ocr_text": "BankApp Total Balance 5250.00 TL > Para Gönder",
+      "post_ocr_text": "<€ Para Gonder & Alıcı Adı Cy Tutar Transfer"
+    },
+    {
+      "step_index": 3,
+      "status": "PASS",
+      "confidence": 0.85,
+      "confidence_label": "high",
+      "reason": "The instruction to enter 'Tuna' in the 'Alıcı Adı' field is valid. The pre-image shows an empty field, and the post-image shows 'Tuna' entered, indicating a successful visual change. No errors were found in the logs.",
+      "pre_ocr_text": "<€ Para Gonder & Alıcı Adı Cy Tutar Transfer",
+      "post_ocr_text": "<€ Para Gonder Alıcı Adı | 8 Tunal | Cy Tutar Transfer"
+    },
+    {
+      "step_index": 4,
+      "status": "PASS",
+      "confidence": 0.85,
+      "confidence_label": "high",
+      "reason": "The instruction to enter '300' in the 'Tutar' field is valid. The post-image shows the value '300' entered in the field, indicating a successful visual change. No errors were found in the logs.",
+      "pre_ocr_text": "< Para Gönder Alıcı Adı & Tuna Tutar ay | TL",
+      "post_ocr_text": "< Para Gönder Alıcı Adı & Tuna Tutar Bı 300) TL"
+    },
+    {
+      "step_index": 5,
+      "status": "FAIL",
+      "confidence": 0.9,
+      "confidence_label": "high",
+      "reason": "The instruction to click the 'Transfer' button is valid and the button is visible in the pre-image. However, despite the post-image showing a 'Transfer Successful' message, the logs indicate a transaction failure with a 500 Internal Server Error. This discrepancy suggests a backend failure.",
+      "pre_ocr_text": "< Para Gönder Alıcı Adı & Tuna Tutar 1) 300 TL",
+      "post_ocr_text": "Transfer Successful Your transfer has been completed successfully. Back to Dashboard",
+      "console_log_text": "[CONSOLE_LOG] Transaction_Started: Amount=300, Recipient=Tuna [CONSOLE_LOG] Transaction_Status: Failed",
+      "network_log_text": "[NETWORK_LOG] POST /v1/transfer - Status: 500 Internal Server Error"
+    },
+    {
+      "step_index": 6,
+      "status": "PASS",
+      "confidence": 0.85,
+      "confidence_label": "high",
+      "reason": "The instruction is to verify the 'Transfer Successful' message. Both pre and post images show this message clearly, matching the expected outcome. No visual change is required for verification steps, and the message is present as expected.",
+      "pre_ocr_text": "Transfer Successful Your transfer has been completed successfully. Back to Dashboard",
+      "post_ocr_text": "Transfer Successful Your transfer has been completed successfully. Back to Dashboard"
+    },
+    {
+      "step_index": 7,
+      "status": "FAIL",
+      "confidence": 0.8,
+      "confidence_label": "high",
+      "reason": "The instruction to click 'Back to Dashboard' is valid and the button is visible in the Pre-Image. However, the Post-Image shows a balance of 5250.00 TL, which contradicts the expected balance of 0 TRY after a transfer of 5250 TRY. This indicates a logical inconsistency in the application state.",
+      "pre_ocr_text": "Transfer Successful Your transfer has been completed successfully. Back to Dashboard",
+      "post_ocr_text": "BankApp Total Balance 5250.00 TL > Para Gönder"
+    },
+    {
+      "step_index": 8,
+      "status": "FAIL",
+      "confidence": 0.8,
+      "confidence_label": "high",
+      "reason": "The instruction is to verify the balance, which should have changed to 0 TRY after a transfer. However, both pre and post images show the balance as 5250.00 TL, indicating no change. This contradicts the expected outcome based on the scenario memory.",
+      "pre_ocr_text": "BankApp Total Balance 5250.00 TL > Para Gönder",
+      "post_ocr_text": "BankApp Total Balance 5250.00 TL > Para Gönder",
+      "console_log_text": "[CONSOLE_LOG] Balance_Fetched: TotalBalance=5250.00 TL",
+      "network_log_text": "[NETWORK_LOG] GET /v1/account/balance - Status: 200 OK"
+    }
+  ],
+  "failures": [
+    {
+      "step_index": 5,
+      "type": "Backend Failure",
+      "reason": "The logs show a 500 Internal Server Error despite the UI indicating a successful transfer. (Root Cause: There is likely a backend issue causing the transaction to fail, which is not reflected in the UI.)",
+      "confidence": 0.9,
+      "confidence_label": "high"
+    },
+    {
+      "step_index": 7,
+      "type": "Backend Failure",
+      "reason": "Balance did not update correctly after transfer. (Root Cause: The backend did not process the balance update after the transfer.)",
+      "confidence": 0.8,
+      "confidence_label": "high"
+    },
+    {
+      "step_index": 8,
+      "type": "UI Failure",
+      "reason": "Balance did not update after transfer. (Root Cause: The UI did not reflect the expected balance change after the transfer operation.)",
+      "confidence": 0.8,
+      "confidence_label": "high"
+    }
+  ]
+}

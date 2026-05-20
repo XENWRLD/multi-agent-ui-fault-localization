@@ -1,0 +1,100 @@
+--- Analyzing Step 0 ---
+ PASSED: The 'Login' screen is correctly displayed, confirming the application is ready for user authentication.
+
+--- Analyzing Step 1 ---
+ PASSED: The login action succeeded, and the app navigated to the Home screen.
+
+--- Analyzing Step 2 ---
+   [LOG] Step 2: inline logs present [g411]
+   [LOG] Observer: The user successfully tapped on the 'Theater' category on the main screen, indicating that the click action was executed as intended.
+ FAILED: The click action was registered but did not trigger any UI response or navigation.
+    Expected: Clicking the 'Theater' category should select it and navigate to the next step in the flow.
+    Observed: The screen remains on the home page with no navigation or content change observed.
+
+--- Analyzing Step 3 ---
+   [LOG] Step 3: inline logs present [g411]
+   [LOG] Observer: The user clicked on the 'Sports' category and navigated to the Event List Screen. However, an overflow error occurred during the layout rendering, indicating a visual issue on the screen. [SYS_ERR]
+ FAILED: A RenderFlex overflowed by 869 pixels on the right, causing a visual issue. (Likely caused by Step 2)
+    Expected: Clicking the 'Sports' category should select it and navigate to the 'Sports Events' screen, displaying a list of sports events.
+    Observed: The app navigated to the 'Sports Events' screen, displaying a list of sports events, but there was a visual overflow issue with the first event's title.
+
+--- Analyzing Step 4 ---
+   [LOG] Step 4: inline logs present [g411]
+   [LOG] Observer: The user successfully tapped the 'Details' button for the 'Madrid Falcons vs Rome Warriors' match, which resulted in navigation to the Event Detail Screen. No errors or network failures were detected during this action.
+ PASSED: The navigation to the event details screen was successful.
+
+--- Analyzing Step 5 ---
+   [LOG] Step 5: inline logs present [g411]
+   [LOG] Observer: The user successfully tapped the 'Select Seats' button, which resulted in navigation to the Seat Selection Screen. No errors or network failures were detected during this action.
+ PASSED: The action successfully navigated to the 'Seat Selection' screen, confirming the click was processed.
+
+--- Analyzing Step 6 ---
+   [LOG] Step 6: inline logs present [g411]
+   [LOG] Observer: The user attempted to click on an occupied seat (A3), but the action resulted in an error indicating that the seat is unavailable. This suggests that the seat was not selectable despite the instruction to verify its selection state. [SYS_ERR]
+ FAILED: The action failed because the seat was not selectable, as indicated by the system error 'Seat unavailable'.
+    Expected: Clicking the 'Dolu olan gri bir koltuğa' should change its state to selected, indicating the seat is now chosen.
+    Observed: The gray occupied seat remained unchanged in its visual state, and an error indicated the seat is unavailable.
+
+--- Analyzing Step 7 ---
+   [LOG] Step 7: inline logs present [g411]
+   [LOG] Observer: The logs indicate that the user successfully selected the available seat A1, which aligns with the action of clicking on an empty green chair and verifying its selection status.
+ PASSED: The seat selection action succeeded, with the seat changing state and confirmation displayed.
+
+--- Analyzing Step 8 ---
+   [LOG] Step 8: inline logs present [g411]
+   [LOG] Observer: The user successfully clicked the 'Go to Cart' button and was navigated to the Cart Screen. No errors or network failures were detected during this action.
+ PASSED: The action successfully navigated to the 'Cart' screen, displaying the expected content.
+
+--- Analyzing Step 9 ---
+ FAILED: The failure is due to the value not being confirmed in POST, which is a content mismatch. (Likely caused by Step 6)
+    Expected: The target element should become visible on screen after the action completes, showing the selected seat and price.
+    Observed: The target element is visible in POST, showing the selected seat 'A1' and price '$99.50', but the value was not confirmed.
+
+--- Analyzing Step 10 ---
+   [LOG] Step 10: inline logs present [g411]
+   [LOG] Observer: The user attempted to click the 'Confirm & Pay' button, but the payment process resulted in a 500 Internal Server Error. This indicates a failure in the application during the payment operation. [NET_FAIL, SYS_ERR]
+ FAILED: Internal Server Error during payment processing. Related to network/system error. (Likely caused by Step 9)
+    Expected: Clicking the 'Confirm & Pay' button should initiate the payment process and confirm successful completion.
+    Observed: The 'Confirm & Pay' button became inactive and a processing indicator appeared, but the payment process resulted in a 500 Internal Server Error.
+
+========================================
+TEST COMPLETE. Scanned 11 steps.
+========================================
+
+FAILURE CHAIN ANALYSIS
+======================
+
+FAILURE CHAIN 1: (2 steps)
+  Step 2 -> Step 3
+  Root: Step 2 [action_failed] - The click action was registered but did not trigger any UI response or navigation.
+  Step 3 [content_mismatch] - A RenderFlex overflowed by 869 pixels on the right, causing a visual issue. (Likely caused by Step 2) (caused by Step 2)
+
+FAILURE CHAIN 2: (3 steps)
+  Step 6 -> Step 9 -> Step 10
+  Root: Step 6 [action_failed] - The action failed because the seat was not selectable, as indicated by the system error 'Seat unavailable'.
+  Step 9 [content_mismatch] - The failure is due to the value not being confirmed in POST, which is a content mismatch. (Likely caused by Step 6) (caused by Step 6)
+  Step 10 [system_error] - Internal Server Error during payment processing. Related to network/system error. (Likely caused by Step 9) (caused by Step 9)
+
+Summary: 5 failures across 2 chain(s)
+
+
+SUMMARY
+=======
+Total steps:   11
+  Analyzed:    11
+  Skipped:     0
+  Passed:      6   (54.5%)
+  Failed:      5   (45.5%)
+
+Confidence Distribution (analyzed steps):
+  High   (>=0.85): 10 steps
+  Medium (>=0.60):  1 steps
+  Low    (<0.60):   0 steps
+  Avg confidence: 0.93
+
+Failure Type Breakdown:
+  action_failed          2
+  content_mismatch       2
+  system_error           1
+
+CASE 3 ANALYSIS: Before the new rules implementation step 2,3,6,10 were fail steps and we were identfiying these steps as fail, but after the new rule implementations we are saying step 9 is also faulty but this is wrong step 9 must be correct.

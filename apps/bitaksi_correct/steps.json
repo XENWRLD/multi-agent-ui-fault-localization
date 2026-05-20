@@ -1,0 +1,90 @@
+[
+  {
+    "action": "waitUntil",
+    "stepInstruction": "Wait until the main map screen is displayed after app launch.",
+    "condition": {
+      "action": "verifyElement",
+      "element": "Main map screen",
+      "intent": "Launch app and reach main screen",
+      "exactMatch": false,
+      "stepInstruction": "Verify that the map screen with the 'Where to?' search bar is visible."
+    },
+    "maxDuration": 30000,
+    "repeatCycle": 5000,
+    "repeatCnt": 3,
+    "requiresVLM": false,
+    "step_idx": 0
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "Search address input field",
+    "intent": "Start searching for a destination",
+    "stepInstruction": "Tap on the search input field to activate typing.",
+    "useVLMCoordinates": true,
+    "step_idx": 1
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "Save Button",
+    "intent": "Save The home adress",
+    "stepInstruction": "Tap on the 'save' button to save the adress",
+    "useVLMCoordinates": true,
+    "step_idx": 2
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "Lux ride option",
+    "intent": "Select a different ride option",
+    "stepInstruction": "Select the 'Lux' ride option from the list.",
+    "useVLMCoordinates": true,
+    "step_idx": 3
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "Profile information",
+    "intent": "View profile information",
+    "stepInstruction": "Tap on 'Profile information' to view account details.",
+    "useVLMCoordinates": true,
+    "step_idx": 4
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "Save button",
+    "intent": "Save updated profile information",
+    "stepInstruction": "Tap the 'Save' button to update profile information.",
+    "useVLMCoordinates": true,
+    "step_idx": 5
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "Trip history",
+    "intent": "View past trips",
+    "stepInstruction": "Tap the 'Trip history' option to view previous trips.",
+    "useVLMCoordinates": true,
+    "step_idx": 6
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "Payment methods",
+    "intent": "View payment methods",
+    "stepInstruction": "Tap the 'Payment methods' option to view saved cards.",
+    "useVLMCoordinates": true,
+    "step_idx": 7
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "Delete",
+    "intent": "Delete a saved payment card",
+    "stepInstruction": "Tap the 'Delete' button to remove the selected card.",
+    "useVLMCoordinates": true,
+    "step_idx": 8
+  }
+]

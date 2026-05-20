@@ -1,0 +1,123 @@
+{
+  "processed_step_count": 11,
+  "status_summary": {
+    "pass": 10,
+    "fail": 1,
+    "unknown": 0,
+    "confidence": {
+      "high": 11,
+      "medium": 0,
+      "low": 0
+    }
+  },
+  "steps": [
+    {
+      "step_index": 1,
+      "status": "PASS",
+      "confidence": 0.85,
+      "confidence_label": "high",
+      "reason": "The instruction is to verify if the 'Futbol' category is visible on the main screen. Both pre-image and post-image show the 'Futbol' category clearly, fulfilling the verification requirement. No visual change is expected for this verification step.",
+      "pre_ocr_text": "08:58 a 72) PASSO pa © Şehir Seç Vv Tarih Seg | P| Kol Saatlerinde Dev Firsat! ¢ En şık markalarda %30'a varan net indiri... v Passo'yu Keşfet mA BILETEY: SO HATIRA BE” ‘ PASS ETKİNLİKLER © DA HATIRA BİLETLİ ETKİNLİKLER JAN e v 8 8 2B An...",
+      "post_ocr_text": "08:59 & çi 72) PASSO pa | P| Kol Saatlerinde Dev Firsat! ¢ En şık markalarda %30'a varan net indiri... v Passo'yu Keşfet o HATİRA siker. er ETKİNLİKLER © DA HATIRA BİLETLİ ETKİNLİKLER JAN e v 8 8 2B Ana Sayfa Sepetim .. Bilet/Siparişleri..."
+    },
+    {
+      "step_index": 2,
+      "status": "PASS",
+      "confidence": 0.85,
+      "confidence_label": "high",
+      "reason": "The instruction to click on the 'Futbol' category is valid. The pre-image shows the 'Futbol' category, and the post-image shows a different screen related to football, indicating a successful click and navigation.",
+      "pre_ocr_text": "08:59 & çi 72) PASSO pa | P| Kol Saatlerinde Dev Firsat! ¢ En şık markalarda %30'a varan net indiri... v Passo'yu Keşfet o HATİRA siker. er ETKİNLİKLER © DA HATIRA BİLETLİ ETKİNLİKLER JAN e v 8 8 2B Ana Sayfa Sepetim .. Bilet/Siparişleri...",
+      "post_ocr_text": "08:59 & a 72) PASSO Ça © Şehir Seç v Tarih Seg CANLI Passo & Taraftar istatistik Indirim 1-1 me 6 Passo Dükkan'da Br > şe _ %50'YE VARAN İNDİRİM! MAS Mastercard nn GS Store'da %50'ye Varan İndirimleri Kaçırma! Ana Sayfa Sepet .. Bilet/Si..."
+    },
+    {
+      "step_index": 3,
+      "status": "PASS",
+      "confidence": 0.85,
+      "confidence_label": "high",
+      "reason": "The instruction 'Arama butonuna dokun' is a valid UI command. The pre-image shows a search bar with a button, and the post-image shows a different screen with search results, indicating a successful interaction and visual change.",
+      "pre_ocr_text": "08:59 & a 72) PASSO Ça © Şehir Seç v Tarih Seg CANLI Passo & Taraftar istatistik Indirim 1-1 me 6 Passo Dükkan'da Br > şe _ %50'YE VARAN İNDİRİM! MAS Mastercard nn GS Store'da %50'ye Varan İndirimleri Kaçırma! Ana Sayfa Sepet .. Bilet/Si...",
+      "post_ocr_text": "08:59 & — e Xx «GG Kombine |) ( DiğerFutbol | Futbol Eskişehirspor - Tire 2021 FK Prof. Dr. Fethi Heper Stadyumu - Eskişehir & 24 Mart Salı, 16:00 Bursaspor - Güzide Gebze SK Atatürk Spor Kompleksi Matlı Stadyumu & 24 Mart Sali, 19:00 Ba..."
+    },
+    {
+      "step_index": 4,
+      "status": "PASS",
+      "confidence": 0.85,
+      "confidence_label": "high",
+      "reason": "The instruction to type 'Eskişehirspor' in the search box is valid. The post-image shows 'Eskişehirspor' typed in the search box, indicating a successful action. The visual change is evident as the search term appears in the input field.",
+      "pre_ocr_text": "08:59 & — e Xx «GG Kombine |) ( DiğerFutbol | Futbol Eskişehirspor - Tire 2021 FK Prof. Dr. Fethi Heper Stadyumu - Eskişehir & 24 Mart Salı, 16:00 Bursaspor - Güzide Gebze SK Atatürk Spor Kompleksi Matlı Stadyumu & 24 Mart Sali, 19:00 Ba...",
+      "post_ocr_text": "09:00 & iç Gi O Eskişehirspor Eskişehirspor - Tire 2021 FK Eskişehirspor - Tire 2021 FK Prof. Dr. Fethi Heper Stadyumu - Eskişehir 24 Mart Salı, 16:00 Bursaspor - Güzide Gebze SK Atatürk Spor Kompleksi Matlı g wer tyulopğü a sd f gh ij k..."
+    },
+    {
+      "step_index": 5,
+      "status": "PASS",
+      "confidence": 0.85,
+      "confidence_label": "high",
+      "reason": "The instruction to click on 'Eskişehirspor - Tire 2021 FK' is valid as the target is visible in the Pre-Image. The Post-Image shows a detailed view of the match, indicating a successful click action with a meaningful visual change.",
+      "pre_ocr_text": "— Eskişehirspor = xX Eskişehirspor - Tire 2021 FK > ( Kombine |( DiğerFutbol | Futbol Eskişehirspor - Tire 2021 FK Prof. Dr. Fethi Heper Stadyumu - Eskişehir & 24 Mart Salı, 16:00 Bursaspor - Güzide Gebze SK Si 2 Atatürk Spor Kompleksi M...",
+      "post_ocr_text": "09:00 & Eskisehirspor - Tire 2021 FK © Prof. Dr. Fethi Heper Stadyumu - Eskişehir Eskişehirspor - Tire 2021 Futbol Kulübü , TFF 3.Lig 4. Grun 26. hafta macı 24 Mart Salı günü Prof. Dr. Devamını Oku Etkinlik Kuralları v (ch Oturma Plani >..."
+    },
+    {
+      "step_index": 6,
+      "status": "PASS",
+      "confidence": 0.85,
+      "confidence_label": "high",
+      "reason": "The 'Bilet Al' button was clicked, leading to a change in the UI where ticket categories are now displayed. This indicates a successful interaction.",
+      "pre_ocr_text": "09:00 & Eskisehirspor - Tire 2021 FK © Prof. Dr. Fethi Heper Stadyumu - Eskişehir Eskişehirspor - Tire 2021 Futbol Kulübü , TFF 3.Lig 4. Grun 26. hafta macı 24 Mart Salı günü Prof. Dr. Devamını Oku Etkinlik Kuralları v (ch Oturma Plani >...",
+      "post_ocr_text": "09:00 & tb Oturma Plani > #150,00'den başlayan fiyatlarla Hemen Biletinizi Alın Kategori Seç 1. Kategori 60000TL (6 2. Kategori 350,00 TL 3. Kategori 250,00 TL 4. Kategori 150,00 TL 5. Kategori 150,00 TL 150,00 - £600,00 Kategoriye göre ..."
+    },
+    {
+      "step_index": 7,
+      "status": "PASS",
+      "confidence": 0.85,
+      "confidence_label": "high",
+      "reason": "The '+' button was clicked, increasing the ticket count from 0 to 1, as expected. The visual change is evident in the updated ticket count and total price.",
+      "pre_ocr_text": "09:00 & tb Oturma Plani > #150,00'den başlayan fiyatlarla Hemen Biletinizi Alın Kategori Seç 1. Kategori 60000TL (6 2. Kategori 350,00 TL 3. Kategori 250,00 TL 4. Kategori 150,00 TL 5. Kategori 150,00 TL 150,00 - £600,00 Kategoriye göre ...",
+      "post_ocr_text": "09:00 & tb Oturma Plani #150,00'den başlayan fiyatlarla Hemen Biletinizi Alın Kategori Seç 1. Kategori 60000TL (6 2. Kategori 350,00 TL 3. Kategori 250,00 TL 4. Kategori 150,00 TL 5. Kategori 150,00 TL Toplam A 600,00 TL"
+    },
+    {
+      "step_index": 8,
+      "status": "PASS",
+      "confidence": 0.85,
+      "confidence_label": "high",
+      "reason": "The instruction to click the 'Bilet Al' button is valid. The pre-image shows the button, and the post-image shows a transition to a new screen, indicating a successful click action.",
+      "pre_ocr_text": "09:01 & tb Oturma Plani #150,00'den başlayan fiyatlarla Hemen Biletinizi Alın Kategori Seç 1. Kategori 60000TL (6 2. Kategori 350,00 TL 3. Kategori 250,00 TL 4. Kategori 150,00 TL 5. Kategori 150,00 TL Toplam A 600,00 TL",
+      "post_ocr_text": "09:01 & a E — Seçim Ekranı Oturma Planı > Blok Seç 101 102 103 104 105 Toplam A 600,00 TL"
+    },
+    {
+      "step_index": 9,
+      "status": "PASS",
+      "confidence": 0.85,
+      "confidence_label": "high",
+      "reason": "The instruction to select block '102' is valid. The pre-image shows block '102' as an option, and the post-image confirms it is selected, indicated by a filled circle. This visual change aligns with the expected outcome of the action.",
+      "pre_ocr_text": "09:01 & a E — Seçim Ekranı Oturma Planı > Blok Seç 101 102 103 104 105 Toplam A 600,00 TL",
+      "post_ocr_text": "09:01 & çi? — Seçim Ekranı Oturma Planı > Blok Seç 101 102 © 103 104 105 Passo benim yerime koltuk seçsin. Toplam A Koltuk § 600,00 TL lüle"
+    },
+    {
+      "step_index": 10,
+      "status": "PASS",
+      "confidence": 0.85,
+      "confidence_label": "high",
+      "reason": "The instruction to click the 'Koltuk Seç' button is valid. The button is visible in the pre-image, and the post-image shows a transition to a seat selection screen, indicating a successful interaction.",
+      "pre_ocr_text": "09:01 & a E — Seçim Ekranı Oturma Planı > Blok Seç 101 102 © 103 104 105 Passo benim yerime koltuk seçsin. Toplam A Koltuk § 600,00 TL lüle",
+      "post_ocr_text": "09:01 & a E — Koltuk Seç 1. Kategori 102 © . nn so Suneeesesseesseseeni. B Seçtiğiniz Koltuk Boş - Seçilebilir OB Dolu - Seçilemez Koltuk Listesi (0/1)"
+    },
+    {
+      "step_index": 11,
+      "status": "FAIL",
+      "confidence": 0.8,
+      "confidence_label": "high",
+      "reason": "The instruction requires clicking on a black seat to change its state to green. However, there is no visual change between the pre-image and post-image, indicating the action did not succeed or was not performed. The seat remains black, and no error is visible in the logs.",
+      "pre_ocr_text": "09:01 & BE — Koltuk Seç 1. Kategori 102 © . nn so Suneeesesseesseseeni. B Seçtiğiniz Koltuk Boş - Seçilebilir OB Dolu - Seçilemez Koltuk Listesi (0/1)",
+      "post_ocr_text": "09:01 & a E — Koltuk Seç 1. Kategori 102 © . nn so Suneeesesseesseseeni. B Seçtiğiniz Koltuk Boş - Seçilebilir OB Dolu - Seçilemez Koltuk Listesi (0/1)"
+    }
+  ],
+  "failures": [
+    {
+      "step_index": 11,
+      "type": "UI Failure",
+      "reason": "No visual change detected after clicking the seat. (Root Cause: The click action may not have been registered, or the seat is not selectable.)",
+      "confidence": 0.8,
+      "confidence_label": "high"
+    }
+  ]
+}

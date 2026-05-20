@@ -1,0 +1,101 @@
+[
+    {
+  "action": "waitUntil",
+  "type": "system",
+  "element": "Coffy App",
+  "intent": "Launch the Coffy application",
+  "stepInstruction": "Open the Coffy app and wait for it to load",
+  "useVLMCoordinates": false,
+  "step_idx": 0,
+  "prev_image": "step_0_prev.png",
+  "post_image": "step_0_post.jpeg"
+    },
+    {
+  "action": "waitUntil",
+  "type": "system",
+  "element": "Home Screen",
+  "intent": "Display the main home screen after app launch",
+  "stepInstruction": "Wait for the home screen to load after the splash screen",
+  "useVLMCoordinates": false,
+  "step_idx": 1,
+  "prev_image": "step_1_post.jpeg",
+  "post_image": "step_1_prev.jpeg"
+},
+{
+  "action": "click",
+  "type": "click",
+  "element": "Latte product card",
+  "intent": "Open the Latte product details page",
+  "stepInstruction": "Tap on the Latte product card from the home screen to view its details",
+  "useVLMCoordinates": true,
+  "step_idx": 2,
+  "prev_image": "step_2_prev.jpeg",
+  "post_image": "step_2_post.png"
+},
+{
+  "action": "click",
+  "type": "click",
+  "element": "yumuşak İçim option",
+  "intent": "Change coffee preference from klasik İçim to yumuşak İçim",
+  "stepInstruction": "Tap on 'yumuşak İçim' option under İçim Tercihi to select it",
+  "useVLMCoordinates": true,
+  "step_idx": 3,
+  "prev_image": "step_3_prev.jpeg",
+  "post_image": "step_3_post.jpeg"
+},
+{
+  "action": "click",
+  "type": "click",
+  "element": "Sepetim (Cart) tab",
+  "intent": "View items added to cart",
+  "stepInstruction": "Tap on the 'Sepetim' icon in the bottom navigation bar to open the cart",
+  "useVLMCoordinates": true,
+  "step_idx": 4,
+  "prev_image": "step_4_prev.jpeg",
+  "post_image": "step_4_post.jpeg"
+},
+{
+  "action": "click",
+  "type": "click",
+  "element": "Sepete Ekle button",
+  "intent": "Add Iced Latte to cart",
+  "stepInstruction": "Tap on 'Sepete Ekle' button to add the selected Iced Latte to the cart",
+  "useVLMCoordinates": true,
+  "step_idx": 5,
+  "prev_image": "step_5_prev.jpeg",
+  "post_image": "step_5_post.jpeg"
+},
+{
+  "action": "click",
+  "type": "click",
+  "element": "Edit (pencil) button in Kişisel Bilgiler",
+  "intent": "Edit personal information",
+  "stepInstruction": "Tap on the pencil icon next to 'Kişisel Bilgiler' to open the personal information edit form",
+  "useVLMCoordinates": true,
+  "step_idx": 6,
+  "prev_image": "step_6_prev.png",
+  "post_image": "step_6_post.png"
+},
+{
+  "action": "click",
+  "type": "click",
+  "element": "Kaydet Button",
+  "intent": "Save updated personal information",
+  "stepInstruction": "Tap on the 'Kaydet' button to save the updated personal information",
+  "useVLMCoordinates": true,
+  "step_idx": 7,
+  "prev_image": "step_7_prev.png",
+  "post_image": "step_7_post.png"
+},
+{
+  "action": "click",
+  "type": "click",
+  "element": "coffy cüzdan",
+  "intent": "Go to coffy cüzdan page",
+  "stepInstruction": "Look at the value of the coffy cüzdan",
+  "useVLMCoordinates": true,
+  "step_idx": 8,
+  "prev_image": "step_8_prev.png",
+  "post_image": "step_8_post.png"
+}
+]

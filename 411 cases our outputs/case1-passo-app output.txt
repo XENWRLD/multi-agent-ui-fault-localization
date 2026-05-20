@@ -1,0 +1,68 @@
+--- Analyzing Step 0 ---
+ PASSED: The 'Futbol' category is visible on the Passo main screen as expected.
+
+--- Analyzing Step 1 ---
+ PASSED: The action successfully navigated to the football section as expected.
+
+--- Analyzing Step 2 ---
+ PASSED: The action successfully navigated to a new screen with relevant content.
+
+--- Analyzing Step 3 ---
+ PASSED: The action succeeded as the search bar was activated and filtered the list correctly.
+
+--- Analyzing Step 4 ---
+ PASSED: The click action successfully navigated to the match details screen.
+
+--- Analyzing Step 5 ---
+ PASSED: The button state change confirms the click was registered successfully.
+
+--- Analyzing Step 6 ---
+ PASSED: The action succeeded as the ticket quantity increased and the total price updated correctly.
+
+--- Analyzing Step 7 ---
+ PASSED: The action succeeded as the app navigated to the expected block selection screen.
+
+--- Analyzing Step 8 ---
+ PASSED: The action successfully selected the '102' block and activated the 'Koltuk Seç' button.
+
+--- Analyzing Step 9 ---
+ PASSED: The action successfully navigated to the seat selection screen as expected.
+
+--- Analyzing Step 10 ---
+ FAILED: The action failed to change the state of the target element, and no prior failures are recorded.
+    Expected: Clicking the black (unselectable) seat should change its state to green (selected) or trigger an error if the action fails.
+    Observed: The target element remained unchanged, still appearing as a black (unselectable) seat with no state change or error.
+
+========================================
+TEST COMPLETE. Scanned 11 steps.
+========================================
+
+FAILURE CHAIN ANALYSIS
+======================
+
+ISOLATED FAILURE:
+  Step 10 [action_failed]: The action failed to change the state of the target element, and no prior failures are recorded.
+    Expected: Clicking the black (unselectable) seat should change its state to green (selected) or trigger an error if the action fails.
+    Observed: The target element remained unchanged, still appearing as a black (unselectable) seat with no state change or error.
+
+Summary: 1 failures across 1 isolated
+
+
+SUMMARY
+=======
+Total steps:   11
+  Analyzed:    11
+  Skipped:     0
+  Passed:      10   (90.9%)
+  Failed:      1   (9.1%)
+
+Confidence Distribution (analyzed steps):
+  High   (>=0.85): 11 steps
+  Medium (>=0.60):  0 steps
+  Low    (<0.60):   0 steps
+  Avg confidence: 0.90
+
+Failure Type Breakdown:
+  action_failed          1 
+
+CASE 1 ANALYSIS: All steps are correct.

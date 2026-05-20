@@ -1,0 +1,77 @@
+--- Analyzing Step 0 ---
+ PASSED: The screen state remained consistent with the expected outcome, confirming the verification was successful.
+
+--- Analyzing Step 1 ---
+ PASSED: The action successfully navigated to the 'Futbol' category screen with relevant content displayed.
+
+--- Analyzing Step 2 ---
+ PASSED: The action successfully navigated to the expected screen displaying football matches.
+
+--- Analyzing Step 3 ---
+ FAILED: The search functionality did not update the displayed content as expected.
+    Expected: Clicking the 'Arama kutusuna 'Eskişehirspor' yaz.' input field should activate the field for input and initiate a search for 'Eskişehirspor'.
+    Observed: The search bar was activated and 'Eskişehirspor' was typed into it, but the list of matches remained unchanged, indicating no new search results appeared.
+
+--- Analyzing Step 4 ---
+ PASSED: The click action successfully navigated to the match details screen, displaying the expected content.
+
+--- Analyzing Step 5 ---
+ PASSED: The button click was registered, and the UI responded by displaying a ticket category selection, confirming the action was processed.
+
+--- Analyzing Step 6 ---
+ PASSED: The action succeeded as the ticket quantity increased and the UI updated correctly.
+
+--- Analyzing Step 7 ---
+ PASSED: The action succeeded as the app navigated to the block selection screen.
+
+--- Analyzing Step 8 ---
+ PASSED: The target block was successfully selected, and the UI responded as expected.
+
+--- Analyzing Step 9 ---
+ PASSED: The action successfully navigated to the seating map screen.
+
+--- Analyzing Step 10 ---
+ FAILED: The click action failed to change the seat's state, possibly due to the seat being unavailable or a processing error.
+    Expected: Clicking the black (unselectable) seat in the bottom left of the seating map should change its state to green (selected) or indicate an error if the seat is unavailable.
+    Observed: The target seat remained black (unselectable) with no state change, indicating the click was not processed or the seat remains unavailable.
+
+========================================
+TEST COMPLETE. Scanned 11 steps.
+========================================
+
+FAILURE CHAIN ANALYSIS
+======================
+
+ISOLATED FAILURE:
+  Step 3 [content_mismatch]: The search functionality did not update the displayed content as expected.
+    Expected: Clicking the 'Arama kutusuna 'Eskişehirspor' yaz.' input field should activate the field for input and initiate a search for 'Eskişehirspor'.
+    Observed: The search bar was activated and 'Eskişehirspor' was typed into it, but the list of matches remained unchanged, indicating no new search results appeared.
+
+ISOLATED FAILURE:
+  Step 10 [action_failed]: The click action failed to change the seat's state, possibly due to the seat being unavailable or a processing error.
+    Expected: Clicking the black (unselectable) seat in the bottom left of the seating map should change its state to green (selected) or indicate an error if the seat is unavailable.
+    Observed: The target seat remained black (unselectable) with no state change, indicating the click was not processed or the seat remains unavailable.
+
+Summary: 2 failures across 2 isolated
+
+
+SUMMARY
+=======
+Total steps:   11
+  Analyzed:    11
+  Skipped:     0
+  Passed:      9   (81.8%)
+  Failed:      2   (18.2%)
+
+Confidence Distribution (analyzed steps):
+  High   (>=0.85): 10 steps
+  Medium (>=0.60):  1 steps
+  Low    (<0.60):   0 steps
+  Avg confidence: 0.89
+
+Failure Type Breakdown:
+  content_mismatch       1
+  action_failed          1
+ 
+
+CASE 1 ANALYSIS: After the last implementaion this case had an faulty step, step 3 is correct but after the new rules we are saying step 3 is faulty.

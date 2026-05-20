@@ -1,0 +1,226 @@
+[
+  {
+    "action": "waitUntil",
+    "stepInstruction": "Ekranda 'Tüm seyahatin tek uygulamada' öğesinin varlığını kontrol et.",
+    "condition": {
+      "action": "verifyElement",
+      "element": "Tüm seyahatin tek uygulamada",
+      "intent": "Tüm seyahatin tek uygulamada öğesini kontrol et",
+      "exactMatch": true,
+      "stepInstruction": "Ekranda 'Tüm seyahatin tek uygulamada' öğesinin varlığını kontrol et."
+    },
+    "step_idx": 0
+  },
+  {
+    "action": "waitUntil",
+    "stepInstruction": "Ekranda 'Tüm seyahatin tek uygulamada' öğesinin varlığını kontrol et.",
+    "condition": {
+      "action": "verifyElement",
+      "element": "Tüm seyahatin tek uygulamada",
+      "intent": "Tüm seyahatin tek uygulamada öğesini kontrol et",
+      "exactMatch": true,
+      "stepInstruction": "Ekranda 'Tüm seyahatin tek uygulamada' öğesinin varlığını kontrol et."
+    },
+    "maxDuration": 30000,
+    "repeatCycle": 10000,
+    "repeatCnt": 2,
+    "requiresVLM": false,
+    "routeTo": "aom",
+    "step_idx": 1
+  },
+  {
+    "action": "waitUntil",
+    "stepInstruction": "Ekranda 'Tüm seyahatin tek uygulamada' öğesinin varlığını kontrol et.",
+    "condition": {
+      "action": "verifyElement",
+      "element": "Tüm seyahatin tek uygulamada",
+      "intent": "Tüm seyahatin tek uygulamada öğesini kontrol et",
+      "exactMatch": true,
+      "stepInstruction": "Ekranda 'Tüm seyahatin tek uygulamada' öğesinin varlığını kontrol et."
+    },
+    "maxDuration": 30000,
+    "repeatCycle": 10000,
+    "repeatCnt": 3,
+    "requiresVLM": false,
+    "routeTo": "aom",
+    "step_idx": 2
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "Çarpı",
+    "intent": "Çarpıya tıkla (VLM Koordinatları ile).",
+    "stepInstruction": "Çarpıya tıkla (VLM Koordinatları ile).",
+    "useVLMCoordinates": true,
+    "step_idx": 3
+  },
+  {
+    "action": "abstractVerification",
+    "intent": "Giriş ekranını doğrula.",
+    "instruction": "Giriş ekranını görsel olarak doğrula.",
+    "stepInstruction": "Giriş ekranını gördüğünü görsel olarak doğrula.",
+    "step_idx": 4
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "Üye olmadan devam et",
+    "intent": "Üye olmadan devam et",
+    "stepInstruction": "'Üye olmadan devam et' e VLM koordinatlari ile tıkla.",
+    "useVLMCoordinates": true,
+    "step_idx": 5
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "İzin Ver",
+    "intent": "Bildirim izni ver",
+    "stepInstruction": "Bildirim izni çıkarsa 'İzin Ver'e tıkla.",
+    "step_idx": 6
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "Nereden",
+    "intent": "Nereden'e tıkla",
+    "stepInstruction": "Nereden'e tıkla.",
+    "step_idx": 7
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "İzmir",
+    "intent": "İzmir'i seç",
+    "stepInstruction": "İzmir'i seç.",
+    "step_idx": 8
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "Nereye",
+    "intent": "Nereye'ye tıkla",
+    "stepInstruction": "Nereye'ye tıkla.",
+    "step_idx": 9
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "Ankara",
+    "intent": "Ankara'ya tıkla",
+    "stepInstruction": "Ankara'ya tıkla.",
+    "step_idx": 10
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "Gidiş Tarihi",
+    "intent": "Gidiş Tarihi'ne tıkla",
+    "stepInstruction": "Gidiş Tarihi'ne tıkla.",
+    "useVLMCoordinates": true,
+    "step_idx": 11
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "21",
+    "intent": "21'e tıkla",
+    "stepInstruction": "21'e tıkla.",
+    "useVLMCoordinates": true,
+    "step_idx": 12
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "UCUZ BİLET BUL",
+    "intent": "UCUZ BİLET BUL butonuna tıkla",
+    "stepInstruction": "UCUZ BİLET BUL butonuna tıkla.",
+    "step_idx": 13
+  },
+  {
+    "action": "wait",
+    "element": "null",
+    "step_idx": 14
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "Kalkış Saati",
+    "intent": "Kalkış Saati'ne tıkla",
+    "stepInstruction": "Kalkış Saati'ne tıkla.",
+    "step_idx": 15
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "Ay Akşamdan Işıktır",
+    "intent": "Ay Akşamdan Işıktır seç",
+    "stepInstruction": "Ay Akşamdan Işıktır seç.",
+    "step_idx": 16
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "sonuçları göster",
+    "intent": "Sonuçları VLM koordinatları ile tıkla",
+    "stepInstruction": "sonuçları göstere VLM koordinatları ile tıkla.",
+    "useVLMCoordinates": true,
+    "step_idx": 17
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "12.15->13.35",
+    "intent": "Vücut tıkla",
+    "useFromCache": false,
+    "stepInstruction": "12.15->13.35 uçuşuna tıkla.",
+    "step_idx": 18
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "BASIC",
+    "intent": "BASIC seç",
+    "stepInstruction": "BASIC'e tıkla.",
+    "step_idx": 19
+  },
+  {
+    "action": "abstractVerification",
+    "intent": "Görsel doğrulama",
+    "instruction": "Görsel olarak 12.15-13.35 arası uçuşu ve BASIC paketin seçildiğini doğrula.",
+    "useFromCache": false,
+    "stepInstruction": "Görsel olarak 12.15-13.35 arası uçuşu ve BASIC paketin seçildiğini doğrula.",
+    "step_idx": 20
+  },
+  {
+    "action": "abstractVerification",
+    "intent": "The screenshot shows the selection of the BASIC package, but there is no visible information about a flight between 12:15 and 13:35.",
+    "instruction": "Görsel olarak 12.15-13.35 arası uçuşu ve BASIC paketin seçildiğini doğrula.",
+    "useFromCache": false,
+    "stepInstruction": "Görsel olarak 12.15-13.35 arası uçuşu ve BASIC paketin seçildiğini doğrula.",
+    "step_idx": 21
+  },
+  {
+    "action": "abstractVerification",
+    "intent": "Görseldeki uçuş saatleri 21:15 kalkış ve 22:35 varış olarak gösterilmekte, bu nedenle 12.15-13.35 arası uçuşunun seçildiği iddia doğrulanamaz.",
+    "instruction": "Görsel olarak 12.15-13.35 arası uçuşu ve BASIC paketin seçildiğini doğrula.",
+    "useFromCache": false,
+    "stepInstruction": "Görsel olarak 12.15-13.35 arası uçuşu ve BASIC paketin seçildiğini doğrula.",
+    "step_idx": 22
+  },
+  {
+    "action": "abstractVerification",
+    "intent": "Görseldeki uçuş saatleri 21:15 kalkış ve 22:35 varış olarak gösterilmekte, 12.15-13.35 arası bir uçuşun seçildiği doğrulanamamaktadır.",
+    "instruction": "Görsel olarak 12.15-13.35 arası uçuşu ve BASIC paketin seçildiğini doğrula.",
+    "useFromCache": false,
+    "stepInstruction": "Görsel olarak 12.15-13.35 arası uçuşu ve BASIC paketin seçildiğini doğrula.",
+    "step_idx": 23
+  },
+  {
+    "action": "abstractVerification",
+    "intent": "Görseldeki uçuş saatleri 21:15 kalkış ve 22:35 varış olarak gösterilmekte, 12.15-13.35 arası bir uçuşun seçildiği doğrulanamamaktadır.",
+    "instruction": "Görsel olarak 12.15-13.35 arası uçuşu ve BASIC paketin seçildiğini doğrula.",
+    "useFromCache": false,
+    "stepInstruction": "Görsel olarak 12.15-13.35 arası uçuşu ve BASIC paketin seçildiğini doğrula.",
+    "step_idx": 24
+  }
+]

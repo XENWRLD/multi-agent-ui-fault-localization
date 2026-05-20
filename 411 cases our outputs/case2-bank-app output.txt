@@ -1,0 +1,73 @@
+--- Analyzing Step 0 ---
+   [LOG] Step 0: inline logs present [g411]
+   [LOG] Observer: The logs indicate that the balance fetched from the account is 5250.00 TL, and the network request to retrieve the balance was successful with a status of 200 OK.
+ PASSED: The balance value of 5250.00 TL was correctly verified on the main page.
+
+--- Analyzing Step 1 ---
+ PASSED: The navigation to the 'Para Gönder' screen was successful.
+
+--- Analyzing Step 2 ---
+ PASSED: The action succeeded as the 'Alıcı adı' field correctly shows 'Tuna'.
+
+--- Analyzing Step 3 ---
+ PASSED: The input field correctly displays the entered value '300', indicating the action was successful.
+
+--- Analyzing Step 4 ---
+   [LOG] Step 4: inline logs present [g411]
+   [LOG] Observer: The logs indicate that a transaction was initiated with an amount of 300 to a recipient named Tuna, but the transaction failed due to a 500 Internal Server Error from the network request. [NET_FAIL, SYS_ERR]
+ FAILED: 500 Internal Server Error from the network request caused the transaction to fail.
+    Expected: Clicking the 'Transfer' button should initiate the transfer process and navigate to a confirmation screen indicating success.
+    Observed: The app navigated to a confirmation screen indicating that the transfer was successful, with an option to return to the dashboard.
+
+--- Analyzing Step 5 ---
+ PASSED: The 'Transfer Successful' message is visible as expected, confirming the action succeeded.
+
+--- Analyzing Step 6 ---
+ PASSED: The action successfully navigated to the main dashboard screen.
+
+--- Analyzing Step 7 ---
+   [LOG] Step 7: inline logs present [g411]
+   [LOG] Observer: The logs indicate that the balance verification step was executed successfully, fetching a total balance of 5250.00 TL with a successful network request.
+ FAILED: The balance value was not confirmed in the post state, leading to a content mismatch.
+    Expected: The screen should display the expected state or value confirming the prior action completed correctly.
+    Observed: The screen remains the same with a balance of '5250.00 TL' and a button labeled 'Para Gönder'. No visual changes or overlays are present.
+
+========================================
+TEST COMPLETE. Scanned 8 steps.
+========================================
+
+FAILURE CHAIN ANALYSIS
+======================
+
+ISOLATED FAILURE:
+  Step 4 [system_error]: 500 Internal Server Error from the network request caused the transaction to fail.
+    Expected: Clicking the 'Transfer' button should initiate the transfer process and navigate to a confirmation screen indicating success.
+    Observed: The app navigated to a confirmation screen indicating that the transfer was successful, with an option to return to the dashboard.
+
+ISOLATED FAILURE:
+  Step 7 [content_mismatch]: The balance value was not confirmed in the post state, leading to a content mismatch.
+    Expected: The screen should display the expected state or value confirming the prior action completed correctly.
+    Observed: The screen remains the same with a balance of '5250.00 TL' and a button labeled 'Para Gönder'. No visual changes or overlays are present.
+
+Summary: 2 failures across 2 isolated
+
+
+SUMMARY
+=======
+Total steps:   8
+  Analyzed:    8
+  Skipped:     0
+  Passed:      6   (75.0%)
+  Failed:      2   (25.0%)
+
+Confidence Distribution (analyzed steps):
+  High   (>=0.85):  8 steps
+  Medium (>=0.60):  0 steps
+  Low    (<0.60):   0 steps
+  Avg confidence: 0.92
+
+Failure Type Breakdown:
+  system_error           1
+  content_mismatch       1 
+
+CASE 2 ANALYSIS: Step 6 must fail, "The instruction to click 'Back to Dashboard' is valid and the button is visible in the Pre-Image. However, the Post-Image shows a balance of 5250.00 TL, which contradicts the expected balance of 0 TRY after a transfer of 5250 TRY. This indicates a logical inconsistency in the application state."

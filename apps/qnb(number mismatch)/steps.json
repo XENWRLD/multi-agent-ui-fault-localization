@@ -1,0 +1,145 @@
+[
+    {
+        "action": "click",
+        "type": "click",
+        "element": "Kartlar",
+        "intent": "Check credit card information",
+        "stepInstruction": "Tap on the 'Kartlar' (Cards) option from the menu.",
+        "useVLMCoordinates": true,
+        "step_idx": 0,
+        "prev_image": "step_0_prev.jpeg",
+        "post_image": "step_0_post.jpeg"
+    },
+    {
+        "action": "click",
+        "type": "click",
+        "element": "Kartlar",
+        "intent": "Navigate to cards menu",
+        "stepInstruction": "Tap on the 'Kartlar' (Cards) option from the menu.",
+        "useVLMCoordinates": true,
+        "step_idx": 1,
+        "prev_image": "step_1_prev.jpeg",
+        "post_image": "step_1_post.jpeg"
+    },
+    {
+        "action": "click",
+        "type": "click",
+        "element": "Banka Kartlarım",
+        "intent": "View bank cards options",
+        "stepInstruction": "Tap on the 'Banka Kartlarım' (My Bank Cards) option.",
+        "useVLMCoordinates": true,
+        "step_idx": 2,
+        "prev_image": "step_2_prev.jpeg",
+        "post_image": "step_2_post.jpeg"
+    },
+{
+  "action": "click",
+  "type": "click",
+  "element": "Back Button",
+  "intent": "Return to the Banka Kartlarım screen",
+  "stepInstruction": "Tap on the back button to go back from the virtual bank card application screen to the Banka Kartlarım page",
+  "useVLMCoordinates": true,
+  "step_idx": 3,
+  "prev_image": "step_3_prev.jpeg",
+  "post_image": "step_3_post.jpeg"
+},
+    {
+        "action": "click",
+        "type": "click",
+        "element": "Günlük",
+        "intent": "Select daily limit validity",
+        "stepInstruction": "Select the 'Günlük' option from the list.",
+        "useVLMCoordinates": true,
+        "step_idx": 4,
+        "prev_image": "step_4_prev.jpeg",
+        "post_image": "step_4_post.jpeg"
+    },
+    {
+        "action": "click",
+        "type": "click",
+        "element": "Günlük",
+        "intent": "Select daily limit validity period",
+        "stepInstruction": "Tap on the 'Günlük' option to choose the daily validity period.",
+        "useVLMCoordinates": true,
+        "step_idx": 5,
+        "prev_image": "step_5_prev.jpeg",
+        "post_image": "step_5_post.jpeg"
+    },
+    {
+        "action": "click",
+        "type": "click",
+        "element": "Limit Geçerlilik Süresi dropdown",
+        "intent": "Confirm selected limit validity period and close selection panel",
+        "stepInstruction": "Close the selection panel after choosing 'Günlük' so the selection is applied.",
+        "useVLMCoordinates": true,
+        "step_idx": 6,
+        "prev_image": "step_6_prev.jpeg",
+        "post_image": "step_6_post.jpeg"
+    },
+{
+    "action": "click",
+    "type": "click",
+    "element": "Back button",
+    "intent": "Return from 'Banka Kartlarım' screen to 'Kartlar' screen",
+    "stepInstruction": "Tap the back arrow at the top left to navigate back to the previous 'Kartlar' menu.",
+    "useVLMCoordinates": true,
+    "step_idx": 7,
+    "prev_image": "step_7_prev.jpeg",
+    "post_image": "step_7_post.jpeg"
+},
+    {
+        "action": "click",
+        "type": "click",
+        "element": "Banka Kartı Ayarları",
+        "intent": "Navigate from 'Banka Kartlarım' to 'Kart Ayarları' screen",
+        "stepInstruction": "Tap on 'Banka Kartı Ayarları' to open the card settings page.",
+        "useVLMCoordinates": true,
+        "step_idx": 8,
+        "prev_image": "step_8_prev.jpeg",
+        "post_image": "step_8_post.jpeg"
+    },
+    {
+        "action": "click",
+        "type": "click",
+        "element": "Güncelle button",
+        "intent": "Open limit update screen for internet/phone purchases",
+        "stepInstruction": "Tap the 'Güncelle' button under the transaction limit section to open the limit update screen.",
+        "useVLMCoordinates": true,
+        "step_idx": 9,
+        "prev_image": "step_9_prev.jpeg",
+        "post_image": "step_9_post.jpeg"
+    },
+    {
+        "action": "input",
+        "type": "text",
+        "element": "İşlem Limitiniz input field",
+        "intent": "Enter a new transaction limit amount",
+        "stepInstruction": "Tap on the 'İşlem Limitiniz' field and enter a new value using the numeric keypad.",
+        "useVLMCoordinates": true,
+        "step_idx": 10,
+        "prev_image": "step_10_prev.jpeg",
+        "post_image": "step_10_post.jpeg"
+    },
+    {
+        "action": "tap",
+        "type": "button",
+        "element": "Uygula button",
+        "intent": "Apply the new transaction limit and proceed to confirmation",
+        "stepInstruction": "Tap the 'Uygula' button at the top right to apply the entered limit.",
+        "useVLMCoordinates": true,
+        "step_idx": 11,
+        "prev_image": "step_11_prev.jpeg",
+        "post_image": "step_11_post.jpeg"
+    },
+{
+    "action": "click",
+    "type": "click",
+    "element": "Onayla button",
+    "intent": "Confirm the update of the online shopping limit for the card",
+    "stepInstruction": "Tap the 'Onayla' button in the confirmation popup to apply the new limit.",
+    "useVLMCoordinates": true,
+    "step_idx": 12,
+    "prev_image": "step_12_prev.jpeg",
+    "post_image": "step_12_post.png"
+}
+]

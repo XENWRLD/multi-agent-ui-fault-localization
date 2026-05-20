@@ -1,0 +1,94 @@
+CURRENT OUTPUT (CORRECT EXCEPT STEP 0):
+DESCRIBER-DECIDER SCAN STARTED... /content/drive/MyDrive/Grad Project/Obilet
+Log parser: format=nested, mode=preassigned
+  Pre-assigned entries across 9 step bucket(s).
+
+--- Analyzing Step 0 ---
+   [LOG] Step 0: 1 entries [preassigned:nested]
+   [LOG] Observer: The logs indicate that the application was successfully launched, as evidenced by the info level message stating 'App launched.' There are no errors or network failures recorded in the logs.
+ FAILED: The Observer did not confirm the expected value in the POST screen, leading to a content mismatch failure.
+    Expected: The target element should become visible on screen after the action completes.
+    Observed: The screen remains on the red splash screen with the Obilet car logo, indicating no change or confirmation of the expected value.
+
+--- Analyzing Step 1 ---
+   [LOG] Step 1: 1 entries [preassigned:nested]
+   [LOG] Observer: The logs indicate that the dashboard has successfully rendered, which aligns with the instruction to wait for the landing page and the Category Selection dashboard to load. No errors or network failures were detected during this step.
+ PASSED: The dashboard loaded successfully with all category selections visible.
+
+--- Analyzing Step 2 ---
+   [LOG] Step 2: 1 entries [preassigned:nested]
+   [LOG] Observer: The logs indicate that the user successfully selected the 'Bus' tab as part of the action to switch categories and set search parameters. No errors or network failures were recorded during this step.
+ PASSED: The action succeeded as the search parameters were updated correctly.
+
+--- Analyzing Step 3 ---
+   [LOG] Step 3: 1 entries [preassigned:nested]
+   [LOG] Observer: The logs indicate a successful network request made to search for bus trips based on the user's input. The request was initiated after clicking the green 'SEARCH' button, and it returned a valid response without any errors.
+ PASSED: The click action successfully navigated to the results screen, indicating the action was processed correctly.
+
+--- Analyzing Step 4 ---
+   [LOG] Step 4: 1 entries [preassigned:nested]
+   [LOG] Observer: The logs indicate that the 'FILTER' button was successfully clicked, triggering the filter modal in the application. There are no errors or network failures reported during this interaction.
+ PASSED: The action succeeded as the filter overlay appeared after clicking the 'FILTER' button.
+
+--- Analyzing Step 5 ---
+   [LOG] Step 5: 1 entries [preassigned:nested]
+   [LOG] Observer: The logs indicate that a multi-company filter was successfully applied in the application, as evidenced by the info log stating 'Applied multi-company filter.' No errors or network failures were detected during this step.
+ PASSED: The filter was successfully applied, and the expected trip options are displayed.
+
+--- Analyzing Step 6 ---
+   [LOG] Step 6: 1 entries [preassigned:nested]
+   [LOG] Observer: The logs indicate that the user successfully expanded the trip details for the 22:00 AKSU trip, which is part of the action taken to view seat availability and the map. There are no errors or network failures recorded during this interaction.
+ PASSED: The action successfully displayed the seat selection map for the 22:00 AKSU trip.
+
+--- Analyzing Step 7 ---
+   [LOG] Step 7: 3 entries [preassigned:nested]
+   [LOG] Observer: The logs indicate that the user successfully tapped the 'Confirm and Continue' button to reserve Seat 12, but encountered a network error due to a 504 Gateway Timeout while attempting to communicate with the reservation service. [NET_FAIL, SYS_ERR]
+ FAILED: 504 Gateway Timeout error occurred while communicating with the reservation service.
+    Expected: Clicking the 'Confirm and Continue' button should proceed to the passenger details screen.
+    Observed: The screen displayed a loading overlay indicating the system is processing the seat selection.
+
+--- Analyzing Step 8 ---
+   [LOG] Step 8: 1 entries [preassigned:nested]
+   [LOG] Observer: The logs indicate that the execution of the 'waitUntil' action was hindered due to a system error. Specifically, the navigation to the Passenger Details Input was blocked because of a failed reservation dependency. [SYS_ERR]
+ FAILED: Navigation to PassengerDetailsActivity blocked by failed reservation dependency. Previous system error in Step 7 may be related.
+    Expected: The target element should become visible on screen after the action completes.
+    Observed: The screen continues to display a loading overlay, preventing access to the passenger information form. The target element 'Passenger Details Input' is not visible.
+
+========================================
+TEST COMPLETE. Scanned 9 steps.
+========================================
+
+FAILURE CHAIN ANALYSIS
+======================
+
+ISOLATED FAILURE:
+  Step 0 [content_mismatch]: The Observer did not confirm the expected value in the POST screen, leading to a content mismatch failure.
+    Expected: The target element should become visible on screen after the action completes.
+    Observed: The screen remains on the red splash screen with the Obilet car logo, indicating no change or confirmation of the expected value.
+
+FAILURE CHAIN 1: (2 steps)
+  Step 7 -> Step 8
+  Root: Step 7 [system_error] - 504 Gateway Timeout error occurred while communicating with the reservation service.
+  Step 8 [element_missing] - Navigation to PassengerDetailsActivity blocked by failed reservation dependency. Previous system error in Step 7 may be related. (caused by Step 7)
+
+Summary: 3 failures across 1 chain(s), 1 isolated
+
+
+SUMMARY
+=======
+Total steps:   9
+  Analyzed:    9
+  Skipped:     0
+  Passed:      6   (66.7%)
+  Failed:      3   (33.3%)
+
+Confidence Distribution (analyzed steps):
+  High   (>=0.85):  9 steps
+  Medium (>=0.60):  0 steps
+  Low    (<0.60):   0 steps
+  Avg confidence: 0.94
+
+Failure Type Breakdown:
+  content_mismatch       1
+  system_error           1
+  element_missing        1

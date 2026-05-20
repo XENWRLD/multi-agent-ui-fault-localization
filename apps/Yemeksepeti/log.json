@@ -1,0 +1,137 @@
+[
+  {
+    "step": {
+      "action": "waitUntil",
+      "stepInstruction": "Verify that the Yemeksepeti splash screen has loaded."
+    },
+    "currScreenshot": "BASE64_DATA_HERE",
+    "prevScreenshot": "BASE64_DATA_HERE",
+    "status": "PASSED"
+  },
+  {
+    "step": {
+      "action": "waitUntil",
+      "stepInstruction": "Verify that the login or onboarding screen has loaded."
+    },
+    "currScreenshot": "BASE64_DATA_HERE",
+    "prevScreenshot": "BASE64_DATA_HERE",
+    "status": "PASSED"
+  },
+  {
+    "step": {
+      "action": "click",
+      "stepInstruction": "Click the 'X' on the Flash Deals banner."
+    },
+    "currScreenshot": "BASE64_DATA_HERE",
+    "prevScreenshot": "BASE64_DATA_HERE",
+    "status": "PASSED"
+  },
+  {
+    "step": {
+      "action": "click",
+      "stepInstruction": "Click on the delivery address at the top of the home screen to change or add an address."
+    },
+    "currScreenshot": "BASE64_DATA_HERE",
+    "prevScreenshot": "BASE64_DATA_HERE",
+    "status": "PASSED"
+  },
+  {
+    "step": {
+      "action": "click",
+      "stepInstruction": "Click on the 'Orta Sabanci Universitesi A4' address option."
+    },
+    "currScreenshot": "BASE64_DATA_HERE",
+    "prevScreenshot": "BASE64_DATA_HERE",
+    "status": "PASSED"
+  },
+  {
+    "step": {
+      "action": "type",
+      "stepInstruction": "Type 'little ceasers pizza' into the search bar and press enter."
+    },
+    "currScreenshot": "BASE64_DATA_HERE",
+    "prevScreenshot": "BASE64_DATA_HERE",
+    "status": "PASSED"
+  },
+  {
+    "step": {
+      "action": "click",
+      "stepInstruction": "Click on the Little Caesars Pizza restaurant card in the search results."
+    },
+    "currScreenshot": "BASE64_DATA_HERE",
+    "prevScreenshot": "BASE64_DATA_HERE",
+    "status": "PASSED"
+  },
+  {
+    "step": {
+      "action": "click",
+      "stepInstruction": "Click on the 'Mixed (Medium) Pizza' item in the menu."
+    },
+    "currScreenshot": "BASE64_DATA_HERE",
+    "prevScreenshot": "BASE64_DATA_HERE",
+    "status": "FAILED"
+  },
+  {
+    "step": {
+      "action": "click",
+      "stepInstruction": "On the Mixed (Medium) pizza screen, select 'Normal Dough'."
+    },
+    "currScreenshot": "BASE64_DATA_HERE",
+    "prevScreenshot": "BASE64_DATA_HERE",
+    "status": "PASSED"
+  },
+  {
+    "step": {
+      "action": "click",
+      "stepInstruction": "Select 'Less Pizza Sauce' from the customization menu."
+    },
+    "currScreenshot": "BASE64_DATA_HERE",
+    "prevScreenshot": "BASE64_DATA_HERE",
+    "status": "PASSED"
+  },
+  {
+    "step": {
+      "action": "click",
+      "stepInstruction": "On the Mixed (Medium) pizza customization screen, select 'I Don't Want Mushrooms' and 'I Don't Want Black Olives'."
+    },
+    "currScreenshot": "BASE64_DATA_HERE",
+    "prevScreenshot": "BASE64_DATA_HERE",
+    "status": "PASSED"
+  },
+  {
+    "step": {
+      "action": "click",
+      "stepInstruction": "Click 'Add to cart' and confirm the cart bar shows '1' Mixed (Medium) pizza."
+    },
+    "currScreenshot": "BASE64_DATA_HERE",
+    "prevScreenshot": "BASE64_DATA_HERE",
+    "status": "PASSED"
+  },
+  {
+    "step": {
+      "action": "click",
+      "stepInstruction": "Click the 'View your cart' red bar at the bottom to see your selection."
+    },
+    "currScreenshot": "BASE64_DATA_HERE",
+    "prevScreenshot": "BASE64_DATA_HERE",
+    "status": "PASSED"
+  },
+  {
+    "step": {
+      "action": "click",
+      "stepInstruction": "Click 'Confirm basket' to proceed to the payment screen for your Mixed (Medium) pizza."
+    },
+    "currScreenshot": "BASE64_DATA_HERE",
+    "prevScreenshot": "BASE64_DATA_HERE",
+    "status": "PASSED"
+  },
+  {
+    "step": {
+      "action": "abstractVerification",
+      "stepInstruction": "Visually verify the 'Mixed (Medium)' pizza selection and the Little Caesars restaurant from the checkout summary."
+    },
+    "currScreenshot": "BASE64_DATA_HERE",
+    "prevScreenshot": "BASE64_DATA_HERE",
+    "status": "FAILED"
+  }
+]

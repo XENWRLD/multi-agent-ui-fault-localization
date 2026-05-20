@@ -1,0 +1,32 @@
+[
+  {
+    "timestamp": "2024-11-15T14:32:01.120Z",
+    "level": "info",
+    "source": "application",
+    "message": "User tapped flight card at position index 3"
+  },
+  {
+    "timestamp": "2024-11-15T14:32:01.250Z",
+    "level": "info",
+    "source": "network",
+    "message": "POST /api/v1/flights/select - Request sent with body: {\"flight_id\": \"TK-2174\", \"departure\": \"21:15\", \"arrival\": \"22:35\", \"route\": \"IST-ESB\"}"
+  },
+  {
+    "timestamp": "2024-11-15T14:32:01.890Z",
+    "level": "info",
+    "source": "network",
+    "message": "POST /api/v1/flights/select - Response 200 OK (640ms) - Flight TK-2174 (21:15-22:35) selected successfully"
+  },
+  {
+    "timestamp": "2024-11-15T14:32:02.010Z",
+    "level": "info",
+    "source": "application",
+    "message": "Navigating to flight class selection screen for flight TK-2174 (21:15->22:35)"
+  },
+  {
+    "timestamp": "2024-11-15T14:32:02.150Z",
+    "level": "warning",
+    "source": "application",
+    "message": "Selected flight departure 21:15 does not match expected target 12:15. Possible incorrect selection."
+  }
+]

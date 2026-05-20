@@ -1,0 +1,105 @@
+CURRENT OUTPUT(CORRECT):
+DESCRIBER-DECIDER SCAN STARTED... /content/drive/MyDrive/Grad Project/Yemeksepeti
+Log parser: format=nested, mode=preassigned
+  Pre-assigned entries across 15 step bucket(s).
+  [WARN] 15/15 steps had no 'logs' field
+
+--- Analyzing Step 0 ---
+   [LOG] Step 0: no log entries found [preassigned:nested]
+ PASSED: The Yemeksepeti splash screen loaded successfully with the logo visible.
+
+--- Step 1 [SKIPPED — action=waitUntil, requires_vlm=False] ---
+
+--- Analyzing Step 2 ---
+   [LOG] Step 2: no log entries found [preassigned:nested]
+ PASSED: The Flash Deals banner was successfully closed as expected.
+
+--- Analyzing Step 3 ---
+   [LOG] Step 3: no log entries found [preassigned:nested]
+ PASSED: The overlay for changing or adding a delivery address appeared successfully.
+
+--- Analyzing Step 4 ---
+   [LOG] Step 4: no log entries found [preassigned:nested]
+ PASSED: The address option was successfully selected and confirmed as the delivery address.
+
+--- Analyzing Step 5 ---
+   [LOG] Step 5: no log entries found [preassigned:nested]
+ PASSED: The search action successfully displayed the expected search results for 'little ceasers pizza'.
+
+--- Analyzing Step 6 ---
+   [LOG] Step 6: no log entries found [preassigned:nested]
+ PASSED: The click action successfully navigated to the restaurant details screen.
+
+--- Analyzing Step 7 ---
+   [LOG] Step 7: no log entries found [preassigned:nested]
+ FAILED: The click action resulted in navigation to an incorrect item, indicating a potential issue with item selection logic.
+    Expected: Clicking the 'Mixed (Medium) Pizza' item should select it and navigate to the next step in the flow.
+    Observed: The app navigated to the 'Mediterranean (Central)' pizza details screen, displaying its ingredients and allowing dough selection options.
+
+--- Analyzing Step 8 ---
+   [LOG] Step 8: no log entries found [preassigned:nested]
+ PASSED: The 'Normal Dough' option was successfully selected as intended.
+
+--- Analyzing Step 9 ---
+   [LOG] Step 9: no log entries found [preassigned:nested]
+ PASSED: The target element was successfully selected, and the UI responded as expected.
+
+--- Analyzing Step 10 ---
+   [LOG] Step 10: no log entries found [preassigned:nested]
+ PASSED: The customization options were successfully selected as instructed.
+
+--- Analyzing Step 11 ---
+   [LOG] Step 11: no log entries found [preassigned:nested]
+ PASSED: The action successfully added the item to the cart and updated the cart bar as expected.
+
+--- Analyzing Step 12 ---
+   [LOG] Step 12: no log entries found [preassigned:nested]
+ PASSED: The click action successfully navigated to the 'Cart' screen, displaying the expected content.
+
+--- Analyzing Step 13 ---
+   [LOG] Step 13: no log entries found [preassigned:nested]
+ PASSED: The action successfully navigated to the 'Checkout' screen as expected.
+
+--- Analyzing Step 14 ---
+   [LOG] Step 14: no log entries found [preassigned:nested]
+ FAILED: The absence of the 'Mixed (Medium)' pizza in the order summary suggests a potential issue with item selection logic, similar to the prior failure in Step 7.
+    Expected: The screen should display the expected state or value confirming the prior action completed correctly.
+    Observed: The screen remains the same in POST, showing the 'Mediterranean (Central)' pizza with no visible 'Mixed (Medium)' pizza.
+
+========================================
+TEST COMPLETE. Scanned 15 steps.
+========================================
+
+FAILURE CHAIN ANALYSIS
+======================
+
+ISOLATED FAILURE:
+  Step 7 [content_mismatch]: The click action resulted in navigation to an incorrect item, indicating a potential issue with item selection logic.
+    Expected: Clicking the 'Mixed (Medium) Pizza' item should select it and navigate to the next step in the flow.
+    Observed: The app navigated to the 'Mediterranean (Central)' pizza details screen, displaying its ingredients and allowing dough selection options.
+
+ISOLATED FAILURE:
+  Step 14 [content_mismatch]: The absence of the 'Mixed (Medium)' pizza in the order summary suggests a potential issue with item selection logic, similar to the prior failure in Step 7.
+    Expected: The screen should display the expected state or value confirming the prior action completed correctly.
+    Observed: The screen remains the same in POST, showing the 'Mediterranean (Central)' pizza with no visible 'Mixed (Medium)' pizza.
+
+Summary: 2 failures across 2 isolated
+
+
+SUMMARY
+=======
+Total steps:   15
+  Analyzed:    14
+  Skipped:     1
+  Passed:      12   (85.7%)
+  Failed:      2   (14.3%)
+
+Confidence Distribution (analyzed steps):
+  High   (>=0.85): 13 steps
+  Medium (>=0.60):  1 steps
+  Low    (<0.60):   0 steps
+  Avg confidence: 0.89
+
+Failure Type Breakdown:
+  content_mismatch       2
+

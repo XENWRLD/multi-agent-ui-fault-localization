@@ -1,0 +1,110 @@
+[
+  {
+    "action": "waitUntil",
+    "stepInstruction": "Wait until the red splash screen with the Obilet car logo appears.",
+    "condition": {
+      "action": "verifyElement",
+      "element": "App Logo",
+      "intent": "Confirm the app has successfully launched and the initial loading screen is visible",
+      "exactMatch": false,
+      "stepInstruction": "Verify that the main app logo is present on the splash screen."
+    },
+    "step_idx": 0
+  },
+  {
+    "action": "waitUntil",
+    "stepInstruction": "Wait until the white landing page loads and the Category Selection (Bus, Flight, Hotel) dashboard is displayed.",
+    "condition": {
+      "action": "verifyElement",
+      "element": "Dashboard Container",
+      "intent": "Confirm the application has initialized and is ready for user input on the main menu",
+      "exactMatch": false,
+      "stepInstruction": "Verify that the main search form or category selector is visible."
+    },
+    "step_idx": 1
+  },
+  {
+    "action": "click",
+    "stepInstruction": "Switch to the 'Bus' category and set the search parameters to From: Istanbul Anatolia, To: Ankara for 10 April Friday.",
+    "condition": {
+      "action": "verifyElement",
+      "element": "Search Parameters",
+      "intent": "Verify that the Bus category is active and the departure, destination, and date fields are correctly populated",
+      "exactMatch": false,
+      "stepInstruction": "Confirm the 'Bus' tab is selected and the route Istanbul to Ankara is shown for April 10."
+    },
+    "step_idx": 2
+  },
+  {
+    "action": "click",
+    "stepInstruction": "Click the green 'SEARCH' button to find available bus trips for the selected route and date.",
+    "condition": {
+      "action": "verifyElement",
+      "element": "Results Loading Screen",
+      "intent": "Confirm that the search request was sent and the application has transitioned to the results loading state",
+      "exactMatch": false,
+      "stepInstruction": "Verify that the loading animation and the text 'Flights are being listed...' (or similar) appear."
+    },
+    "step_idx": 3
+  },
+  {
+    "action": "click",
+    "stepInstruction": "Click the 'FILTER' button to open the bus trip filtering options.",
+    "condition": {
+      "action": "verifyElement",
+      "element": "Filter Modal",
+      "intent": "Confirm that the filter menu has opened, allowing the user to sort by company, station, or time",
+      "exactMatch": false,
+      "stepInstruction": "Verify that the Filter overlay is visible with categories like 'By Company' and 'By Station' at the top."
+    },
+    "step_idx": 4
+  },
+  {
+    "action": "click",
+    "stepInstruction": "Select 'Aksu Turizm', 'Adıyaman Anka Turizm', and 'Ben Turizm' from the company list and click the 'FILTER' button to apply.",
+    "condition": {
+      "action": "verifyElement",
+      "element": "Filtered Trip List",
+      "intent": "Confirm that the trip list has been filtered to only show the selected companies",
+      "exactMatch": false,
+      "stepInstruction": "Verify that the trip list displays a '3' on the Filter button and shows companies like 'Ben Turizm' and 'Anka'."
+    },
+    "step_idx": 5
+  },
+  {
+    "action": "click",
+    "stepInstruction": "Select the 22:00 AKSU trip from the list to view the seat availability and map.",
+    "condition": {
+      "action": "verifyElement",
+      "element": "Seat Selection Map",
+      "intent": "Confirm that the seat map has opened for the selected 22:00 AKSU trip",
+      "exactMatch": false,
+      "stepInstruction": "Verify that the seat layout with numbers and color-coded availability (Occupied-Male/Female) is displayed."
+    },
+    "step_idx": 6
+  },
+  {
+    "action": "click",
+    "stepInstruction": "Select Seat 12 and click the 'Confirm and Continue' button to proceed to passenger details.",
+    "condition": {
+      "action": "verifyElement",
+      "element": "Passenger Information Form",
+      "intent": "Confirm that the seat is locked and the application has transitioned to the passenger detail entry screen",
+      "exactMatch": false,
+      "stepInstruction": "Verify that the Passenger Info screen with name and ID fields is visible."
+    },
+    "step_idx": 7
+  },
+  {
+    "action": "waitUntil",
+    "stepInstruction": "Wait for the loading overlay to disappear and the Passenger Information form to load.",
+    "condition": {
+      "action": "verifyElement",
+      "element": "Passenger Details Input",
+      "intent": "Verify that the user can now enter their name, surname, and ID number to finalize the booking",
+      "exactMatch": false,
+      "stepInstruction": "Confirm that the 'Loading, please wait...' message has closed and the form fields are interactable."
+    },
+    "step_idx": 8
+  }
+]

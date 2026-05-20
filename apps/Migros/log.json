@@ -1,0 +1,42 @@
+[
+  {
+    "step": { "action": "waitUntil", "stepInstruction": "Wait for the Migros splash screen to load." },
+    "status": "PASSED",
+    "logs": "timestamp: 2026-04-08T13:22:01Z | level: INFO | source: application | trace_id: mig_01 | thread: main | screen: SplashActivity | event_type: LIFECYCLE | message: App launched successfully."
+  },
+  {
+    "step": { "action": "waitUntil", "stepInstruction": "Wait for the Migros main dashboard to load." },
+    "status": "PASSED",
+    "logs": "timestamp: 2026-04-08T13:23:05Z | level: INFO | source: application | trace_id: mig_01 | thread: main | screen: DashboardActivity | event_type: UI_STATE_CHANGE | message: Dashboard rendered with service grid."
+  },
+  {
+    "step": { "action": "click", "stepInstruction": "Navigate to Sanalmarket and click on the 'Categories' tab." },
+    "status": "PASSED",
+    "logs": "timestamp: 2026-04-08T13:23:15Z | level: INFO | source: application | trace_id: mig_02 | thread: main | screen: DashboardActivity | event_type: UI_INTERACTION | message: User selected Categories tab."
+  },
+  {
+    "step": { "action": "type", "stepInstruction": "Search for 'Raffaello' using the top search bar." },
+    "status": "PASSED",
+    "logs": "timestamp: 2026-04-08T13:35:10Z | level: INFO | source: network | trace_id: mig_03 | thread: network-1 | screen: SearchActivity | event_type: NETWORK_REQUEST | message: GET /api/v1/products/search?q=Raffaello - 200 OK."
+  },
+  {
+    "step": { "action": "click", "stepInstruction": "Click 'Add to Cart' and wait for delivery method selection." },
+    "status": "PASSED",
+    "logs": "timestamp: 2026-04-08T13:36:01Z | level: INFO | source: application | trace_id: mig_04 | thread: main | screen: ProductDetailActivity | event_type: UI_INTERACTION | message: AddToCart modal triggered."
+  },
+  {
+    "step": { "action": "click", "stepInstruction": "Select the 'Yurt' delivery address." },
+    "status": "PASSED",
+    "logs": "timestamp: 2026-04-08T13:37:12Z | level: INFO | source: application | trace_id: mig_04 | thread: main | screen: AddressSelection | event_type: UI_INTERACTION | message: Address 'Yurt' selected and synced."
+  },
+  {
+    "step": { "action": "click", "stepInstruction": "Click on the 'Cart' icon to review items." },
+    "status": "PASSED",
+    "logs": "timestamp: 2026-04-08T13:39:45Z | level: INFO | source: application | trace_id: mig_05 | thread: main | screen: CartActivity | event_type: UI_STATE_CHANGE | message: Cart opened. Items detected: 1."
+  },
+  {
+    "step": { "action": "click", "stepInstruction": "Click the 'Confirm' button to proceed to payment." },
+    "status": "FAILED",
+    "logs": "timestamp: 2026-04-08T13:45:10.500Z | level: INFO | source: application | trace_id: mig_err_99 | thread: main | screen: CartActivity | event_type: UI_INTERACTION | message: User tapped 'Confirm' button.\ntimestamp: 2026-04-08T13:45:10.650Z | level: ERROR | source: system | trace_id: mig_err_99 | thread: main | screen: CartActivity | event_type: STATE_MISMATCH | message: Local cart state shows 1 item, but session validation returned EMPTY.\ntimestamp: 2026-04-08T13:45:10.800Z | level: ERROR | source: network | trace_id: mig_err_99 | thread: network-pool-1 | screen: CartActivity | event_type: NETWORK_RESPONSE | message: POST /api/v1/cart/confirm - 400 Bad Request (Reason: Cart is empty).\ntimestamp: 2026-04-08T13:45:11.100Z | level: WARN | source: vlm_evaluator | trace_id: mig_err_99 | thread: main | screen: CartActivity | event_type: VISUAL_VERIFY | message: UI shows 'Your Cart Appears to Be Empty!'. Expected: Payment screen."
+  }
+]

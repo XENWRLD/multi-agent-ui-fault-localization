@@ -1,0 +1,363 @@
+PREVIOUS OUTPUT (CORRECT EXCEPT STEP 0, STEP 4)
+
+DESCRIBER-DECIDER SCAN STARTED... /content/drive/MyDrive/Grad Project/steps
+Log parser: format=raw, mode=dynamic
+  Dynamic assignment over 60 raw entries.
+
+--- Analyzing Step 0 ---
+   [LOG] Step 0: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the application successfully initiated a wait condition for the UI element 'Tüm seyahatin tek uygulamada'. The element was found to be visible during the polling cycle, and remote configurations were fetched successfully without any errors.
+ FAILED: The element 'Tüm seyahatin tek uygulamada' did not appear as expected.
+    Expected: The target element should become visible on screen after the action completes.
+    Observed: The target element 'Tüm seyahatin tek uygulamada' is not visible. No visual changes are detected between PREV and POST.
+
+--- Step 1 [SKIPPED — action=waitUntil, requires_vlm=False] ---
+
+--- Step 2 [SKIPPED — action=waitUntil, requires_vlm=False] ---
+
+--- Analyzing Step 3 ---
+   [LOG] Step 3: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the action to click on 'Çarpı' was successfully executed, with the visual target being accurately mapped to screen coordinates. The user interaction was confirmed with a tap action dispatched at the resolved coordinates, and subsequent visual verification of the login screen was completed successfully.
+ PASSED: The action successfully navigated to the login screen, indicating the 'Çarpı' element was clicked as intended.
+
+--- Analyzing Step 4 ---
+   [LOG] Step 4: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the system successfully initiated a visual verification for the login screen, which passed as the required elements were visible. Following this, a user interaction was logged where the 'Continue as Guest' button was tapped.
+ FAILED: The observer did not confirm the expected value in POST, leading to a content mismatch failure.
+    Expected: The screen should display the expected state or value confirming the prior action completed correctly.
+    Observed: The login screen remains visible with no changes except for the time update. The value was not confirmed in POST.
+
+--- Analyzing Step 5 ---
+   [LOG] Step 5: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the action to click on 'Üye olmadan devam et' was successfully executed, with the target coordinates resolved and a guest session created without any errors. The interaction was logged with a high confidence score, and the subsequent network request for an anonymous access token was successful.
+ PASSED: The action was successful despite the system overlay, which is not an application failure.
+
+--- Analyzing Step 6 ---
+   [LOG] Step 6: 7 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user successfully clicked 'İzin Ver' on an in-app notification dialog, allowing for notifications. Prior to this action, visual verification of the login screen was completed successfully, and subsequent network requests for fare verification were also successful.
+ PASSED: The action succeeded as the notification permission dialog was dismissed and the main screen was displayed.
+
+--- Analyzing Step 7 ---
+   [LOG] Step 7: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user successfully clicked on the departure city selection box labeled 'Nereden', which triggered a network request to fetch available departure airports. The request was completed successfully with a 200 OK status and a latency of 150 ms.
+ PASSED: The action succeeded as the app navigated to the expected selection interface.
+
+--- Analyzing Step 8 ---
+   [LOG] Step 8: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user interacted with the departure city selection box and successfully fetched available departure airports, including İzmir, with no errors reported. The network requests returned successful responses with acceptable latency.
+ PASSED: The action succeeded; 'İzmir' was selected as the departure city without any errors.
+
+--- Analyzing Step 9 ---
+   [LOG] Step 9: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user interacted with the application by opting in to in-app notifications. A network request was made to update user preferences, which was successful with a 200 status code.
+ PASSED: The navigation to the destination selection screen was successful.
+
+--- Analyzing Step 10 ---
+   [LOG] Step 10: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user interacted with the application by allowing in-app notifications and selecting 'İzmir (ADB)' as their departure city. Network requests were made to update user preferences and sync the departure selection, both of which were successful.
+ PASSED: The action succeeded as the app navigated to the correct screen with 'Ankara' as the destination.
+
+--- Analyzing Step 11 ---
+   [LOG] Step 11: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user successfully interacted with the application by selecting a departure city and tapping on the arrival city selection box. All network requests related to these actions returned successful responses with no errors reported.
+ PASSED: The action successfully opened the calendar overlay as expected.
+
+--- Analyzing Step 12 ---
+   [LOG] Step 12: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user interacted with the application by tapping on the arrival city selection box, which triggered a network request to fetch available arrival destinations. The requests were successful, with no errors or failures reported.
+ PASSED: The target element '21' was successfully clicked and the departure date was correctly updated.
+
+--- Analyzing Step 13 ---
+   [LOG] Step 13: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user successfully fetched available arrival destinations and selected 'Ankara (ESB)' from the list. The system updated the arrival state without any errors or failures.
+ PASSED: The action successfully navigated to the flight selection screen.
+
+--- Step 14 [SKIPPED — action=wait, requires_vlm=True] ---
+
+--- Analyzing Step 15 ---
+   [LOG] Step 15: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user interacted with the application by tapping on the departure date field and subsequently selecting a dynamic calendar cell. The system responded with an updated state and prepared the calendar UI without any errors or failures.
+ PASSED: The action succeeded as the 'Kalkış Saati' button expanded to show time options.
+
+--- Analyzing Step 16 ---
+   [LOG] Step 16: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user interacted with the application by tapping on the departure date field and selecting a date from the calendar. Subsequently, the user initiated a flight search by tapping the search button. No errors or network failures were recorded during this process.
+ PASSED: The target element was successfully selected as indicated by the visual change.
+
+--- Analyzing Step 17 ---
+   [LOG] Step 17: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that a flight search was initiated by the user tapping the 'UCUZ BİLET BUL' button. A request was sent to the server to fetch flight results, which was successfully completed with a 200 OK status, and the results were fetched after a latency of 3650 ms.
+ PASSED: The action successfully navigated to the flight results screen.
+
+--- Analyzing Step 18 ---
+   [LOG] Step 18: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that a flight search was initiated successfully, and the results were rendered without any errors. The user interacted with the application by tapping on a sorting tab for departure time.
+ FAILED: The target element was not visible, leading to a content mismatch. Previous failure history includes a content mismatch in step 4.
+    Expected: Clicking the '12.15->13.35' item should select it and navigate to the next step in the flow.
+    Observed: A flight class selection overlay appeared, showing options for BASIC, FLEX, and PREMIUM classes.
+
+--- Analyzing Step 19 ---
+   [LOG] Step 19: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that a user successfully performed a flight search, with results rendered and subsequent interactions with sorting and filtering options. No errors were encountered during this process.
+ PASSED: The click action was registered, and the app is processing as indicated by the loading overlay.
+
+--- Analyzing Step 20 ---
+   [LOG] Step 20: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user interacted with the application to filter flights by departure time and evening flights. The flight list was successfully updated based on the applied filters, with no errors or network failures reported.
+ FAILED: The observer did not confirm the expected flight time '12:15-13:35' in POST, similar to previous content mismatch failures in steps 4 and 18. (Likely caused by Step 18)
+    Expected: The screen should display the expected state or value confirming the prior action completed correctly, specifically showing the flight time '12:15-13:35' and the BASIC package selected.
+    Observed: The screen shows flight details for a different time '21:15-22:35' with the BASIC package selected, but the expected flight time '12:15-13:35' is not visible.
+
+--- Analyzing Step 21 ---
+   [LOG] Step 21: 20 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user successfully interacted with the application to select a flight between 12:15 and 13:35 and chose the BASIC fare package. However, the assertion for verifying the selection revealed that there was no visible information about the flight in the screenshot.
+ FAILED: The observer did not confirm the expected flight time '12:15-13:35' in POST, similar to previous content mismatch failures in steps 4 and 18. (Likely caused by Step 20)
+    Expected: The screen should display the expected state or value confirming the prior action completed correctly, specifically showing a flight time between 12:15 and 13:35 with the BASIC package selected.
+    Observed: The screen shows the BASIC package selected, but the flight time displayed is 21:15 to 22:35, not the expected 12:15 to 13:35.
+
+--- Analyzing Step 22 ---
+   [LOG] Step 22: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user successfully selected the flight from 12:15 to 13:35 and chose the BASIC fare package. The fare verification process was initiated and completed successfully, confirming the fare availability and locking the price.
+ FAILED: The observer did not confirm the expected flight time '12:15-13:35' in POST, similar to previous content mismatch failures in steps 18, 20, and 21. (Likely caused by Step 21)
+    Expected: The screen should display the expected state or value confirming the prior action completed correctly, specifically showing the flight time 12:15-13:35.
+    Observed: The screen shows flight times 21:15 departure and 22:35 arrival, and the BASIC package is selected. The expected flight time 12:15-13:35 was not confirmed.
+
+--- Analyzing Step 23 ---
+   [LOG] Step 23: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user successfully selected the 'BASIC' fare package and the system verified the fare availability for the flight times 21:15 to 22:35. However, the verification for the flight time 12:15-13:35 could not be confirmed as per the instruction.
+ FAILED: The observer did not confirm the expected flight time '12:15-13:35' in POST, similar to previous content mismatch failures in steps 18, 20, 21, and 22. (Likely caused by Step 22)
+    Expected: The screen should display the expected state or value confirming the prior action completed correctly, specifically showing a flight time of 12:15-13:35.
+    Observed: The screen shows flight times of 21:15 departure and 22:35 arrival, and the expected flight time of 12:15-13:35 was not confirmed.
+
+--- Analyzing Step 24 ---
+   [LOG] Step 24: 3 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the flight verification for the '12:15-13:35' flight and 'BASIC' package selection was executed successfully. The verification process confirmed that the selected UI elements matched the expected parameters without any errors.
+ FAILED: The observer did not confirm the expected flight time '12:15-13:35' in POST, similar to previous content mismatch failures in steps 18, 20, 21, 22, and 23. (Likely caused by Step 23)
+    Expected: The screen should display the expected state or value confirming the prior action completed correctly, specifically showing a flight between 12:15 and 13:35 and the BASIC package selected.
+    Observed: The screen shows a flight with departure at 21:15 and arrival at 22:35, and the BASIC package is selected. The expected flight time '12:15-13:35' was not confirmed.
+
+========================================
+TEST COMPLETE. Scanned 25 steps.
+========================================
+
+FAILURE CHAIN ANALYSIS
+======================
+
+ISOLATED FAILURE:
+  Step 0 [element_missing]: The element 'Tüm seyahatin tek uygulamada' did not appear as expected.
+    Expected: The target element should become visible on screen after the action completes.
+    Observed: The target element 'Tüm seyahatin tek uygulamada' is not visible. No visual changes are detected between PREV and POST.
+
+ISOLATED FAILURE:
+  Step 4 [content_mismatch]: The observer did not confirm the expected value in POST, leading to a content mismatch failure.
+    Expected: The screen should display the expected state or value confirming the prior action completed correctly.
+    Observed: The login screen remains visible with no changes except for the time update. The value was not confirmed in POST.
+
+FAILURE CHAIN 1: (6 steps)
+  Step 18 -> Step 20 -> Step 21 -> Step 22 -> Step 23 -> Step 24
+  Root: Step 18 [content_mismatch] - The target element was not visible, leading to a content mismatch. Previous failure history includes a content mismatch in step 4.
+  Step 20 [content_mismatch] - The observer did not confirm the expected flight time '12:15-13:35' in POST, similar to previous content mismatch failures in steps 4 and 18. (Likely caused by Step 18) (caused by Step 18)
+  Step 21 [content_mismatch] - The observer did not confirm the expected flight time '12:15-13:35' in POST, similar to previous content mismatch failures in steps 4 and 18. (Likely caused by Step 20) (caused by Step 20)
+  Step 22 [content_mismatch] - The observer did not confirm the expected flight time '12:15-13:35' in POST, similar to previous content mismatch failures in steps 18, 20, and 21. (Likely caused by Step 21) (caused by Step 21)
+  Step 23 [content_mismatch] - The observer did not confirm the expected flight time '12:15-13:35' in POST, similar to previous content mismatch failures in steps 18, 20, 21, and 22. (Likely caused by Step 22) (caused by Step 22)
+  Step 24 [content_mismatch] - The observer did not confirm the expected flight time '12:15-13:35' in POST, similar to previous content mismatch failures in steps 18, 20, 21, 22, and 23. (Likely caused by Step 23) (caused by Step 23)
+
+Summary: 8 failures across 1 chain(s), 2 isolated
+
+
+SUMMARY
+=======
+Total steps:   25
+  Analyzed:    22
+  Skipped:     3
+  Passed:      14   (63.6%)
+  Failed:      8   (36.4%)
+
+Confidence Distribution (analyzed steps):
+  High   (>=0.85): 22 steps
+  Medium (>=0.60):  0 steps
+  Low    (<0.60):   0 steps
+  Avg confidence: 0.95
+
+Failure Type Breakdown:
+  content_mismatch       7
+  element_missing        1
+
+
+CURRENT OUTPUT:(STEP 0 MUST BE CORRECT, STEP 18 MUST FAIL, STEP 19 MUST CORRECT)
+DESCRIBER-DECIDER SCAN STARTED... /content/drive/MyDrive/Grad Project/steps
+Log parser: format=raw, mode=dynamic
+  Dynamic assignment over 60 raw entries.
+
+--- Analyzing Step 0 ---
+   [LOG] Step 0: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the application successfully initiated a wait condition for the UI element 'Tüm seyahatin tek uygulamada'. The element was found to be visible during the polling cycle, and remote configurations were fetched successfully without any errors.
+ FAILED: The target element did not appear on the screen as expected.
+    Expected: The target element should become visible on screen after the action completes.
+    Observed: The target element 'Tüm seyahatin tek uygulamada' is not visible. No significant visual changes between PREV and POST.
+
+--- Step 1 [SKIPPED — action=waitUntil, requires_vlm=False] ---
+
+--- Step 2 [SKIPPED — action=waitUntil, requires_vlm=False] ---
+
+--- Analyzing Step 3 ---
+   [LOG] Step 3: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the action to click on 'Çarpı' was successfully executed, with the visual target being accurately resolved to screen coordinates. The user interaction was dispatched, and the subsequent visual verification for the login screen confirmed that the necessary elements were visible and the transition was successful.
+ PASSED: The click action successfully navigated to the login screen, indicating the action was processed correctly.
+
+--- Analyzing Step 4 ---
+   [LOG] Step 4: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the system successfully initiated a visual verification for the login screen, which passed as the required elements were visible. Following this, a user interaction was logged where the 'Continue as Guest' button was tapped.
+ PASSED: The login screen was visually verified successfully with no changes between PREV and POST.
+
+--- Analyzing Step 5 ---
+   [LOG] Step 5: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the action to click on 'Üye olmadan devam et' was successfully executed, with the target coordinates resolved and a guest session created without any errors. The interaction was logged with a high confidence score, and the subsequent network request for an anonymous access token was successful.
+ PASSED: The action was successful as the system overlay is not an application failure.
+
+--- Analyzing Step 6 ---
+   [LOG] Step 6: 7 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user successfully clicked 'İzin Ver' on a custom in-app notification dialog, allowing for visual verification of the login screen. Subsequent network requests for fare verification were executed without any errors.
+ PASSED: The click action successfully dismissed the permission dialog and returned to the main screen.
+
+--- Analyzing Step 7 ---
+   [LOG] Step 7: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user successfully clicked on the departure city selection box labeled 'Nereden', which triggered the opening of a bottom sheet. A network request was made to fetch available departure airports, which returned a successful response with a status code of 200 and a latency of 150 ms.
+ PASSED: The click action successfully navigated to the airport selection screen.
+
+--- Analyzing Step 8 ---
+   [LOG] Step 8: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user interacted with the departure city selection box and successfully fetched available departure airports, including İzmir. The network requests returned successful responses with no errors or latency issues.
+ PASSED: The action succeeded as the target element 'İzmir' was selected and the app navigated to the main booking screen.
+
+--- Analyzing Step 9 ---
+   [LOG] Step 9: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user interacted with an in-app notification, opting in for push notifications. Following this, a network request was made to update the user's communication preferences, which was successful with a 200 OK response.
+ PASSED: The action successfully navigated to the destination selection screen.
+
+--- Analyzing Step 10 ---
+   [LOG] Step 10: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user interacted with the application by allowing in-app notifications and selecting 'İzmir (ADB)' as their departure city. Network requests were made to update user preferences and sync the departure selection, both of which were successful.
+ PASSED: The action succeeded as the app navigated to the flight booking screen with 'Ankara' selected.
+
+--- Analyzing Step 11 ---
+   [LOG] Step 11: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user successfully interacted with the application by selecting a departure city and tapping on the arrival city selection box. All network requests related to these actions returned successful responses with no errors or anomalies detected.
+ PASSED: The action successfully navigated to the calendar screen for date selection.
+
+--- Analyzing Step 12 ---
+   [LOG] Step 12: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user interacted with the application by tapping on the arrival city selection box, which triggered a network request to fetch available arrival destinations. The requests for updating the departure state and fetching destinations were successful, with no errors or failures reported.
+ PASSED: The action succeeded as the app navigated to the flight booking screen with the correct date selected.
+
+--- Analyzing Step 13 ---
+   [LOG] Step 13: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user successfully fetched available arrival destinations and selected 'Ankara (ESB)' from the list. The system updated the arrival state without any errors or failures.
+ PASSED: The action successfully navigated to the flight results screen, indicating a successful click.
+
+--- Step 14 [SKIPPED — action=wait, requires_vlm=True] ---
+
+--- Analyzing Step 15 ---
+   [LOG] Step 15: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user interacted with the application by tapping on the departure date field and subsequently selecting a dynamic calendar cell. The system responded with an update on the arrival state and prepared the calendar UI without any errors.
+ PASSED: The action succeeded as the departure time selection overlay appeared.
+
+--- Analyzing Step 16 ---
+   [LOG] Step 16: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user interacted with the application by tapping on the departure date field and selecting a date from the calendar. Subsequently, the user initiated a flight search by tapping the search button. No errors or network failures were recorded during this process.
+ PASSED: The target element was successfully selected, and the UI responded as expected.
+
+--- Analyzing Step 17 ---
+   [LOG] Step 17: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that a flight search was initiated by the user, resulting in a successful response from the server with a status code of 200. The request took 3650 milliseconds to complete, and there were no errors or anomalies detected during this process.
+ PASSED: The action completed successfully as the target button disappeared, indicating a state change.
+
+--- Analyzing Step 18 ---
+   [LOG] Step 18: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that a flight search was initiated successfully, and the results were rendered without any errors. The user interacted with the UI by tapping on the sorting tab for departure time.
+ PASSED: The action resulted in a navigation to a flight class selection overlay, indicating success.
+
+--- Analyzing Step 19 ---
+   [LOG] Step 19: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that a flight search was successfully executed, with results fetched and rendered without any errors. User interactions included sorting the flight list by departure time and applying an evening time filter.
+ FAILED: The click action did not trigger any state change or navigation, possibly due to an unresponsive UI element.
+    Expected: Clicking the 'BASIC' item should select it and navigate to the next step in the flow.
+    Observed: The screen remains on the flight class selection with 'BASIC' still visible and selectable, indicating no change in selection or state.
+
+--- Analyzing Step 20 ---
+   [LOG] Step 20: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user interacted with the application to filter flights by departure time and evening flights. The flight list was successfully updated to reflect the applied filters without any errors.
+ FAILED: The flight time displayed does not match the expected time range specified in the instruction. (Likely caused by Step 19)
+    Expected: The screen should display the expected state or value confirming the prior action completed correctly, specifically showing the flight time as 12.15-13.35 and the BASIC package selected.
+    Observed: The screen shows the BASIC package selected, but the flight time is 21:15-22:35, not the expected 12.15-13.35.
+
+--- Analyzing Step 21 ---
+   [LOG] Step 21: 20 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user successfully interacted with the application to select a flight between 12:15 and 13:35 and chose the BASIC fare package. However, the assertion for verifying the selection of the flight and package was executed, but the expected visual confirmation was not found.
+ FAILED: The flight time displayed does not match the expected time range specified in the instruction. (Likely caused by Step 19) (Likely caused by Step 20)
+    Expected: The screen should display the expected state or value confirming the prior action completed correctly, specifically showing a flight between 12:15 and 13:35 with the BASIC package selected.
+    Observed: The screen shows the BASIC package selected, but there is no visible information about a flight between 12:15 and 13:35.
+
+--- Analyzing Step 22 ---
+   [LOG] Step 22: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user successfully selected the flight from 12:15 to 13:35 and chose the BASIC fare package. The fare verification process was initiated and completed successfully, confirming the fare availability and locking the price.
+ FAILED: The flight time displayed does not match the expected time range specified in the instruction. (Likely caused by Step 19) (Likely caused by Step 21)
+    Expected: The screen should display the expected state or value confirming the prior action completed correctly, specifically showing the flight time between 12:15 and 13:35.
+    Observed: The screen shows flight details with departure at 21:15 and arrival at 22:35, which does not match the expected flight time range.
+
+--- Analyzing Step 23 ---
+   [LOG] Step 23: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user successfully selected the 'BASIC' fare package and the system verified the fare availability for the flight times 21:15 to 22:35. However, the verification for the flight time 12:15-13:35 could not be confirmed as per the instruction.
+ FAILED: The flight time displayed does not match the expected time range specified in the instruction. (Likely caused by Step 19) (Likely caused by Step 22)
+    Expected: The screen should display the expected state or value confirming the prior action completed correctly, specifically showing a flight time of 12:15-13:35.
+    Observed: The screen shows flight details with a departure at 21:15 and arrival at 22:35, and the BASIC package is selected. The expected flight time of 12:15-13:35 is not confirmed.
+
+--- Analyzing Step 24 ---
+   [LOG] Step 24: 3 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the flight verification process for the flight '12:15-13:35' and the 'BASIC' package selection was executed successfully. The verification confirmed that the selected UI elements matched the expected parameters without any errors.
+ FAILED: The flight time displayed does not match the expected time range specified in the instruction. Likely caused by Step 23.
+    Expected: The screen should display the expected flight time of 12:15-13:35 and confirm the BASIC package selection.
+    Observed: The screen shows a flight time of 21:15-22:35, and the BASIC package is selected. The expected flight time of 12:15-13:35 is not confirmed.
+
+========================================
+TEST COMPLETE. Scanned 25 steps.
+========================================
+
+FAILURE CHAIN ANALYSIS
+======================
+
+ISOLATED FAILURE:
+  Step 0 [element_missing]: The target element did not appear on the screen as expected.
+    Expected: The target element should become visible on screen after the action completes.
+    Observed: The target element 'Tüm seyahatin tek uygulamada' is not visible. No significant visual changes between PREV and POST.
+
+FAILURE CHAIN 1: (6 steps)
+  Step 19 -> Step 20 -> Step 21 -> Step 22 -> Step 23 -> Step 24
+  Root: Step 19 [action_failed] - The click action did not trigger any state change or navigation, possibly due to an unresponsive UI element.
+  Step 20 [content_mismatch] - The flight time displayed does not match the expected time range specified in the instruction. (Likely caused by Step 19) (caused by Step 19)
+  Step 21 [content_mismatch] - The flight time displayed does not match the expected time range specified in the instruction. (Likely caused by Step 19) (Likely caused by Step 20) (caused by Step 20)
+  Step 22 [content_mismatch] - The flight time displayed does not match the expected time range specified in the instruction. (Likely caused by Step 19) (Likely caused by Step 21) (caused by Step 21)
+  Step 23 [content_mismatch] - The flight time displayed does not match the expected time range specified in the instruction. (Likely caused by Step 19) (Likely caused by Step 22) (caused by Step 22)
+  Step 24 [content_mismatch] - The flight time displayed does not match the expected time range specified in the instruction. Likely caused by Step 23. (caused by Step 23)
+
+Summary: 7 failures across 1 chain(s), 1 isolated
+
+
+SUMMARY
+=======
+Total steps:   25
+  Analyzed:    22
+  Skipped:     3
+  Passed:      15   (68.2%)
+  Failed:      7   (31.8%)
+
+Confidence Distribution (analyzed steps):
+  High   (>=0.85): 22 steps
+  Medium (>=0.60):  0 steps
+  Low    (<0.60):   0 steps
+  Avg confidence: 0.94
+
+Failure Type Breakdown:
+  content_mismatch       5
+  element_missing        1
+  action_failed          1

@@ -1,0 +1,69 @@
+{
+  "processed_step_count": 5,
+  "status_summary": {
+    "pass": 4,
+    "fail": 1,
+    "unknown": 0,
+    "confidence": {
+      "high": 5,
+      "medium": 0,
+      "low": 0
+    }
+  },
+  "steps": [
+    {
+      "step_index": 1,
+      "status": "PASS",
+      "confidence": 0.85,
+      "confidence_label": "high",
+      "reason": "The instruction is to verify the presence of 'Vikipedi' on the screen. Both pre and post images show 'Vikipedi' clearly visible, matching the instruction. No visual change is required for verification steps.",
+      "pre_ocr_text": "= 75) VİKİPEDİ = | M ; O, Vikipedi üzerinde ara ği Özgür Ansiklopedi Anasayfa Tartışma Vikipedi'ye hoş geldiniz! Herkesin katkıda bulunabildiği özgür ansiklopedi Tiger Il veya tam adıyla Panzerkampfwagen Tiger Ausf. B, İkinci Dünya Savaş...",
+      "post_ocr_text": "= 75) VİKİPEDİ = | M ; O, Vikipedi üzerinde ara ği Özgür Ansiklopedi Anasayfa Tartışma Vikipedi'ye hoş geldiniz! Herkesin katkıda bulunabildiği özgür ansiklopedi Tiger Il veya tam adıyla Panzerkampfwagen Tiger Ausf. B, İkinci Dünya Savaş..."
+    },
+    {
+      "step_index": 2,
+      "status": "PASS",
+      "confidence": 0.85,
+      "confidence_label": "high",
+      "reason": "The instruction 'Sol üstteki menüye tıkla' is valid as the pre-image shows a menu icon in the top left corner. The post-image shows the menu expanded, indicating a successful click action. No errors were found in the logs.",
+      "pre_ocr_text": "= 75) VİKİPEDİ = | M ; O, Vikipedi üzerinde ara ği Özgür Ansiklopedi Anasayfa Tartışma Vikipedi'ye hoş geldiniz! Herkesin katkıda bulunabildiği özgür ansiklopedi Tiger Il veya tam adıyla Panzerkampfwagen Tiger Ausf. B, İkinci Dünya Savaş...",
+      "post_ocr_text": "VİKİPEDİ O. Vikipedi üzerinde ara Özgür Ansiklopedi ‘4 re Roe Ana menü kenar çubuğuna taşı Anasayfa Hakkımızda İçindekiler geldiniz! zgür ansiklopedi Rastgele madde Seçkin içerik Yakınımdakiler Katılım ssi Deneme tahtası Tiger Il veya ta..."
+    },
+    {
+      "step_index": 3,
+      "status": "PASS",
+      "confidence": 0.85,
+      "confidence_label": "high",
+      "reason": "The 'Hakkımızda' option was visible in the pre-image and clicking it led to a new page in the post-image, indicating a successful navigation.",
+      "pre_ocr_text": "VİKİPEDİ Özgür Ansiklopedi O. Vikipedi üzerinde ara Ana menü kenar çubuğuna taşı Anasayfa Hakkımızda İçindekiler geldiniz! zgür ansiklopedi Rastgele madde Seçkin içerik Yakınımdakiler Katılım ssi Deneme tahtası Tiger Il veya tam adıyla P...",
+      "post_ocr_text": "= *°) VİKİPEDİ — %& * 7 Özgür Ansiklopedi İçindekiler (o gizle Giriş Vikipedi'nin içeriği herkesin özgür kullanımına açıktır Y Vikipedi'yi verimli kullanım yolları İçindekiler Bilgiler arasında yol bulma Araştırma aracı olarak kullanılma..."
+    },
+    {
+      "step_index": 4,
+      "status": "PASS",
+      "confidence": 0.85,
+      "confidence_label": "high",
+      "reason": "The instruction '138 dil seçeneğine tıkla' is valid as the '138 dil' option is visible in the pre-image. The post-image shows a language selection menu, indicating a successful click action.",
+      "pre_ocr_text": "= *°) VİKİPEDİ — %& * 7 Özgür Ansiklopedi İçindekiler (o gizle Giriş Vikipedi'nin içeriği herkesin özgür kullanımına açıktır Y Vikipedi'yi verimli kullanım yolları İçindekiler Bilgiler arasında yol bulma Araştırma aracı olarak kullanılma...",
+      "post_ocr_text": "= -) VİKİPEDİ a Özgür Ansiklopedi İçindekiler (o gizle Giriş Vikipedi'nin içeriği herkesin özgür kullanımına açıktır Y Vikipedi'yi verimli kullanım yolları İçindekiler Bilgiler arasında yol bulma Araştırma aracı olarak kullanılması Güçlü..."
+    },
+    {
+      "step_index": 5,
+      "status": "FAIL",
+      "confidence": 0.9,
+      "confidence_label": "high",
+      "reason": "The instruction 'Osmanlı padişahı 3. Murad tahta çıktı seç' does not match any visible UI element in the screenshots. The target is lexically isolated from the scenario keywords and unrelated to the visible content, which is about Wikipedia's general information and language selection.",
+      "pre_ocr_text": "= -) VİKİPEDİ a Özgür Ansiklopedi İçindekiler (o gizle Giriş Vikipedi'nin içeriği herkesin özgür kullanımına açıktır Y Vikipedi'yi verimli kullanım yolları İçindekiler Bilgiler arasında yol bulma Araştırma aracı olarak kullanılması Güçlü...",
+      "post_ocr_text": "= -) VİKİPEDİ a Özgür Ansiklopedi İçindekiler (o gizle Giriş Vikipedi'nin içeriği herkesin özgür kullanımına açıktır Y Vikipedi'yi verimli kullanım yolları İçindekiler Bilgiler arasında yol bulma Araştırma aracı olarak kullanılması Güçlü..."
+    }
+  ],
+  "failures": [
+    {
+      "step_index": 5,
+      "type": "Instruction Error",
+      "reason": "The instruction target is not visible or relevant to the current UI context. (Root Cause: The instruction seems to be unrelated to the current Wikipedia page context, possibly due to a scenario mismatch or incorrect step.)",
+      "confidence": 0.9,
+      "confidence_label": "high"
+    }
+  ]
+}

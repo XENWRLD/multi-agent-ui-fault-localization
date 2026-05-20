@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(python:*)",
+      "Bash(py -3 -c ' *)",
+      "Bash(py *)",
+      "PowerShell(ls \"C:\\\\Grad Project\\\\outputs\\\\\")",
+      "PowerShell(ls \"C:\\\\Grad Project\\\\411 cases our outputs\\\\\")",
+      "PowerShell(ls \"C:\\\\Grad Project\\\\411 cases our outputs after update\\\\\")",
+      "PowerShell(ls \"C:\\\\Grad Project\\\\#411-fault-localization-cases\\\\\" | Select-Object -First 20)",
+      "Bash(dir \"C:\\\\Grad Project\\\\before suspicious step implementation\" /b)"
+    ]
+  }
+}

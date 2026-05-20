@@ -1,0 +1,592 @@
+[
+  {
+    "timestamp": "2025-04-06T10:00:01.100Z",
+    "level": "INFO",
+    "source": "application",
+    "trace_id": "trc_launch_883a1",
+    "thread": "main-ui-thread",
+    "screen": "SplashActivity",
+    "event_type": "LIFECYCLE",
+    "message": "Application launched. Initiating WaitUntil condition for target UI element."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:01.150Z",
+    "level": "INFO",
+    "source": "application",
+    "trace_id": "trc_launch_883a1",
+    "element_id": "com.travelapp:id/tv_onboarding_slogan",
+    "message": "Element exact match found for text: 'Tüm seyahatin tek uygulamada'."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:02.050Z",
+    "level": "INFO",
+    "source": "application",
+    "trace_id": "trc_launch_883a1",
+    "event_type": "POLLING",
+    "message": "Wait condition cycle 1. Element 'Tüm seyahatin tek uygulamada' is still visible."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:02.120Z",
+    "level": "INFO",
+    "source": "network",
+    "trace_id": "trc_launch_883a1",
+    "request": {
+      "method": "GET",
+      "endpoint": "/api/v1/app/remote-config?os=android",
+      "user_agent": "TravelApp/4.2.0"
+    },
+    "message": "Fetching remote configurations."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:02.340Z",
+    "level": "INFO",
+    "source": "network",
+    "trace_id": "trc_launch_883a1",
+    "response": {
+      "status_code": 200,
+      "latency_ms": 220
+    },
+    "message": "Remote config loaded successfully."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:04.050Z",
+    "level": "INFO",
+    "source": "application",
+    "trace_id": "trc_launch_883a1",
+    "event_type": "POLLING",
+    "message": "Wait condition cycle 2 complete. Target element state is stable. Transitioning to active state."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:04.100Z",
+    "level": "INFO",
+    "source": "system",
+    "memory_state": "NORMAL",
+    "message": "Splash screen resources garbage collected."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:06.120Z",
+    "level": "INFO",
+    "source": "vlm_evaluator",
+    "trace_id": "trc_modal_99b42",
+    "event_type": "COORDINATE_RESOLUTION",
+    "evaluation": {
+      "target_intent": "Çarpıya tıkla",
+      "resolved_coordinates": {"x": 980, "y": 145},
+      "confidence_score": 0.98
+    },
+    "message": "VLM successfully mapped visual target 'Çarpı' to screen coordinates."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:06.150Z",
+    "level": "INFO",
+    "source": "application",
+    "trace_id": "trc_modal_99b42",
+    "thread": "main-ui-thread",
+    "event_type": "UI_INTERACTION",
+    "message": "User tap action dispatched at coordinates [980, 145]. Modal dismissed."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:08.010Z",
+    "level": "INFO",
+    "source": "application",
+    "trace_id": "trc_verify_11c00",
+    "screen": "AuthActivity",
+    "message": "System initiated abstract visual verification for Login Screen."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:08.850Z",
+    "level": "INFO",
+    "source": "vlm_evaluator",
+    "trace_id": "trc_verify_11c00",
+    "evaluation": {
+      "status": "PASSED",
+      "instruction": "Giriş ekranını gördüğünü görsel olarak doğrula.",
+      "observed_state": "Email/Phone input fields and login buttons are clearly visible on screen. Transition successful."
+    },
+    "message": "Visual verification completed successfully."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:10.200Z",
+    "level": "INFO",
+    "source": "vlm_evaluator",
+    "trace_id": "trc_guest_auth_55d11",
+    "event_type": "COORDINATE_RESOLUTION",
+    "evaluation": {
+      "target_intent": "Üye olmadan devam et",
+      "resolved_coordinates": {"x": 540, "y": 1920},
+      "confidence_score": 0.95
+    },
+    "message": "VLM resolved target to coordinates."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:10.250Z",
+    "level": "INFO",
+    "source": "application",
+    "trace_id": "trc_guest_auth_55d11",
+    "event_type": "UI_INTERACTION",
+    "message": "Tapped 'Continue as Guest' button at [540, 1920]."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:10.300Z",
+    "level": "INFO",
+    "source": "network",
+    "trace_id": "trc_guest_auth_55d11",
+    "request": {
+      "method": "POST",
+      "endpoint": "/api/v2/auth/guest-session",
+      "payload_size_bytes": 112
+    },
+    "message": "POST /api/v2/auth/guest-session - Requesting anonymous access token."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:10.650Z",
+    "level": "INFO",
+    "source": "network",
+    "trace_id": "trc_guest_auth_55d11",
+    "response": {
+      "status_code": 200,
+      "latency_ms": 350
+    },
+    "message": "Guest session created successfully. Token received."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:18.450Z",
+    "level": "INFO",
+    "source": "application",
+    "trace_id": "trc_dep_click_22b4",
+    "screen": "FlightSearchHome",
+    "event_type": "UI_INTERACTION",
+    "element_id": "com.travelapp:id/input_departure_city",
+    "message": "User tapped departure city selection box ('Nereden'). Bottom sheet opened."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:18.500Z",
+    "level": "INFO",
+    "source": "network",
+    "trace_id": "trc_dep_click_22b4",
+    "request": {
+      "method": "GET",
+      "endpoint": "/api/v1/airports/search?type=departure&locale=tr_TR"
+    },
+    "message": "Fetching available departure airports."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:18.650Z",
+    "level": "INFO",
+    "source": "network",
+    "trace_id": "trc_dep_click_22b4",
+    "response": {
+      "status_code": 200,
+      "latency_ms": 150,
+      "payload_size_bytes": 8450
+    },
+    "message": "GET /api/v1/airports/search - 200 OK."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:18.450Z",
+    "level": "INFO",
+    "source": "application",
+    "trace_id": "trc_dep_click_22b4",
+    "screen": "FlightSearchHome",
+    "event_type": "UI_INTERACTION",
+    "element_id": "com.travelapp:id/input_departure_city",
+    "message": "User tapped departure city selection box ('Nereden'). Bottom sheet opened."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:18.500Z",
+    "level": "INFO",
+    "source": "network",
+    "trace_id": "trc_dep_click_22b4",
+    "request": {
+      "method": "GET",
+      "endpoint": "/api/v1/airports/search?type=departure&locale=tr_TR"
+    },
+    "message": "Fetching available departure airports."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:18.650Z",
+    "level": "INFO",
+    "source": "network",
+    "trace_id": "trc_dep_click_22b4",
+    "response": {
+      "status_code": 200,
+      "latency_ms": 150,
+      "payload_size_bytes": 8450
+    },
+    "message": "GET /api/v1/airports/search - 200 OK."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:15.100Z",
+    "level": "INFO",
+    "source": "application",
+    "trace_id": "trc_inapp_notif_88f",
+    "screen": "HomeActivity",
+    "event_type": "UI_STATE_CHANGE",
+    "message": "In-app push notification opt-in modal presented."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:15.850Z",
+    "level": "INFO",
+    "source": "application",
+    "trace_id": "trc_inapp_notif_88f",
+    "event_type": "UI_INTERACTION",
+    "element_id": "com.travelapp:id/btn_allow_inapp_notifications",
+    "message": "User tapped 'İzin Ver' on custom in-app notification dialog."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:16.020Z",
+    "level": "INFO",
+    "source": "network",
+    "trace_id": "trc_inapp_notif_88f",
+    "request": {
+      "method": "POST",
+      "endpoint": "/api/v1/profile/preferences",
+      "payload": {"push_opt_in": true}
+    },
+    "message": "Updating user communication preferences."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:16.200Z",
+    "level": "INFO",
+    "source": "network",
+    "trace_id": "trc_inapp_notif_88f",
+    "response": {
+      "status_code": 200,
+      "latency_ms": 180
+    },
+    "message": "Preferences updated successfully."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:21.100Z",
+    "level": "INFO",
+    "source": "application",
+    "trace_id": "trc_dep_select_77x1",
+    "event_type": "UI_INTERACTION",
+    "element_id": "com.travelapp:id/airport_list_item_adb",
+    "message": "User selected 'İzmir (ADB)' from the list."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:21.150Z",
+    "level": "INFO",
+    "source": "network",
+    "trace_id": "trc_dep_select_77x1",
+    "request": {
+      "method": "POST",
+      "endpoint": "/api/v1/flights/set-departure",
+      "payload": {"city": "Izmir", "code": "ADB"}
+    },
+    "message": "Syncing departure selection with session state."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:21.350Z",
+    "level": "INFO",
+    "source": "network",
+    "trace_id": "trc_dep_select_77x1",
+    "response": {
+      "status_code": 200,
+      "latency_ms": 200
+    },
+    "message": "Departure state updated successfully."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:23.050Z",
+    "level": "INFO",
+    "source": "application",
+    "trace_id": "trc_arr_click_99y2",
+    "screen": "FlightSearchHome",
+    "event_type": "UI_INTERACTION",
+    "element_id": "com.travelapp:id/input_arrival_city",
+    "message": "User tapped arrival city selection box ('Nereye')."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:23.080Z",
+    "level": "INFO",
+    "source": "network",
+    "trace_id": "trc_arr_click_99y2",
+    "request": {
+      "method": "GET",
+      "endpoint": "/api/v1/airports/search?type=arrival&origin=ADB&locale=tr_TR"
+    },
+    "message": "Fetching available arrival destinations for origin: ADB."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:23.330Z",
+    "level": "INFO",
+    "source": "network",
+    "trace_id": "trc_arr_click_99y2",
+    "response": {
+      "status_code": 200,
+      "latency_ms": 250
+    },
+    "message": "Destinations fetched successfully."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:25.400Z",
+    "level": "INFO",
+    "source": "application",
+    "trace_id": "trc_arr_select_44z9",
+    "event_type": "UI_INTERACTION",
+    "element_id": "com.travelapp:id/airport_list_item_esb",
+    "message": "User selected 'Ankara (ESB)' from the list."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:25.450Z",
+    "level": "INFO",
+    "source": "network",
+    "trace_id": "trc_arr_select_44z9",
+    "request": {
+      "method": "POST",
+      "endpoint": "/api/v1/flights/set-arrival",
+      "payload": {"city": "Ankara", "code": "ESB"}
+    },
+    "message": "Syncing arrival selection with session state."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:25.590Z",
+    "level": "INFO",
+    "source": "network",
+    "trace_id": "trc_arr_select_44z9",
+    "response": {
+      "status_code": 200,
+      "latency_ms": 140
+    },
+    "message": "Arrival state updated successfully."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:25.600Z",
+    "level": "INFO",
+    "source": "system",
+    "memory_state": "NORMAL",
+    "message": "Route ADB->ESB locked in local state. Preparing calendar UI."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:25.100Z",
+    "level": "INFO",
+    "source": "application",
+    "trace_id": "trc_date_open_33a",
+    "event_type": "UI_INTERACTION",
+    "message": "User tapped departure date field via coordinate fallback [250, 850]."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:25.300Z",
+    "level": "INFO",
+    "source": "application",
+    "trace_id": "trc_date_open_33a",
+    "screen": "CalendarBottomSheet",
+    "event_type": "UI_STATE_CHANGE",
+    "message": "Calendar bottom sheet presented to user."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:27.400Z",
+    "level": "INFO",
+    "source": "application",
+    "trace_id": "trc_date_select_99b",
+    "event_type": "UI_INTERACTION",
+    "message": "User tapped dynamic calendar cell at coordinate [620, 1150]."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:27.450Z",
+    "level": "INFO",
+    "source": "system",
+    "trace_id": "trc_date_select_99b",
+    "message": "Local session state updated: departure_date=2025-04-21."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:29.100Z",
+    "level": "INFO",
+    "source": "application",
+    "trace_id": "trc_flight_search_11x",
+    "event_type": "UI_INTERACTION",
+    "element_id": "com.travelapp:id/btn_search_flights",
+    "message": "User tapped 'UCUZ BİLET BUL'."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:29.150Z",
+    "level": "INFO",
+    "source": "network",
+    "trace_id": "trc_flight_search_11x",
+    "request": {
+      "method": "POST",
+      "endpoint": "/api/v2/flights/search",
+      "payload": {
+        "origin": "ADB",
+        "destination": "ESB",
+        "date_departure": "2025-04-21"
+      }
+    },
+    "message": "Initiated flight search request."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:29.200Z",
+    "level": "INFO",
+    "source": "application",
+    "trace_id": "trc_flight_search_11x",
+    "event_type": "UI_STATE_CHANGE",
+    "message": "Displaying loading animation (Wait state active)."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:32.800Z",
+    "level": "INFO",
+    "source": "network",
+    "trace_id": "trc_flight_search_11x",
+    "response": {
+      "status_code": 200,
+      "latency_ms": 3650,
+      "payload_size_bytes": 142500
+    },
+    "message": "POST /api/v2/flights/search - 200 OK. Results fetched."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:32.950Z",
+    "level": "INFO",
+    "source": "application",
+    "trace_id": "trc_flight_search_11x",
+    "screen": "SearchResultsActivity",
+    "event_type": "UI_STATE_CHANGE",
+    "message": "Flight search results rendered successfully."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:35.050Z",
+    "level": "INFO",
+    "source": "application",
+    "trace_id": "trc_filter_sort_44y",
+    "event_type": "UI_INTERACTION",
+    "element_id": "com.travelapp:id/tab_sort_departure_time",
+    "message": "User tapped 'Kalkış Saati' sorting tab."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:35.100Z",
+    "level": "INFO",
+    "source": "application",
+    "trace_id": "trc_filter_sort_44y",
+    "event_type": "UI_STATE_CHANGE",
+    "message": "Flight list reordered dynamically by departure time."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:38.200Z",
+    "level": "INFO",
+    "source": "application",
+    "trace_id": "trc_filter_time_72a",
+    "event_type": "UI_INTERACTION",
+    "element_id": "com.travelapp:id/filter_time_evening",
+    "message": "User tapped 'Akşam' (Evening) time filter."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:40.150Z",
+    "level": "INFO",
+    "source": "application",
+    "trace_id": "trc_filter_apply_88b",
+    "event_type": "UI_INTERACTION",
+    "element_id": "com.travelapp:id/btn_show_results",
+    "message": "User tapped 'Sonuçları göster' button to apply filters."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:40.200Z",
+    "level": "INFO",
+    "source": "application",
+    "trace_id": "trc_filter_apply_88b",
+    "event_type": "UI_STATE_CHANGE",
+    "message": "Filter criteria updated. Flight list re-rendered with evening flights."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:43.500Z",
+    "level": "INFO",
+    "source": "application",
+    "trace_id": "trc_flight_select_91c",
+    "event_type": "UI_INTERACTION",
+    "element_id": "com.travelapp:id/flight_card_1215",
+    "message": "User tapped flight card representing route '12:15->13:35'."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:43.600Z",
+    "level": "INFO",
+    "source": "application",
+    "trace_id": "trc_flight_select_91c",
+    "screen": "FareSelectionBottomSheet",
+    "event_type": "UI_STATE_CHANGE",
+    "message": "Flight class selection (Uçuş Sınıfı Seçin) bottom sheet presented."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:45.100Z",
+    "level": "INFO",
+    "source": "application",
+    "trace_id": "trc_fare_select_04d",
+    "event_type": "UI_INTERACTION",
+    "element_id": "com.travelapp:id/fare_package_basic",
+    "message": "User tapped 'BASIC' fare package."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:45.150Z",
+    "level": "INFO",
+    "source": "network",
+    "trace_id": "trc_fare_select_04d",
+    "request": {
+      "method": "POST",
+      "endpoint": "/api/v2/flights/verify-price",
+      "payload": {
+        "flight_time": "21:15-22:35",
+        "fare_class": "BASIC"
+      }
+    },
+    "message": "Verifying fare availability and price lock."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:45.450Z",
+    "level": "INFO",
+    "source": "network",
+    "trace_id": "trc_fare_select_04d",
+    "response": {
+      "status_code": 200,
+      "latency_ms": 300
+    },
+    "message": "Fare verified and temporarily locked."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:46.000Z",
+    "level": "INFO",
+    "source": "automation_driver",
+    "trace_id": "trc_verify_11e",
+    "event_type": "ASSERTION_START",
+    "message": "Executing state verification for flight '12:15-13:35' and 'BASIC' package selection."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:46.350Z",
+    "level": "INFO",
+    "source": "automation_driver",
+    "trace_id": "trc_verify_11e",
+    "event_type": "ASSERTION_PASS",
+    "message": "Verification successful. Selected UI elements match the expected state parameters."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:46.850Z",
+    "level": "ERROR",
+    "source": "vlm_agent",
+    "trace_id": "trc_verify_11e",
+    "event_type": "VISUAL_ASSERTION_MISMATCH",
+    "message": "Intent: Görsel olarak 12.15-13.35 arası uçuşu ve BASIC paketin seçildiğini doğrula. | Log: The screenshot shows the selection of the BASIC package, and flight times are shown as 21:15 departure and 22:35 arrival."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:48.200Z",
+    "level": "ERROR",
+    "source": "vlm_agent",
+    "trace_id": "trc_verify_11e",
+    "event_type": "VISUAL_ASSERTION_MISMATCH",
+    "message": "Intent: Görsel olarak 12.15-13.35 arası uçuşu ve BASIC paketin seçildiğini doğrula. | Log: Görseldeki uçuş saatleri 21:15 kalkış ve 22:35 varış olarak gösterilmekte."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:49.500Z",
+    "level": "ERROR",
+    "source": "vlm_agent",
+    "trace_id": "trc_verify_11e",
+    "event_type": "VISUAL_ASSERTION_MISMATCH",
+    "message": "Intent: Görsel olarak 12.15-13.35 arası uçuşu ve BASIC paketin seçildiğini doğrula. | Log: Görseldeki uçuş saatleri 21:15 kalkış ve 22:35 varış olarak gösterilmekte."
+  },
+  {
+    "timestamp": "2025-04-06T10:00:51.100Z",
+    "level": "ERROR",
+    "source": "vlm_agent",
+    "trace_id": "trc_verify_11e",
+    "event_type": "VISUAL_ASSERTION_MISMATCH",
+    "message": "Intent: Görsel olarak 12.15-13.35 arası uçuşu ve BASIC paketin seçildiğini doğrula. | Log: Görseldeki uçuş saatleri 21:15 kalkış ve 22:35 varış olarak gösterilmekte."
+  }
+]

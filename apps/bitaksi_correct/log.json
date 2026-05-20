@@ -1,0 +1,234 @@
+[
+    {
+        "timestamp": "2026-01-20T20:26:00.112Z",
+        "level": "INFO",
+        "source": "App",
+        "trace_id": "trc_flow_001",
+        "event_type": "LIFECYCLE",
+        "message": "Application launch requested."
+    },
+    {
+        "timestamp": "2026-01-20T20:26:00.245Z",
+        "level": "INFO",
+        "source": "Navigation",
+        "trace_id": "trc_flow_001",
+        "event_type": "NAVIGATION",
+        "message": "Splash screen mounted."
+    },
+    {
+        "timestamp": "2026-01-20T20:26:01.018Z",
+        "level": "INFO",
+        "source": "Location",
+        "trace_id": "trc_flow_001",
+        "event_type": "SYSTEM",
+        "message": "Last known location restored successfully."
+    },
+    {
+        "timestamp": "2026-01-20T20:26:01.642Z",
+        "level": "INFO",
+        "source": "Map",
+        "trace_id": "trc_flow_001",
+        "event_type": "RENDER",
+        "message": "Main map screen rendered."
+    },
+    {
+        "timestamp": "2026-01-20T20:26:01.713Z",
+        "level": "INFO",
+        "source": "UI",
+        "trace_id": "trc_flow_001",
+        "event_type": "UI_STATE",
+        "message": "Search bar 'Where to?' is visible."
+    },
+    {
+        "timestamp": "2026-01-20T20:26:01.714Z",
+        "level": "INFO",
+        "source": "StepRunner",
+        "trace_id": "trc_flow_001",
+        "event_type": "ASSERTION",
+        "message": "Step 0 passed: Main map screen is visible."
+    },
+    {
+        "timestamp": "2026-01-20T20:26:04.021Z",
+        "level": "INFO",
+        "source": "Gesture",
+        "trace_id": "trc_flow_001",
+        "event_type": "USER_ACTION",
+        "message": "Tap detected on element: 'Where to?'"
+    },
+    {
+        "timestamp": "2026-01-20T20:26:04.156Z",
+        "level": "INFO",
+        "source": "Navigation",
+        "trace_id": "trc_flow_001",
+        "event_type": "NAVIGATION",
+        "message": "Navigating to address search screen."
+    },
+    {
+        "timestamp": "2026-01-20T20:26:04.487Z",
+        "level": "INFO",
+        "source": "UI",
+        "trace_id": "trc_flow_001",
+        "event_type": "RENDER",
+        "message": "Search address screen rendered successfully."
+    },
+    {
+        "timestamp": "2026-01-20T20:26:04.488Z",
+        "level": "INFO",
+        "source": "StepRunner",
+        "trace_id": "trc_flow_001",
+        "event_type": "ASSERTION",
+        "message": "Step 1 passed: Address search screen opened."
+    },
+    {
+        "timestamp": "2026-01-20T20:26:06.002Z",
+        "level": "INFO",
+        "source": "Gesture",
+        "trace_id": "trc_flow_001",
+        "event_type": "USER_ACTION",
+        "message": "Tap detected on element: 'Save Button'"
+    },
+    {
+        "timestamp": "2026-01-20T20:26:06.097Z",
+        "level": "INFO",
+        "source": "Favorites",
+        "trace_id": "trc_flow_001",
+        "event_type": "SYSTEM",
+        "message": "Saving home address..."
+    },
+    {
+        "timestamp": "2026-01-20T20:26:06.098Z",
+        "level": "INFO",
+        "source": "Favorites",
+        "trace_id": "trc_flow_001",
+        "event_type": "SYSTEM",
+        "message": "Home address saved successfully."
+    },
+    {
+        "timestamp": "2026-01-20T20:26:06.099Z",
+        "level": "INFO",
+        "source": "StepRunner",
+        "trace_id": "trc_flow_001",
+        "event_type": "ASSERTION",
+        "message": "Step 2 passed: Save button tapped and address saved."
+    },
+    {
+        "timestamp": "2026-01-20T20:26:07.000Z",
+        "level": "INFO",
+        "source": "StepRunner",
+        "trace_id": "trc_flow_001",
+        "event_type": "PLACEHOLDER",
+        "message": "Step 3 executed (placeholder)."
+    },
+    {
+        "timestamp": "2026-01-20T20:26:07.001Z",
+        "level": "INFO",
+        "source": "StepRunner",
+        "trace_id": "trc_flow_001",
+        "event_type": "ASSERTION",
+        "message": "Step 3 passed: Dummy condition always true."
+    },
+    {
+        "timestamp": "2026-01-20T20:26:08.403Z",
+        "level": "INFO",
+        "source": "Search",
+        "trace_id": "trc_flow_001",
+        "event_type": "PROCESS",
+        "message": "User query processed for destination suggestions."
+    },
+    {
+        "timestamp": "2026-01-20T20:26:08.611Z",
+        "level": "INFO",
+        "source": "Search",
+        "trace_id": "trc_flow_001",
+        "event_type": "DATA",
+        "message": "Suggestions loaded: 6 results."
+    },
+    {
+        "timestamp": "2026-01-20T20:26:09.102Z",
+        "level": "INFO",
+        "source": "Gesture",
+        "trace_id": "trc_flow_001",
+        "event_type": "USER_ACTION",
+        "message": "Tap detected on element: 'Büyük Çamlıca Cami'"
+    },
+    {
+        "timestamp": "2026-01-20T20:26:09.368Z",
+        "level": "INFO",
+        "source": "Address",
+        "trace_id": "trc_flow_001",
+        "event_type": "STATE_CHANGE",
+        "message": "Selected address: 'Büyük Çamlıca Cami'"
+    },
+    {
+        "timestamp": "2026-01-20T20:26:09.623Z",
+        "level": "INFO",
+        "source": "StepRunner",
+        "trace_id": "trc_flow_001",
+        "event_type": "ASSERTION",
+        "message": "Step 4 passed: Search result selected."
+    },
+    {
+        "timestamp": "2026-01-20T20:26:11.200Z",
+        "level": "INFO",
+        "source": "Gesture",
+        "trace_id": "trc_flow_001",
+        "event_type": "USER_ACTION",
+        "message": "Tap detected on element: 'Home'"
+    },
+    {
+        "timestamp": "2026-01-20T20:26:11.719Z",
+        "level": "INFO",
+        "source": "StepRunner",
+        "trace_id": "trc_flow_001",
+        "event_type": "ASSERTION",
+        "message": "Step 5 passed: Add Home screen opened."
+    },
+    {
+        "timestamp": "2026-01-20T20:26:14.044Z",
+        "level": "INFO",
+        "source": "Gesture",
+        "trace_id": "trc_flow_001",
+        "event_type": "USER_ACTION",
+        "message": "Tap detected on element: 'Save'"
+    },
+    {
+        "timestamp": "2026-01-20T20:26:14.658Z",
+        "level": "INFO",
+        "source": "StepRunner",
+        "trace_id": "trc_flow_001",
+        "event_type": "ASSERTION",
+        "message": "Step 6 passed: Home address saved."
+    },
+    {
+        "timestamp": "2026-01-20T20:26:17.015Z",
+        "level": "INFO",
+        "source": "StepRunner",
+        "trace_id": "trc_flow_001",
+        "event_type": "ASSERTION",
+        "message": "Step 7 passed: Destination field reopened."
+    },
+    {
+        "timestamp": "2026-01-20T20:26:20.890Z",
+        "level": "INFO",
+        "source": "StepRunner",
+        "trace_id": "trc_flow_001",
+        "event_type": "ASSERTION",
+        "message": "Step 8 passed: Destination address selected."
+    },
+    {
+        "timestamp": "2026-01-20T20:26:22.241Z",
+        "level": "INFO",
+        "source": "StepRunner",
+        "trace_id": "trc_flow_001",
+        "event_type": "ASSERTION",
+        "message": "Step 9 passed: Route and destination confirmed."
+    },
+    {
+        "timestamp": "2026-01-20T20:26:22.500Z",
+        "level": "INFO",
+        "source": "TestRunner",
+        "trace_id": "trc_flow_001",
+        "event_type": "SUMMARY",
+        "message": "Scenario completed successfully. Total steps: 10, failures: 0."
+    }
+]

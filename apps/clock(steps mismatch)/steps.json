@@ -1,0 +1,65 @@
+[
+  {
+    "action": "click",
+    "type": "click",
+    "element": "08:17 alarm toggle",
+    "intent": "Turn on the 08:17 alarm",
+    "stepInstruction": "Tap the toggle switch for the 08:17 alarm to enable it.",
+    "useVLMCoordinates": true,
+    "step_idx": 0
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "Stopwatch tab",
+    "intent": "Navigate to the stopwatch screen",
+    "stepInstruction": "Tap on the 'Stopwatch' tab at the bottom navigation bar.",
+    "useVLMCoordinates": true,
+    "step_idx": 1
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "Start button",
+    "intent": "Start the stopwatch",
+    "stepInstruction": "Tap the 'Start' button to begin the stopwatch.",
+    "useVLMCoordinates": true,
+    "step_idx": 2
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "Reset button",
+    "intent": "reset the stopwatch",
+    "stepInstruction": "Tap the 'Reset' button to reset the stopwatch.",
+    "useVLMCoordinates": true,
+    "step_idx": 3
+  },
+  {
+    "action": "scroll",
+    "type": "scroll",
+    "element": "Minute picker",
+    "intent": "Adjust timer duration",
+    "stepInstruction": "Scroll the minute picker to change the timer duration.",
+    "useVLMCoordinates": true,
+    "step_idx": 4
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "Pause button",
+    "intent": "Pause the running timer",
+    "stepInstruction": "Tap the pause button to stop the countdown temporarily.",
+    "useVLMCoordinates": true,
+    "step_idx": 5
+  },
+  {
+    "action": "click",
+    "type": "click",
+    "element": "World Clock tab",
+    "intent": "Navigate to World Clock tab",
+    "stepInstruction": "Tap on the 'World Clock' tab in the bottom navigation bar.",
+    "useVLMCoordinates": true,
+    "step_idx": 6
+  }
+]

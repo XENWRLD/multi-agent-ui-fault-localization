@@ -1,0 +1,85 @@
+[
+    {
+  "action": "click",
+  "type": "click",
+  "element": "Search Bar",
+  "intent": "Arama yapmak için arama kutusuna odaklan",
+  "stepInstruction": "Üst kısımdaki arama çubuğuna tıkla (VLM Koordinatları ile).",
+  "useVLMCoordinates": true,
+  "step_idx": 0
+},
+{
+  "action": "type",
+  "type": "input",
+  "element": "Search Bar",
+  "intent": "\"bmw 420\" araması yap",
+  "stepInstruction": "Arama çubuğuna \"bmw 420\" yaz ve aramayı başlat (Enter veya arama ikonuna tıkla).",
+  "useVLMCoordinates": false,
+  "inputText": "bmw 420",
+  "step_idx": 1
+},
+{
+  "action": "scroll",
+  "type": "scroll",
+  "element": "Search Results List",
+  "intent": "Daha fazla ilan görmek için aşağı kaydır",
+  "stepInstruction": "Sayfayı aşağı kaydırarak daha fazla ilan görüntüle.",
+  "useVLMCoordinates": false,
+  "direction": "down",
+  "step_idx": 2
+},
+{
+  "action": "click",
+  "type": "click",
+  "element": "Listing Item - 2022 BMW 420 i M SPORT M4 TABA KOLTUK SHADOW LAZER HATASIZ",
+  "intent": "İlan detayını görüntüle",
+  "stepInstruction": "\"2022 BMW 420 i M SPORT M4 TABA KOLTUK SHADOW LAZER HATASIZ\" ilanına tıkla.",
+  "useVLMCoordinates": true,
+  "step_idx": 3
+},
+{
+  "action": "click",
+  "type": "click",
+  "element": "Image Thumbnail - Rear View",
+  "intent": "Farklı araç fotoğrafını görüntüle",
+  "stepInstruction": "Alt kısımdaki küçük fotoğraflardan arka görünüm olan görsele tıkla.",
+  "useVLMCoordinates": true,
+  "step_idx": 4
+},
+{
+  "action": "type",
+  "type": "input",
+  "element": "Search Bar",
+  "intent": "Arama terimini değiştir",
+  "stepInstruction": "Üstteki arama çubuğuna tıkla ve 'bmw 430' yaz.",
+  "useVLMCoordinates": true,
+  "step_idx": 5
+},
+{
+  "action": "submit",
+  "type": "search",
+  "element": "Search Bar",
+  "intent": "Arama terimini gönder ve sonuçları getir",
+  "stepInstruction": "Arama çubuğundaki 'bmw 430' ifadesini arat (Enter tuşuna bas veya arama ikonuna tıkla).",
+  "useVLMCoordinates": true,
+  "step_idx": 6
+},
+{
+  "action": "click",
+  "type": "click",
+  "element": "Vasıta Kategorisi",
+  "intent": "Araç kategorisine geçiş yap",
+  "stepInstruction": "Sonuçlar arasından 'Vasıta' kategorisine tıkla.",
+  "useVLMCoordinates": true,
+  "step_idx": 7
+},
+{
+  "action": "click",
+  "type": "navigation",
+  "element": "Sahibinden Logo",
+  "intent": "Ana sayfaya dön",
+  "stepInstruction": "Üstteki sahibinden.com logosuna tıkla.",
+  "useVLMCoordinates": true,
+  "step_idx": 8
+}
+]

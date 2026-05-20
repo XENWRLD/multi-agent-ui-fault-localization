@@ -1,0 +1,255 @@
+[
+  {
+  "timestamp": "2026-04-20T19:44:59.000Z",
+  "level": "INFO",
+  "step": 0,
+  "event": "app_launch",
+  "message": "Starting Coffy app execution flow"
+},
+{
+  "timestamp": "2026-04-20T19:44:59.200Z",
+  "level": "INFO",
+  "step": 0,
+  "event": "app_launch",
+  "message": "Coffy app launched successfully"
+},
+{
+  "timestamp": "2026-04-20T19:45:00.000Z",
+  "level": "INFO",
+  "step": 0,
+  "event": "ui_render",
+  "message": "Splash screen displayed"
+},
+{
+  "timestamp": "2026-04-20T19:45:00.300Z",
+  "level": "INFO",
+  "step": 0,
+  "event": "assertion",
+  "message": "Step 0 passed: App initialized"
+},
+
+{
+  "timestamp": "2026-04-20T19:45:02.000Z",
+  "level": "INFO",
+  "step": 1,
+  "event": "ui_render",
+  "message": "Home screen loaded with product list"
+},
+{
+  "timestamp": "2026-04-20T19:45:02.200Z",
+  "level": "INFO",
+  "step": 1,
+  "event": "assertion",
+  "message": "Step 1 passed: Home screen visible"
+},
+
+{
+  "timestamp": "2026-04-20T19:46:00.000Z",
+  "level": "INFO",
+  "step": 2,
+  "event": "user_action",
+  "message": "Tap detected on element: 'Latte product card'"
+},
+{
+  "timestamp": "2026-04-20T19:46:00.150Z",
+  "level": "INFO",
+  "step": 2,
+  "event": "navigation",
+  "message": "Navigating to product detail page: Latte"
+},
+{
+  "timestamp": "2026-04-20T19:46:00.300Z",
+  "level": "INFO",
+  "step": 2,
+  "event": "ui_render",
+  "message": "Latte product detail screen displayed"
+},
+{
+  "timestamp": "2026-04-20T19:46:00.300Z",
+  "level": "INFO",
+  "step": 2,
+  "event": "ui_render",
+  "message": "Failed to render the latte price"
+},
+{
+  "timestamp": "2026-04-20T19:46:00.350Z",
+  "level": "INFO",
+  "step": 2,
+  "event": "assertion",
+  "message": "Step 2 failed: Latte price failed to load"
+},
+
+{
+  "timestamp": "2026-04-20T19:46:02.000Z",
+  "level": "INFO",
+  "step": 3,
+  "event": "user_action",
+  "message": "Size selection set to 'Latte - S'"
+},
+{
+  "timestamp": "2026-04-20T19:46:02.150Z",
+  "level": "INFO",
+  "step": 3,
+  "event": "user_action",
+  "message": "Drink preference set to 'Klasik İçim'"
+},
+{
+  "timestamp": "2026-04-20T19:46:02.250Z",
+  "level": "INFO",
+  "step": 3,
+  "event": "user_action",
+  "message": "Milk selection set to 'Standart Süt'"
+},
+{
+  "timestamp": "2026-04-20T19:46:02.350Z",
+  "level": "INFO",
+  "step": 3,
+  "event": "assertion",
+  "message": "Step 3 passed: Product options configured"
+},
+
+{
+  "timestamp": "2026-04-20T19:46:04.000Z",
+  "level": "INFO",
+  "step": 4,
+  "event": "user_action",
+  "message": "Tap detected on element: 'Sepete Ekle'"
+},
+{
+  "timestamp": "2026-04-20T19:46:04.200Z",
+  "level": "INFO",
+  "step": 4,
+  "event": "system",
+  "message": "Product added to cart"
+},
+{
+  "timestamp": "2026-04-20T19:46:04.350Z",
+  "level": "INFO",
+  "step": 4,
+  "event": "ui_render",
+  "message": "Success message displayed: 'Sepete Başarıyla Eklendi'"
+},
+{
+  "timestamp": "2026-04-20T19:46:04.400Z",
+  "level": "INFO",
+  "step": 4,
+  "event": "assertion",
+  "message": "Step 4 passed: Item added to cart"
+},
+
+{
+  "timestamp": "2026-04-20T19:46:06.000Z",
+  "level": "INFO",
+  "step": 5,
+  "event": "user_action",
+  "message": "Tap detected on element: 'Sepetim tab'"
+},
+{
+  "timestamp": "2026-04-20T19:46:06.200Z",
+  "level": "INFO",
+  "step": 5,
+  "event": "navigation",
+  "message": "Navigating to cart screen"
+},
+{
+  "timestamp": "2026-04-20T19:46:06.350Z",
+  "level": "INFO",
+  "step": 5,
+  "event": "ui_render",
+  "message": "Cart screen displayed with selected items"
+},
+{
+  "timestamp": "2026-04-20T19:46:06.400Z",
+  "level": "INFO",
+  "step": 5,
+  "event": "assertion",
+  "message": "Step 5 passed: Cart content visible"
+},
+
+{
+  "timestamp": "2026-04-20T19:47:00.000Z",
+  "level": "INFO",
+  "step": 6,
+  "event": "user_action",
+  "message": "Tap detected on element: 'Hesabım tab'"
+},
+{
+  "timestamp": "2026-04-20T19:47:00.200Z",
+  "level": "INFO",
+  "step": 6,
+  "event": "navigation",
+  "message": "Navigating to account screen"
+},
+{
+  "timestamp": "2026-04-20T19:47:00.350Z",
+  "level": "INFO",
+  "step": 6,
+  "event": "ui_render",
+  "message": "Account screen displayed"
+},
+{
+  "timestamp": "2026-04-20T19:47:00.400Z",
+  "level": "INFO",
+  "step": 6,
+  "event": "assertion",
+  "message": "Step 6 passed: Account page loaded"
+},
+
+{
+  "timestamp": "2026-04-20T19:47:05.000Z",
+  "level": "INFO",
+  "step": 7,
+  "event": "user_action",
+  "message": "Tap detected on element: 'Coffy Cüzdan'"
+},
+{
+  "timestamp": "2026-04-20T19:47:05.200Z",
+  "level": "INFO",
+  "step": 7,
+  "event": "navigation",
+  "message": "Navigating to wallet screen"
+},
+{
+  "timestamp": "2026-04-20T19:47:05.350Z",
+  "level": "INFO",
+  "step": 7,
+  "event": "ui_render",
+  "message": "Coffy Cüzdan screen displayed with balance"
+},
+{
+  "timestamp": "2026-04-20T19:47:05.400Z",
+  "level": "INFO",
+  "step": 7,
+  "event": "assertion",
+  "message": "Step 7 passed: Wallet screen visible"
+},
+
+{
+  "timestamp": "2026-04-20T19:47:08.000Z",
+  "level": "INFO",
+  "step": 8,
+  "event": "user_action",
+  "message": "Tap detected on element: 'Coffy Cüzdan'"
+},
+{
+  "timestamp": "2026-04-20T19:47:08.150Z",
+  "level": "INFO",
+  "step": 8,
+  "event": "navigation",
+  "message": "Navigating to coffy cüzdan"
+},
+{
+  "timestamp": "2026-04-20T19:47:08.300Z",
+  "level": "INFO",
+  "step": 8,
+  "event": "ui_render",
+  "message": "coffy cüzdan screen rendered successfully"
+},
+{
+  "timestamp": "2026-04-20T19:47:08.350Z",
+  "level": "INFO",
+  "step": 8,
+  "event": "assertion",
+  "message": "Step 8 passed: Coffy cüzdan page shown"
+}
+]

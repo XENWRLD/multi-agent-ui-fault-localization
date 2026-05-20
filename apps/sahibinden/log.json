@@ -1,0 +1,114 @@
+[
+  {
+    "timestamp": "2026-04-27T19:45:00.000Z",
+    "level": "INFO",
+    "step": 0,
+    "event": "user_action",
+    "message": "Search bar clicked and focused."
+  },
+  {
+    "timestamp": "2026-04-27T19:45:01.000Z",
+    "level": "INFO",
+    "step": 1,
+    "event": "user_input",
+    "message": "User typed search query: bmw 420."
+  },
+  {
+    "timestamp": "2026-04-27T19:45:01.400Z",
+    "level": "ERROR",
+    "step": 1,
+    "event": "price_fetch_failed",
+    "message": "Price data could not be retrieved from server. Price displayed as undefined."
+  },
+  {
+    "timestamp": "2026-04-27T19:45:02.000Z",
+    "level": "INFO",
+    "step": 2,
+    "event": "user_action",
+    "message": "User scrolled down the search results list."
+  },
+  {
+    "timestamp": "2026-04-27T19:45:02.300Z",
+    "level": "ERROR",
+    "step": 2,
+    "event": "price_fetch_failed",
+    "message": "Price data could not be retrieved from server. Listing prices displayed as undefined."
+  },
+  {
+    "timestamp": "2026-04-27T19:45:03.000Z",
+    "level": "INFO",
+    "step": 3,
+    "event": "user_action",
+    "message": "User clicked listing: 2022 BMW 420 i M SPORT M4 TABA KOLTUK SHADOW LAZER HATASIZ."
+  },
+  {
+    "timestamp": "2026-04-27T19:45:03.400Z",
+    "level": "ERROR",
+    "step": 3,
+    "event": "price_fetch_failed",
+    "message": "Price data could not be retrieved from server. Listing detail price displayed as undefined."
+  },
+  {
+    "timestamp": "2026-04-27T19:45:04.000Z",
+    "level": "INFO",
+    "step": 4,
+    "event": "user_action",
+    "message": "User clicked rear-view image thumbnail."
+  },
+  {
+    "timestamp": "2026-04-27T19:45:04.300Z",
+    "level": "ERROR",
+    "step": 4,
+    "event": "price_fetch_failed",
+    "message": "Price data still unavailable after gallery interaction. Price remains undefined."
+  },
+  {
+    "timestamp": "2026-04-27T19:45:05.000Z",
+    "level": "INFO",
+    "step": 5,
+    "event": "user_input",
+    "message": "User changed search query to bmw 430."
+  },
+  {
+    "timestamp": "2026-04-27T19:45:06.000Z",
+    "level": "INFO",
+    "step": 6,
+    "event": "search_submit",
+    "message": "User submitted search query: bmw 430."
+  },
+  {
+    "timestamp": "2026-04-27T19:45:06.500Z",
+    "level": "INFO",
+    "step": 6,
+    "event": "ui_render",
+    "message": "Search category results rendered for query bmw 430."
+  },
+  {
+    "timestamp": "2026-04-27T19:45:07.000Z",
+    "level": "INFO",
+    "step": 7,
+    "event": "user_action",
+    "message": "User clicked Vasıta category."
+  },
+  {
+    "timestamp": "2026-04-27T19:45:07.500Z",
+    "level": "INFO",
+    "step": 7,
+    "event": "ui_render",
+    "message": "Vehicle category results loaded."
+  },
+  {
+    "timestamp": "2026-04-27T19:45:08.000Z",
+    "level": "INFO",
+    "step": 8,
+    "event": "user_action",
+    "message": "User clicked Sahibinden logo."
+  },
+  {
+    "timestamp": "2026-04-27T19:45:08.500Z",
+    "level": "INFO",
+    "step": 8,
+    "event": "navigation",
+    "message": "User returned to homepage."
+  }
+]

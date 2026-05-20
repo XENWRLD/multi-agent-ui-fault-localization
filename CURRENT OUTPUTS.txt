@@ -1,0 +1,1057 @@
+Migros:(CORRECT)
+DESCRIBER-DECIDER SCAN STARTED... /content/drive/MyDrive/Grad Project/ Migros
+Log parser: format=nested, mode=preassigned
+  Pre-assigned entries across 8 step bucket(s).
+
+--- Analyzing Step 0 ---
+   [LOG] Step 0: 1 entries [preassigned:nested]
+   [LOG] Observer: The logs indicate that the application was launched successfully at the specified timestamp. There are no errors or network failures recorded during this step.
+ PASSED: The target element 'Migros Logo' appeared as expected on the splash screen.
+
+--- Analyzing Step 1 ---
+   [LOG] Step 1: 1 entries [preassigned:nested]
+   [LOG] Observer: The logs indicate that the service selection dashboard has successfully rendered with the service grid, confirming that the Migros main dashboard has loaded as expected.
+ PASSED: The Migros main dashboard loaded successfully, displaying the expected service categories and search bar.
+
+--- Analyzing Step 2 ---
+   [LOG] Step 2: 1 entries [preassigned:nested]
+   [LOG] Observer: The logs indicate that the user successfully clicked on the 'Categories' tab in the DashboardActivity. This action aligns with the instruction to navigate to the Migros Sanalmarket service and interact with the specified UI element.
+ PASSED: The action succeeded as the 'Categories' tab was selected and the app navigated to the correct screen.
+
+--- Analyzing Step 3 ---
+   [LOG] Step 3: 1 entries [preassigned:nested]
+   [LOG] Observer: The logs indicate a successful network request was made to search for 'Raffaello' using the top search bar, returning a 200 OK status. No errors or anomalies were detected during this step.
+ PASSED: The search for 'Raffaello' was successful, displaying the correct products.
+
+--- Analyzing Step 4 ---
+   [LOG] Step 4: 1 entries [preassigned:nested]
+   [LOG] Observer: The logs indicate that the 'Add to Cart' modal was successfully triggered when the user clicked the 'Add to Cart' button for the Ferrero Raffaello 150 G. There are no errors or network failures reported during this step.
+ PASSED: The action succeeded as the delivery method selection overlay appeared after clicking 'Add to Cart'.
+
+--- Analyzing Step 5 ---
+   [LOG] Step 5: 1 entries [preassigned:nested]
+   [LOG] Observer: The logs indicate that the 'Yurt' delivery address was successfully selected and synced during the address selection step. There are no errors or network failures reported in this execution.
+ PASSED: The action successfully navigated to the next logical screen, indicating the selection was processed.
+
+--- Analyzing Step 6 ---
+   [LOG] Step 6: 1 entries [preassigned:nested]
+   [LOG] Observer: The logs indicate that the 'Cart' icon was successfully clicked, resulting in the CartActivity being opened with one item detected. No errors or network failures were recorded during this step.
+ PASSED: The click action successfully navigated to the 'Cart' screen, displaying the expected content.
+
+--- Analyzing Step 7 ---
+   [LOG] Step 7: 4 entries [preassigned:nested]
+   [LOG] Observer: The logs indicate that the user attempted to click the 'Confirm' button to proceed with the payment, but encountered multiple errors. The local cart state showed an item, while the session validation indicated that the cart was empty, leading to a 400 Bad Request response from the server. [NET_FAIL, SYS_ERR]
+ FAILED: System error due to cart state inconsistency; server responded with 400 Bad Request.
+    Expected: Clicking the 'Confirm' button should proceed to the payment phase for the items in the cart.
+    Observed: The cart appears empty, prompting the user to add items, and the 'Confirm' button is not visible.
+
+========================================
+TEST COMPLETE. Scanned 8 steps.
+========================================
+
+FAILURE CHAIN ANALYSIS
+======================
+
+ISOLATED FAILURE:
+  Step 7 [system_error]: System error due to cart state inconsistency; server responded with 400 Bad Request.
+    Expected: Clicking the 'Confirm' button should proceed to the payment phase for the items in the cart.
+    Observed: The cart appears empty, prompting the user to add items, and the 'Confirm' button is not visible.
+
+Summary: 1 failures across 1 isolated
+
+
+SUMMARY
+=======
+Total steps:   8
+  Analyzed:    8
+  Skipped:     0
+  Passed:      7   (87.5%)
+  Failed:      1   (12.5%)
+
+Confidence Distribution (analyzed steps):
+  High   (>=0.85):  8 steps
+  Medium (>=0.60):  0 steps
+  Low    (<0.60):   0 steps
+  Avg confidence: 0.95
+
+Failure Type Breakdown:
+  system_error           1
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+bitaksi:(CORRECT)
+--- Step 0 [SKIPPED — action=waitUntil, requires_vlm=False] ---
+
+--- Analyzing Step 1 ---
+   [LOG] Step 1: 4 entries [preassigned:flat_assertions]
+   [LOG] Observer: The logs indicate that a tap was detected on the 'Where to?' element, leading to navigation to the address search screen, which was rendered successfully. The step was confirmed to have passed as the address search screen opened without any issues.
+ PASSED: The action succeeded as the search input field was activated and ready for typing.
+
+--- Analyzing Step 2 ---
+   [LOG] Step 2: 4 entries [preassigned:flat_assertions]
+   [LOG] Observer: The logs indicate that a tap action was successfully detected on the 'Save Button', leading to the saving of the home address. The process completed without any errors, and the address was saved successfully.
+ PASSED: The action succeeded as the address was saved and the app navigated to the next logical screen.
+
+--- Analyzing Step 3 ---
+   [LOG] Step 3: 2 entries [preassigned:flat_assertions]
+   [LOG] Observer: The logs indicate that Step 3 was executed successfully, with a placeholder message logged and an assertion confirming that the step passed. No errors or network failures were recorded during this step.
+ PASSED: The Lux ride option was successfully selected, and the UI updated accordingly.
+
+--- Analyzing Step 4 ---
+   [LOG] Step 4: 5 entries [preassigned:flat_assertions]
+   [LOG] Observer: The logs indicate that a user interaction occurred where a tap was detected on an element labeled 'Büyük Çamlıca Cami'. Following this, the selected address was confirmed, and the step passed successfully, indicating that the search result was selected without any errors.
+ PASSED: The action succeeded as the app navigated to the 'Profile information' screen and displayed the expected user details.
+
+--- Analyzing Step 5 ---
+   [LOG] Step 5: 2 entries [preassigned:flat_assertions]
+   [LOG] Observer: The logs indicate that a tap was detected on the 'Home' element, and Step 5 passed, confirming that the Home screen was opened successfully. However, there is no log entry related to the 'Save button' action specified in the step context.
+ PASSED: The 'Save' button was clicked, the profile was updated successfully, and the button was disabled as expected.
+
+--- Analyzing Step 6 ---
+   [LOG] Step 6: 2 entries [preassigned:flat_assertions]
+   [LOG] Observer: The logs indicate that a tap was detected on the 'Save' element, followed by a successful assertion that the home address was saved. However, there is no record of the intended action to click on 'Trip history'.
+ PASSED: The action succeeded as the app navigated to the 'Trip history' screen as expected.
+
+--- Analyzing Step 7 ---
+   [LOG] Step 7: 1 entries [preassigned:flat_assertions]
+   [LOG] Observer: The logs indicate that the action of clicking on the 'Payment methods' option was executed successfully, as evidenced by the assertion that Step 7 passed and the destination field was reopened.
+ PASSED: The action succeeded as the app navigated to the 'Payment methods' screen and displayed the expected content.
+
+--- Analyzing Step 8 ---
+   [LOG] Step 8: 1 entries [preassigned:flat_assertions]
+   [LOG] Observer: The logs indicate that the action to click the 'Delete' button was executed successfully, as evidenced by the assertion that Step 8 passed with the destination address selected.
+ PASSED: The action succeeded as the card was removed and the UI responded correctly.
+
+========================================
+TEST COMPLETE. Scanned 9 steps.
+========================================
+
+FAILURE CHAIN ANALYSIS
+======================
+ALL PASSED.
+
+
+SUMMARY
+=======
+Total steps:   9
+  Analyzed:    8
+  Skipped:     1
+  Passed:      8   (100.0%)
+  Failed:      0   (0.0%)
+
+Confidence Distribution (analyzed steps):
+  High   (>=0.85):  8 steps
+  Medium (>=0.60):  0 steps
+  Low    (<0.60):   0 steps
+  Avg confidence: 0.95
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+clock:(CORRECT)
+--- Analyzing Step 0 ---
+   [LOG] Step 0: 2 entries [preassigned:flat_indexed]
+   [LOG] Observer: The logs indicate that the Clock app was launched successfully and the Alarms screen was rendered. There are no errors or network events recorded during this step.
+ PASSED: The alarm toggle was successfully activated, changing its state as expected.
+
+--- Analyzing Step 1 ---
+   [LOG] Step 1: 2 entries [preassigned:flat_indexed]
+   [LOG] Observer: The logs indicate that the user successfully navigated to the Stopwatch tab and the Stopwatch screen was displayed with the Start button. No errors or network failures were recorded during this step.
+ PASSED: The Stopwatch tab was successfully selected, and the app navigated to the Stopwatch screen.
+
+--- Analyzing Step 2 ---
+   [LOG] Step 2: 2 entries [preassigned:flat_indexed]
+   [LOG] Observer: The logs indicate that the user successfully pressed the 'Start' button, which triggered the stopwatch to start. There are no errors or network issues recorded during this step.
+ PASSED: The stopwatch started successfully, and the button state changed as expected.
+
+--- Analyzing Step 3 ---
+   [LOG] Step 3: 2 entries [preassigned:flat_indexed]
+   [LOG] Observer: The logs indicate that the stopwatch was reset successfully, with timer ticks recorded at 00:00.01 and 00:01.00. No errors or network issues were detected during this step.
+ PASSED: The 'Reset' button was clicked successfully, and the stopwatch reset as expected.
+
+--- Analyzing Step 4 ---
+   [LOG] Step 4: 2 entries [preassigned:flat_indexed]
+   [LOG] Observer: The logs indicate that the timer length was changed twice during the execution of the scroll action on the minute picker. Initially, it was set to 19 minutes, followed by a change to 31 minutes shortly after.
+ PASSED: The scroll action successfully changed the minute picker value.
+
+--- Analyzing Step 5 ---
+   [LOG] Step 5: 2 entries [preassigned:flat_indexed]
+   [LOG] Observer: The logs indicate that the user successfully navigated to the Timers tab and the Timer screen was displayed. There are no errors or network issues reported during this step.
+ PASSED: The action succeeded as the pause button changed state and the timer was paused.
+
+--- Analyzing Step 6 ---
+   [LOG] Step 6: 2 entries [preassigned:flat_indexed]
+   [LOG] Observer: The logs indicate that a timer was set for 31 minutes and subsequently started. There are no errors or network events recorded during this step.
+ PASSED: The action succeeded as the 'World Clock tab' was selected and the app navigated correctly.
+
+========================================
+TEST COMPLETE. Scanned 7 steps.
+========================================
+
+FAILURE CHAIN ANALYSIS
+======================
+ALL PASSED.
+
+
+SUMMARY
+=======
+Total steps:   7
+  Analyzed:    7
+  Skipped:     0
+  Passed:      7   (100.0%)
+  Failed:      0   (0.0%)
+
+Confidence Distribution (analyzed steps):
+  High   (>=0.85):  7 steps
+  Medium (>=0.60):  0 steps
+  Low    (<0.60):   0 steps
+  Avg confidence: 0.95
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+flight app:(CORRECT)
+--- Analyzing Step 0 ---
+   [LOG] Step 0: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the application successfully initiated a wait condition for the UI element 'Tüm seyahatin tek uygulamada'. The element was found to be visible during the polling cycle, and remote configurations were fetched successfully without any errors.
+ PASSED: The log evidence confirms the wait condition was met, overriding the visual absence of the element.
+
+--- Step 1 [SKIPPED — action=waitUntil, requires_vlm=False] ---
+
+--- Step 2 [SKIPPED — action=waitUntil, requires_vlm=False] ---
+
+--- Analyzing Step 3 ---
+   [LOG] Step 3: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the action to click on 'Çarpı' was successfully executed, with the visual target being accurately resolved to screen coordinates. The user interaction was dispatched, and subsequent visual verification confirmed that the login screen was displayed correctly.
+ PASSED: The action successfully navigated to the login screen, indicating the 'X' icon was clicked and processed correctly.
+
+--- Analyzing Step 4 ---
+   [LOG] Step 4: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the system successfully initiated a visual verification for the login screen, which passed as the required elements were visible. Following this, a user interaction was logged where the 'Continue as Guest' button was tapped.
+ PASSED: The login screen was visually verified successfully with no changes detected.
+
+--- Analyzing Step 5 ---
+   [LOG] Step 5: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the action to click on 'Üye olmadan devam et' was successfully executed, with the target coordinates resolved and a guest session created without any errors. The interaction was logged with a high confidence score, and the subsequent network request for an anonymous access token was successful.
+ PASSED: The action was successful as the system overlay is not an application failure.
+
+--- Analyzing Step 6 ---
+   [LOG] Step 6: 7 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user successfully clicked 'İzin Ver' on an in-app notification dialog, allowing for notifications. Prior to this action, visual verification of the login screen was completed successfully, and subsequent network requests for fare verification were also successful.
+ PASSED: The click action on 'İzin Ver' was successful, and the notification permission dialog was dismissed as expected.
+
+--- Analyzing Step 7 ---
+   [LOG] Step 7: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user successfully clicked on the departure city selection box labeled 'Nereden', which triggered the opening of a bottom sheet. A network request was made to fetch available departure airports, which returned a successful response with a status code of 200 and a latency of 150 ms.
+ PASSED: The click action successfully activated the 'Nereden' field and navigated to the appropriate selection screen.
+
+--- Analyzing Step 8 ---
+   [LOG] Step 8: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user interacted with the departure city selection box and successfully fetched available departure airports, including İzmir. The network requests returned successful responses with no errors or anomalies detected.
+ PASSED: The action succeeded as 'İzmir' was selected and the app navigated to the flight search screen.
+
+--- Analyzing Step 9 ---
+   [LOG] Step 9: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user interacted with an in-app notification, opting in for push notifications. Following this, a network request was made to update the user's communication preferences, which was successful with a 200 status code.
+ PASSED: The action successfully navigated to the destination selection screen.
+
+--- Analyzing Step 10 ---
+   [LOG] Step 10: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user interacted with the application by allowing in-app notifications and selecting 'İzmir (ADB)' as their departure city. Network requests were made to update user preferences and sync the departure selection, both of which were successful.
+ PASSED: The click action successfully navigated to the booking screen with 'Ankara' as the selected destination.
+
+--- Analyzing Step 11 ---
+   [LOG] Step 11: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user successfully interacted with the application by selecting a departure city and tapping on the arrival city selection box. All network requests related to these actions returned successful responses with no errors reported.
+ PASSED: The action successfully navigated to the calendar selection screen.
+
+--- Analyzing Step 12 ---
+   [LOG] Step 12: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user interacted with the application by tapping on the arrival city selection box, which triggered a network request to fetch available arrival destinations. The requests for updating the departure state and fetching destinations were successful, with no errors or failures reported.
+ PASSED: The click action successfully selected the target date '21', confirming the departure date as expected.
+
+--- Analyzing Step 13 ---
+   [LOG] Step 13: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user successfully fetched available arrival destinations and selected 'Ankara (ESB)' from the list. The system updated the arrival state without any errors or failures.
+ PASSED: The action successfully navigated to the flight selection screen, displaying the expected content.
+
+--- Step 14 [SKIPPED — action=wait, requires_vlm=True] ---
+
+--- Analyzing Step 15 ---
+   [LOG] Step 15: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user interacted with the application by tapping on the departure date field and subsequently selecting a dynamic calendar cell. The system responded with an updated state and prepared the calendar UI without any errors.
+ PASSED: The action succeeded as the selection overlay appeared, indicating the click was registered.
+
+--- Analyzing Step 16 ---
+   [LOG] Step 16: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user interacted with the application by tapping on the departure date field and selecting a date from the calendar. Subsequently, the user initiated a flight search by tapping the search button. No errors or network failures were recorded during this process.
+ PASSED: The target element was successfully selected as indicated by the visual change.
+
+--- Analyzing Step 17 ---
+   [LOG] Step 17: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that a flight search was initiated by the user tapping the 'UCUZ BİLET BUL' button. A request was sent to the server to fetch flight results, which was successfully completed with a 200 OK status, and the results were fetched after a latency of 3650 ms.
+ PASSED: The action successfully displayed additional flight options, confirming the click was processed.
+
+--- Analyzing Step 18 ---
+   [LOG] Step 18: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that a flight search was initiated successfully, and the results were rendered without any errors. The user interacted with the UI by tapping on the sorting tab for departure time.
+ FAILED: The click action did not result in the expected target selection, leading to a mismatch in content.
+    Expected: Clicking the '12.15->13.35' item should select it and navigate to the next step in the flow.
+    Observed: The screen context changed to show a flight class selection overlay, but the target element '12.15->13.35' was not visible.
+
+--- Analyzing Step 19 ---
+   [LOG] Step 19: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that a user successfully performed a flight search, with results rendered and subsequent interactions with sorting and filtering options. No errors were encountered during this process.
+ PASSED: The click action successfully selected the 'BASIC' option, with no errors or issues observed.
+
+--- Analyzing Step 20 ---
+   [LOG] Step 20: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user interacted with the application to filter flights by departure time and evening flights. The flight list was successfully updated to reflect the applied filters without any errors.
+ FAILED: The content mismatch occurred because the expected flight time was not visible, similar to prior failure in Step 18.
+    Expected: The screen should display the expected state or value confirming the prior action completed correctly, specifically showing a flight time of 12:15-13:35 with a BASIC package selected.
+    Observed: The screen shows a flight option with a departure time of 21:15 and a BASIC package selected, but the expected flight time of 12:15-13:35 was not confirmed.
+
+--- Analyzing Step 21 ---
+   [LOG] Step 21: 20 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user successfully interacted with the application to select a flight between 12:15 and 13:35 and chose the BASIC fare package. However, the assertion for verifying the selection of the flight and package was executed, but the expected visual confirmation was not found.
+ FAILED: The content mismatch occurred because the expected flight time was not visible, similar to prior failure in Step 20.
+    Expected: The screen should display the expected state or value confirming the prior action completed correctly, specifically showing a flight between 12:15 and 13:35 with the BASIC package selected.
+    Observed: The screen shows the BASIC package selected, but there is no visible information about a flight between 12:15 and 13:35.
+
+--- Analyzing Step 22 ---
+   [LOG] Step 22: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user successfully selected the flight for the route '12:15->13:35' and the BASIC fare package. The fare verification process was initiated and completed without any errors, confirming the fare availability and temporarily locking the price.
+ FAILED: The content mismatch occurred because the expected flight time was not visible, similar to prior failures in Steps 18, 20, and 21. (Likely caused by Step 21)
+    Expected: The screen should display the expected state or value confirming the prior action completed correctly, specifically showing the flight time 12:15-13:35.
+    Observed: The screen shows flight times 21:15 departure and 22:35 arrival, with the BASIC package selected. The expected flight time 12:15-13:35 was not confirmed.
+
+--- Analyzing Step 23 ---
+   [LOG] Step 23: 5 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the user successfully selected the 'BASIC' fare package and the system verified the fare availability for the flight times 21:15 to 22:35. However, the verification for the flight time 12:15-13:35 could not be confirmed as per the instruction.
+ FAILED: The content mismatch occurred because the expected flight time was not visible, similar to prior failures in Steps 20, 21, and 22. (Likely caused by Step 22)
+    Expected: The screen should display the expected flight time of 12:15-13:35 and confirm the BASIC package selection.
+    Observed: The screen shows a flight with departure at 21:15 and arrival at 22:35, confirming the BASIC package selection, but the expected flight time of 12:15-13:35 is not visible.
+
+--- Analyzing Step 24 ---
+   [LOG] Step 24: 3 entries [dynamic:keyword]
+   [LOG] Observer: The logs indicate that the flight verification process for the flight '12:15-13:35' and the 'BASIC' package selection was executed successfully. The verification confirmed that the selected UI elements matched the expected parameters without any errors.
+ FAILED: The content mismatch occurred because the expected flight time was not visible, similar to prior failures in Steps 20, 21, 22, and 23. (Likely caused by Step 23)
+    Expected: The screen should display the expected flight time of 12:15-13:35 and confirm the BASIC package selection.
+    Observed: The screen shows flight times of 21:15-22:35 and confirms the BASIC package selection, but the expected flight time of 12:15-13:35 is not confirmed.
+
+========================================
+TEST COMPLETE. Scanned 25 steps.
+========================================
+
+FAILURE CHAIN ANALYSIS
+======================
+
+FAILURE CHAIN 1: (6 steps)
+  Step 18 -> Step 20 -> Step 21 -> Step 22 -> Step 23 -> Step 24
+  Root: Step 18 [content_mismatch] - The click action did not result in the expected target selection, leading to a mismatch in content.
+  Step 20 [content_mismatch] - The content mismatch occurred because the expected flight time was not visible, similar to prior failure in Step 18. (caused by Step 18)
+  Step 21 [content_mismatch] - The content mismatch occurred because the expected flight time was not visible, similar to prior failure in Step 20. (caused by Step 20)
+  Step 22 [content_mismatch] - The content mismatch occurred because the expected flight time was not visible, similar to prior failures in Steps 18, 20, and 21. (Likely caused by Step 21) (caused by Step 21)
+  Step 23 [content_mismatch] - The content mismatch occurred because the expected flight time was not visible, similar to prior failures in Steps 20, 21, and 22. (Likely caused by Step 22) (caused by Step 22)
+  Step 24 [content_mismatch] - The content mismatch occurred because the expected flight time was not visible, similar to prior failures in Steps 20, 21, 22, and 23. (Likely caused by Step 23) (caused by Step 23)
+
+Summary: 6 failures across 1 chain(s)
+
+
+SUMMARY
+=======
+Total steps:   25
+  Analyzed:    22
+  Skipped:     3
+  Passed:      16   (72.7%)
+  Failed:      6   (27.3%)
+
+Confidence Distribution (analyzed steps):
+  High   (>=0.85): 22 steps
+  Medium (>=0.60):  0 steps
+  Low    (<0.60):   0 steps
+  Avg confidence: 0.95
+
+Failure Type Breakdown:
+  content_mismatch       6
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+qnb:(CORRECT)
+--- Analyzing Step 0 ---
+   [LOG] Step 0: 1 entries [preassigned:flat_indexed]
+   [LOG] Observer: The logs indicate that the 'Kartlar' (Cards) screen was successfully opened following the click action on the menu option. There are no errors or network failures recorded during this step.
+ PASSED: The action was successful as the notification dialog is a valid system overlay indicating no cards to display.
+
+--- Analyzing Step 1 ---
+   [LOG] Step 1: 2 entries [preassigned:flat_indexed]
+   [LOG] Observer: The logs indicate that the user successfully tapped on the 'Banka Kartlarım' option, which resulted in the display of the corresponding screen. There are no errors or network failures recorded during this step.
+ PASSED: The action successfully navigated to the 'KARTLAR' screen, displaying the expected content.
+
+--- Analyzing Step 2 ---
+   [LOG] Step 2: 4 entries [preassigned:flat_indexed]
+   [LOG] Observer: The logs indicate that the user successfully tapped on the 'Back Button', navigated to the 'Banka Kartlarım' screen, and the screen rendered correctly with the card options list. The assertion confirms that the step passed without any issues.
+ PASSED: The action succeeded as the app navigated to the expected screen with relevant content displayed.
+
+--- Analyzing Step 3 ---
+   [LOG] Step 3: 1 entries [preassigned:flat_indexed]
+   [LOG] Observer: The logs indicate that the user tapped on the 'Limit Geçerlilik Süresi' button during the test step. There are no errors or network failures recorded in the logs, suggesting that the action was executed successfully without any issues.
+ PASSED: The navigation back to the 'Banka Kartlarım' screen was successful.
+
+--- Analyzing Step 4 ---
+   [LOG] Step 4: 1 entries [preassigned:flat_indexed]
+   [LOG] Observer: The logs indicate that the user action to click on the 'Günlük' option resulted in the opening of a limit duration modal. No errors or network failures were recorded during this step.
+ FAILED: The UI did not respond to the click action as expected, resulting in no state change.
+    Expected: Clicking the 'Günlük' option should select it and indicate a state change such as highlighting or selection.
+    Observed: The 'Günlük' option remained visible but was not selected or highlighted, and no state change was observed.
+
+--- Analyzing Step 5 ---
+   [LOG] Step 5: 1 entries [preassigned:flat_indexed]
+   [LOG] Observer: The logs indicate that the user successfully selected the 'Günlük' option as part of the test step. There are no errors or network issues reported during this action.
+ PASSED: The 'Günlük' option was successfully selected, with the UI reflecting the change.
+
+--- Analyzing Step 6 ---
+   [LOG] Step 6: 5 entries [preassigned:flat_indexed]
+   [LOG] Observer: The logs indicate that the user successfully navigated from the 'Banka Kartlarım' screen to the 'Kartlar' main menu. The 'Kartlar' screen was rendered with a full list of card services, and all relevant UI elements were detected without any issues. The assertion confirms that step 7 passed successfully.
+ PASSED: The action succeeded as the selection panel closed and 'Günlük' was confirmed as the selected option.
+
+--- Analyzing Step 7 ---
+   [LOG] Step 7: 1 entries [preassigned:flat_indexed]
+   [LOG] Observer: The logs indicate that the user focused on the 'İşlem Limitiniz' input field during the test step. There are no errors or network failures recorded in the logs.
+ PASSED: The navigation back to the 'Kartlar' menu was successful, with the expected screen change observed.
+
+--- Analyzing Step 8 ---
+   [LOG] Step 8: 1 entries [preassigned:flat_indexed]
+   [LOG] Observer: The logs indicate that during the test step, a user action was recorded where a value of '0' was entered. However, there are no errors or network issues reported in the logs.
+ PASSED: The navigation to the card settings page was successful, and the expected content appeared.
+
+--- Analyzing Step 9 ---
+   [LOG] Step 9: 1 entries [preassigned:flat_indexed]
+   [LOG] Observer: The logs indicate that the user tapped the 'Uygula' button instead of the 'Güncelle' button as instructed. There are no errors or network failures recorded in the logs.
+ PASSED: The app navigated to the correct screen despite the log indicating a different button was tapped.
+
+--- Analyzing Step 10 ---
+   [LOG] Step 10: 1 entries [preassigned:flat_indexed]
+   [LOG] Observer: The logs indicate that a confirmation popup was displayed during the execution of the test step where the user was instructed to tap on the 'İşlem Limitiniz' input field. No errors or network failures were recorded during this step.
+ PASSED: The input field was successfully activated for input, and the numeric keypad appeared as expected.
+
+--- Analyzing Step 11 ---
+   [LOG] Step 11: 3 entries [preassigned:flat_indexed]
+   [LOG] Observer: The logs indicate that the user tapped the 'Onayla' button, which triggered a limit update request. Subsequently, the UI rendered the card page with the updated limits, suggesting that the action was successful without any errors.
+ PASSED: The action was successful as the confirmation dialog appeared, indicating the limit application process was initiated.
+
+--- Analyzing Step 12 ---
+   [LOG] Step 12: no log entries found [preassigned:flat_indexed]
+ PASSED: The action succeeded as the app navigated to the expected screen after clicking the 'Onayla' button.
+
+========================================
+TEST COMPLETE. Scanned 13 steps.
+========================================
+
+FAILURE CHAIN ANALYSIS
+======================
+
+ISOLATED FAILURE:
+  Step 4 [action_failed]: The UI did not respond to the click action as expected, resulting in no state change.
+    Expected: Clicking the 'Günlük' option should select it and indicate a state change such as highlighting or selection.
+    Observed: The 'Günlük' option remained visible but was not selected or highlighted, and no state change was observed.
+
+Summary: 1 failures across 1 isolated
+
+
+SUMMARY
+=======
+Total steps:   13
+  Analyzed:    13
+  Skipped:     0
+  Passed:      12   (92.3%)
+  Failed:      1   (7.7%)
+
+Confidence Distribution (analyzed steps):
+  High   (>=0.85): 13 steps
+  Medium (>=0.60):  0 steps
+  Low    (<0.60):   0 steps
+  Avg confidence: 0.94
+
+Failure Type Breakdown:
+  action_failed          1
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+yemeksepeti:(CORRECT)
+DESCRIBER-DECIDER SCAN STARTED... /content/drive/MyDrive/Grad Project/Yemeksepeti
+Log parser: format=nested, mode=preassigned
+  Pre-assigned entries across 15 step bucket(s).
+  [WARN] 15/15 steps had no 'logs' field
+
+--- Analyzing Step 0 ---
+   [LOG] Step 0: no log entries found [preassigned:nested]
+ PASSED: The Yemeksepeti splash screen loaded successfully, with the logo visible.
+
+--- Step 1 [SKIPPED — action=waitUntil, requires_vlm=False] ---
+
+--- Analyzing Step 2 ---
+   [LOG] Step 2: no log entries found [preassigned:nested]
+ PASSED: The action successfully closed the Flash Deals banner as expected.
+
+--- Analyzing Step 3 ---
+   [LOG] Step 3: no log entries found [preassigned:nested]
+ PASSED: The click action successfully triggered the overlay for address management.
+
+--- Analyzing Step 4 ---
+   [LOG] Step 4: no log entries found [preassigned:nested]
+ PASSED: The target address was successfully selected and displayed as the delivery address.
+
+--- Analyzing Step 5 ---
+   [LOG] Step 5: no log entries found [preassigned:nested]
+ PASSED: The search action successfully displayed results for 'little ceasers pizza'.
+
+--- Analyzing Step 6 ---
+   [LOG] Step 6: no log entries found [preassigned:nested]
+ PASSED: The click action successfully navigated to the Little Caesars Pizza details screen.
+
+--- Analyzing Step 7 ---
+   [LOG] Step 7: no log entries found [preassigned:nested]
+ FAILED: The click action was intended for 'Mixed (Medium) Pizza' but navigated to 'Mediterranean (Central)' pizza instead.
+    Expected: Clicking the 'Mixed (Medium) Pizza' item should select it and navigate to its detailed view.
+    Observed: The app navigated to the detailed view of the 'Mediterranean (Central)' pizza instead.
+
+--- Analyzing Step 8 ---
+   [LOG] Step 8: no log entries found [preassigned:nested]
+ PASSED: The 'Normal Dough' option was successfully selected as intended.
+
+--- Analyzing Step 9 ---
+   [LOG] Step 9: no log entries found [preassigned:nested]
+ PASSED: The 'Less Pizza Sauce' option was successfully selected.
+
+--- Analyzing Step 10 ---
+   [LOG] Step 10: no log entries found [preassigned:nested]
+ PASSED: The action successfully selected the options to remove mushrooms and black olives.
+
+--- Analyzing Step 11 ---
+   [LOG] Step 11: no log entries found [preassigned:nested]
+ PASSED: The action succeeded as the cart was updated correctly with the selected item.
+
+--- Analyzing Step 12 ---
+   [LOG] Step 12: no log entries found [preassigned:nested]
+ PASSED: The click action successfully navigated to the 'Cart' screen, displaying the expected content.
+
+--- Analyzing Step 13 ---
+   [LOG] Step 13: no log entries found [preassigned:nested]
+ PASSED: The action successfully navigated to the 'Checkout' screen, confirming the basket.
+
+--- Analyzing Step 14 ---
+   [LOG] Step 14: no log entries found [preassigned:nested]
+ FAILED: The 'Mixed (Medium)' pizza was not displayed in the order summary, similar to prior failure in Step 7 where the wrong pizza was selected.
+    Expected: The screen should display the expected state or value confirming the prior action completed correctly.
+    Observed: The screen shows a 'Mediterranean (Central)' pizza in the order summary, but the 'Mixed (Medium)' pizza is not visible.
+
+========================================
+TEST COMPLETE. Scanned 15 steps.
+========================================
+
+FAILURE CHAIN ANALYSIS
+======================
+
+ISOLATED FAILURE:
+  Step 7 [content_mismatch]: The click action was intended for 'Mixed (Medium) Pizza' but navigated to 'Mediterranean (Central)' pizza instead.
+    Expected: Clicking the 'Mixed (Medium) Pizza' item should select it and navigate to its detailed view.
+    Observed: The app navigated to the detailed view of the 'Mediterranean (Central)' pizza instead.
+
+ISOLATED FAILURE:
+  Step 14 [content_mismatch]: The 'Mixed (Medium)' pizza was not displayed in the order summary, similar to prior failure in Step 7 where the wrong pizza was selected.
+    Expected: The screen should display the expected state or value confirming the prior action completed correctly.
+    Observed: The screen shows a 'Mediterranean (Central)' pizza in the order summary, but the 'Mixed (Medium)' pizza is not visible.
+
+Summary: 2 failures across 2 isolated
+
+
+SUMMARY
+=======
+Total steps:   15
+  Analyzed:    14
+  Skipped:     1
+  Passed:      12   (85.7%)
+  Failed:      2   (14.3%)
+
+Confidence Distribution (analyzed steps):
+  High   (>=0.85): 14 steps
+  Medium (>=0.60):  0 steps
+  Low    (<0.60):   0 steps
+  Avg confidence: 0.90
+
+Failure Type Breakdown:
+  content_mismatch       2
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+o bilet:(CORRECT)
+--- Analyzing Step 0 ---
+   [LOG] Step 0: 1 entries [preassigned:nested]
+   [LOG] Observer: The logs indicate that the application was successfully launched, as evidenced by the info level log stating 'App launched.' There are no errors or network failures reported in the logs.
+ PASSED: The target element appeared as expected, indicating the action was successful.
+
+--- Analyzing Step 1 ---
+   [LOG] Step 1: 1 entries [preassigned:nested]
+   [LOG] Observer: The logs indicate that the dashboard has successfully rendered, which aligns with the instruction to wait for the landing page and the Category Selection dashboard to load. No errors or network failures were detected during this step.
+ PASSED: The dashboard loaded successfully with the expected elements visible.
+
+--- Analyzing Step 2 ---
+   [LOG] Step 2: 1 entries [preassigned:nested]
+   [LOG] Observer: The logs indicate that the user successfully selected the 'Bus' tab as part of the action to switch categories and set search parameters. No errors or network failures were recorded during this step.
+ PASSED: The action succeeded as the search parameters were updated correctly.
+
+--- Analyzing Step 3 ---
+   [LOG] Step 3: 1 entries [preassigned:nested]
+   [LOG] Observer: The logs indicate a successful network request made to search for bus trips based on the user's input. The request was initiated after clicking the 'SEARCH' button, and there are no errors or failures recorded in the logs.
+ PASSED: The click action successfully navigated to the results screen, indicating the search was processed correctly.
+
+--- Analyzing Step 4 ---
+   [LOG] Step 4: 1 entries [preassigned:nested]
+   [LOG] Observer: The logs indicate that the 'FILTER' button was successfully clicked, triggering the filter modal in the application. There are no errors or network failures reported during this interaction.
+ PASSED: The action succeeded as the filter overlay appeared after clicking the 'FILTER' button.
+
+--- Analyzing Step 5 ---
+   [LOG] Step 5: 1 entries [preassigned:nested]
+   [LOG] Observer: The logs indicate that a multi-company filter was successfully applied in the application, as evidenced by the info log entry stating 'Applied multi-company filter.' No errors or network failures were detected during this step.
+ PASSED: The filter was successfully applied, and the expected trip results were displayed.
+
+--- Analyzing Step 6 ---
+   [LOG] Step 6: 1 entries [preassigned:nested]
+   [LOG] Observer: The logs indicate that the user successfully expanded the trip for the 22:00 AKSU journey, which aligns with the action of selecting the trip to view seat availability and map. There are no errors or network failures recorded during this interaction.
+ PASSED: The action successfully selected the 22:00 AKSU trip and displayed the seat map as expected.
+
+--- Analyzing Step 7 ---
+   [LOG] Step 7: 3 entries [preassigned:nested]
+   [LOG] Observer: The logs indicate that the user successfully tapped the 'Confirm and Continue' button to reserve Seat 12, but encountered a network error due to a 504 Gateway Timeout when attempting to communicate with the reservation service. [NET_FAIL, SYS_ERR]
+ FAILED: 504 Gateway Timeout error occurred when attempting to communicate with the reservation service.
+    Expected: Clicking the 'Confirm and Continue' button should proceed to the passenger details screen.
+    Observed: A loading overlay appeared after selecting the seat and confirming, indicating the system is processing the request to proceed to passenger details.
+
+--- Analyzing Step 8 ---
+   [LOG] Step 8: 1 entries [preassigned:nested]
+   [LOG] Observer: The logs indicate that the action 'waitUntil' for the 'Passenger Details Input' step encountered an error due to a blocked navigation to the PassengerDetailsActivity, caused by a failed reservation dependency. This suggests that the system was unable to proceed with loading the Passenger Information form as expected. [SYS_ERR]
+ FAILED: Navigation to PassengerDetailsActivity blocked by failed reservation dependency. Prior failure: Step 7 system_error due to 504 Gateway Timeout with reservation service.
+    Expected: The target element 'Passenger Details Input' should become visible on screen after the action completes.
+    Observed: The screen remains on the loading overlay, indicating a transition or processing state, with no visible Passenger Details Input form yet.
+
+========================================
+TEST COMPLETE. Scanned 9 steps.
+========================================
+
+FAILURE CHAIN ANALYSIS
+======================
+
+FAILURE CHAIN 1: (2 steps)
+  Step 7 -> Step 8
+  Root: Step 7 [system_error] - 504 Gateway Timeout error occurred when attempting to communicate with the reservation service.
+  Step 8 [element_missing] - Navigation to PassengerDetailsActivity blocked by failed reservation dependency. Prior failure: Step 7 system_error due to 504 Gateway Timeout with reservation service. (caused by Step 7)
+
+Summary: 2 failures across 1 chain(s)
+
+
+SUMMARY
+=======
+Total steps:   9
+  Analyzed:    9
+  Skipped:     0
+  Passed:      7   (77.8%)
+  Failed:      2   (22.2%)
+
+Confidence Distribution (analyzed steps):
+  High   (>=0.85):  9 steps
+  Medium (>=0.60):  0 steps
+  Low    (<0.60):   0 steps
+  Avg confidence: 0.95
+
+Failure Type Breakdown:
+  system_error           1
+  element_missing        1
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+case1-passo-app:(STEP 5 MUST BE CORRECT, OTHER THAN STEP 5 EVERYTHING IS CORRECT)
+--- Analyzing Step 0 ---
+ PASSED: The 'Futbol' category is visible on the Passo main screen, confirming the screen loaded correctly.
+
+--- Analyzing Step 1 ---
+ PASSED: The action successfully navigated to the football section, confirming the click was registered.
+
+--- Analyzing Step 2 ---
+ PASSED: The action successfully navigated to the search results screen.
+
+--- Analyzing Step 3 ---
+ PASSED: The action succeeded as the search bar contains the expected text.
+
+--- Analyzing Step 4 ---
+ PASSED: The click action successfully navigated to the detailed match information screen.
+
+--- Analyzing Step 5 ---
+ FAILED: The button becoming inactive suggests a prerequisite action or selection is required before proceeding.
+    Expected: Clicking the 'Bilet Al' button should enable the button or navigate to the next step in the ticket purchasing process.
+    Observed: The 'Bilet Al' button became inactive (grayed out) and no navigation or new content appeared.
+
+--- Analyzing Step 6 ---
+ PASSED: The click action successfully increased the ticket quantity and updated the total price.
+
+--- Analyzing Step 7 ---
+ PASSED: The action successfully navigated to the block selection screen.
+
+--- Analyzing Step 8 ---
+ PASSED: The target block '102' was successfully selected, and the UI responded as expected.
+
+--- Analyzing Step 9 ---
+ PASSED: The action successfully navigated to the seat selection screen.
+
+--- Analyzing Step 10 ---
+ FAILED: The seat did not change state, possibly due to a prerequisite action or selection required before proceeding, similar to the prior failure in Step 5.
+    Expected: Clicking the black (unselectable) seat should change its state to green (selected) or trigger an error message.
+    Observed: The target element remained unchanged, still appearing as a black (unselectable) seat with no visual changes or overlays.
+
+========================================
+TEST COMPLETE. Scanned 11 steps.
+========================================
+
+FAILURE CHAIN ANALYSIS
+======================
+
+ISOLATED FAILURE:
+  Step 5 [action_failed]: The button becoming inactive suggests a prerequisite action or selection is required before proceeding.
+    Expected: Clicking the 'Bilet Al' button should enable the button or navigate to the next step in the ticket purchasing process.
+    Observed: The 'Bilet Al' button became inactive (grayed out) and no navigation or new content appeared.
+
+ISOLATED FAILURE:
+  Step 10 [action_failed]: The seat did not change state, possibly due to a prerequisite action or selection required before proceeding, similar to the prior failure in Step 5.
+    Expected: Clicking the black (unselectable) seat should change its state to green (selected) or trigger an error message.
+    Observed: The target element remained unchanged, still appearing as a black (unselectable) seat with no visual changes or overlays.
+
+Summary: 2 failures across 2 isolated
+
+
+SUMMARY
+=======
+Total steps:   11
+  Analyzed:    11
+  Skipped:     0
+  Passed:      9   (81.8%)
+  Failed:      2   (18.2%)
+
+Confidence Distribution (analyzed steps):
+  High   (>=0.85): 10 steps
+  Medium (>=0.60):  1 steps
+  Low    (<0.60):   0 steps
+  Avg confidence: 0.89
+
+Failure Type Breakdown:
+  action_failed          2
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+case2-bank-app:(STEP 6 MUST FAIL (SYSTEMATIC PROBLEM NOT ABOUT RULES) OTHER THAN STEP 6 EVERY STEPS ARE CORRECT)
+--- Analyzing Step 0 ---
+   [LOG] Step 0: inline logs present [g411]
+   [LOG] Observer: The logs indicate that the balance fetched from the account is 5250.00 TL, and the network request to retrieve the balance was successful with a status of 200 OK. There are no errors or anomalies present in the logs.
+ PASSED: The balance value was correctly verified as 5250.00 TL.
+
+--- Analyzing Step 1 ---
+ PASSED: The action successfully navigated to the 'Para Gönder' screen as expected.
+
+--- Analyzing Step 2 ---
+ PASSED: The action succeeded as the name 'Tuna' was correctly entered into the 'Alıcı adı' field.
+
+--- Analyzing Step 3 ---
+ PASSED: The input field was successfully updated with the value '300'.
+
+--- Analyzing Step 4 ---
+   [LOG] Step 4: inline logs present [g411]
+   [LOG] Observer: The logs indicate that a transaction was initiated with an amount of 300 to a recipient named Tuna, but the transaction failed due to a 500 Internal Server Error during the transfer request. [NET_FAIL, SYS_ERR]
+ FAILED: 500 Internal Server Error during the transfer request.
+    Expected: Clicking the 'Transfer' button should initiate the transfer process and navigate to a confirmation screen indicating success.
+    Observed: The app navigated to a confirmation screen indicating the transfer was successful, with an option to return to the dashboard.
+
+--- Analyzing Step 5 ---
+ PASSED: The 'Transfer Successful' message is visible as expected, confirming the action succeeded.
+
+--- Analyzing Step 6 ---
+ PASSED: The action successfully navigated to the main dashboard screen.
+
+--- Analyzing Step 7 ---
+   [LOG] Step 7: inline logs present [g411]
+   [LOG] Observer: The logs indicate that the balance verification step was executed successfully, fetching a total balance of 5250.00 TL with a successful network request.
+ FAILED: The target element was not visible, and no changes were observed in the screen state.
+    Expected: The screen should display the expected state or value confirming the prior action completed correctly.
+    Observed: The target element 'Bakiyeyi doğrula' is not visible in both PREV and POST screens, with no changes observed.
+
+========================================
+TEST COMPLETE. Scanned 8 steps.
+========================================
+
+FAILURE CHAIN ANALYSIS
+======================
+
+ISOLATED FAILURE:
+  Step 4 [system_error]: 500 Internal Server Error during the transfer request.
+    Expected: Clicking the 'Transfer' button should initiate the transfer process and navigate to a confirmation screen indicating success.
+    Observed: The app navigated to a confirmation screen indicating the transfer was successful, with an option to return to the dashboard.
+
+ISOLATED FAILURE:
+  Step 7 [element_missing]: The target element was not visible, and no changes were observed in the screen state.
+    Expected: The screen should display the expected state or value confirming the prior action completed correctly.
+    Observed: The target element 'Bakiyeyi doğrula' is not visible in both PREV and POST screens, with no changes observed.
+
+Summary: 2 failures across 2 isolated
+
+
+SUMMARY
+=======
+Total steps:   8
+  Analyzed:    8
+  Skipped:     0
+  Passed:      6   (75.0%)
+  Failed:      2   (25.0%)
+
+Confidence Distribution (analyzed steps):
+  High   (>=0.85):  8 steps
+  Medium (>=0.60):  0 steps
+  Low    (<0.60):   0 steps
+  Avg confidence: 0.92
+
+Failure Type Breakdown:
+  system_error           1
+  element_missing        1
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+case3-ticket-app:(CORRECT)
+--- Analyzing Step 0 ---
+ PASSED: The target element is present in both PREV and POST screens, confirming the action was successful.
+
+--- Analyzing Step 1 ---
+ PASSED: The login action succeeded, and the app navigated to the 'Home' screen as expected.
+
+--- Analyzing Step 2 ---
+   [LOG] Step 2: inline logs present [g411]
+   [LOG] Observer: The user successfully tapped on the 'Theater' category on the main screen, which aligns with the specified action and instruction in the step context.
+ FAILED: The click action was registered but did not trigger any UI response or navigation.
+    Expected: Clicking the 'Theater' category should navigate to the Theater section or update the screen to show Theater-related content.
+    Observed: The screen remained on the home page with no navigation or state change after the click.
+
+--- Analyzing Step 3 ---
+   [LOG] Step 3: inline logs present [g411]
+   [LOG] Observer: The user clicked on the 'Sports' category, which led to navigation to the Event List Screen. However, an overflow error occurred during the layout rendering, indicating a visual issue on the screen. [SYS_ERR]
+ FAILED: RenderFlex overflow error occurred during layout rendering, causing a visual issue. (Likely caused by Step 2)
+    Expected: Clicking the 'Sports' category should navigate to the 'Sports Events' screen and display a list of sports events.
+    Observed: The app navigated to the 'Sports Events' screen and displayed a list of sports events, but there was a text overflow issue on the first event card.
+
+--- Analyzing Step 4 ---
+   [LOG] Step 4: inline logs present [g411]
+   [LOG] Observer: The user successfully clicked the 'Details' button for the 'Madrid Falcons vs Rome Warriors' match, which resulted in navigation to the Event Detail Screen.
+ PASSED: The action succeeded as the app navigated to the correct Event Details screen.
+
+--- Analyzing Step 5 ---
+   [LOG] Step 5: inline logs present [g411]
+   [LOG] Observer: The user successfully tapped the 'Select Seats' button, which resulted in navigation to the Seat Selection Screen. No errors or network failures were detected during this action.
+ PASSED: The action successfully navigated to the Seat Selection screen, confirming the click was processed.
+
+--- Analyzing Step 6 ---
+   [LOG] Step 6: inline logs present [g411]
+   [LOG] Observer: The user attempted to click on an occupied seat (A3), but the action resulted in an error indicating that the seat is unavailable. This suggests that the seat was not selectable despite the instruction to verify its selection state. [SYS_ERR]
+ FAILED: The system error 'Seat unavailable' indicates the seat was not selectable, causing the action to fail.
+    Expected: Clicking the 'Dolu olan gri bir koltuğa' should change its state to selected, indicating a successful selection.
+    Observed: The screen remained unchanged with no seat selected or state altered.
+
+--- Analyzing Step 7 ---
+   [LOG] Step 7: inline logs present [g411]
+   [LOG] Observer: The logs indicate that the user successfully selected the available seat A1, which aligns with the action of clicking on an empty green chair and verifying its selection status.
+ PASSED: The seat selection action succeeded, with the seat changing state as expected.
+
+--- Analyzing Step 8 ---
+   [LOG] Step 8: inline logs present [g411]
+   [LOG] Observer: The user successfully clicked the 'Go to Cart' button and was navigated to the Cart Screen. No errors or network failures were detected during this step.
+ PASSED: The action successfully navigated to the Cart screen, displaying the expected checkout summary.
+
+--- Analyzing Step 9 ---
+ PASSED: The target element is present and displays the correct seat and price information.
+
+--- Analyzing Step 10 ---
+   [LOG] Step 10: inline logs present [g411]
+   [LOG] Observer: The user attempted to click the 'Confirm & Pay' button, but the payment process resulted in a server error with a status code of 500. This indicates that the payment could not be completed successfully. [NET_FAIL, SYS_ERR]
+ FAILED: Internal Server Error (HTTP 500) occurred during payment processing. (Likely caused by Step 6)
+    Expected: Clicking the 'Confirm & Pay' button should initiate the payment process and confirm the payment completion.
+    Observed: The 'Confirm & Pay' button was clicked, became disabled, and a processing indicator appeared, but the payment process resulted in a server error.
+
+========================================
+TEST COMPLETE. Scanned 11 steps.
+========================================
+
+FAILURE CHAIN ANALYSIS
+======================
+
+FAILURE CHAIN 1: (2 steps)
+  Step 2 -> Step 3
+  Root: Step 2 [action_failed] - The click action was registered but did not trigger any UI response or navigation.
+  Step 3 [system_error] - RenderFlex overflow error occurred during layout rendering, causing a visual issue. (Likely caused by Step 2) (caused by Step 2)
+
+FAILURE CHAIN 2: (2 steps)
+  Step 6 -> Step 10
+  Root: Step 6 [action_failed] - The system error 'Seat unavailable' indicates the seat was not selectable, causing the action to fail.
+  Step 10 [system_error] - Internal Server Error (HTTP 500) occurred during payment processing. (Likely caused by Step 6) (caused by Step 6)
+
+Summary: 4 failures across 2 chain(s)
+
+
+SUMMARY
+=======
+Total steps:   11
+  Analyzed:    11
+  Skipped:     0
+  Passed:      7   (63.6%)
+  Failed:      4   (36.4%)
+
+Confidence Distribution (analyzed steps):
+  High   (>=0.85): 11 steps
+  Medium (>=0.60):  0 steps
+  Low    (<0.60):   0 steps
+  Avg confidence: 0.94
+
+Failure Type Breakdown:
+  action_failed          2
+  system_error           2
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+case4-rent-a-car-app: (STEP 8 MUST FAIL, OTHER THAN STEP 8 EVERY STEP IS CORRECTLY ANALYZED)
+DESCRIBER-DECIDER SCAN STARTED... /content/drive/MyDrive/Grad Project/case4-rent-a-car-app
+[Adapter] Detected Group 411 format — normalizing rent_a_car_fail.json
+Log parser: format=none, mode=empty
+
+--- Analyzing Step 0 ---
+ PASSED: The app's main screen is displayed as expected, confirming the verification step succeeded.
+
+--- Analyzing Step 1 ---
+ PASSED: The cities were successfully selected as instructed, and the screen state updated correctly.
+
+--- Analyzing Step 2 ---
+   [LOG] Step 2: inline logs present [g411]
+   [LOG] Observer: The logs indicate that the user successfully selected the purchase date as '14 Nisan' and the delivery date as '17 Nisan' for the year 2026. There are no errors or network failures recorded during this step.
+ PASSED: The action successfully selected the correct dates and enabled the button.
+
+--- Analyzing Step 3 ---
+ PASSED: The action successfully navigated to the vehicle selection screen as expected.
+
+--- Analyzing Step 4 ---
+ PASSED: The vehicle list screen is displayed as expected with no changes, confirming the verification step succeeded.
+
+--- Analyzing Step 5 ---
+   [LOG] Step 5: inline logs present [g411]
+   [LOG] Observer: The logs indicate that the action to click the 'Kirala' button for the 'Mercedes-Benz G-Class' vehicle was blocked due to a requirement for a special corporate account for intercity drop-off in Izmir. This resulted in an error preventing the intended action from being completed. [SYS_ERR]
+ FAILED: The action was blocked due to a requirement for a special corporate account for intercity drop-off in Izmir, as indicated by the system error log.
+    Expected: Clicking the 'Kirala' button next to 'Mercedes-Benz G-Class' should initiate a UI change indicating the rental process has started.
+    Observed: The 'Kirala' button remained visible and active with no UI change observed, indicating the action did not proceed.
+
+--- Analyzing Step 6 ---
+ PASSED: The action successfully navigated to the payment screen with the correct reservation details.
+
+--- Analyzing Step 7 ---
+ PASSED: The total amount for the 3-day rental and insurance is correctly displayed as ₺17000.00.
+
+--- Analyzing Step 8 ---
+ PASSED: The promotional code 'DISCOUNT20' was successfully entered into the input field.
+
+--- Analyzing Step 9 ---
+ FAILED: The UI failed to update the total amount despite confirming the discount application. (Likely caused by Step 5)
+    Expected: Clicking the 'Uygula' button should apply a 20% discount and update the total amount displayed.
+    Observed: The discount message 'Tebrikler! %20 indirim uygulandı!' appeared, but the total amount remained as ₺17000.00.
+
+--- Analyzing Step 10 ---
+   [LOG] Step 10: inline logs present [g411]
+   [LOG] Observer: The logs indicate that a payment action was attempted but resulted in a 504 Gateway Timeout error, suggesting that the payment gateway in the İzmir region failed to respond in a timely manner. [NET_FAIL, SYS_ERR]
+ FAILED: The payment gateway in the İzmir region failed to respond, causing a 504 Gateway Timeout error. (Likely caused by Step 9)
+    Expected: Clicking the 'Onayla ve Öde' button should initiate the payment process and navigate to a confirmation screen indicating a successful payment.
+    Observed: The 'Onayla ve Öde' button remained visible with no change in screen state, and the payment process did not complete due to a 504 Gateway Timeout error.
+
+========================================
+TEST COMPLETE. Scanned 11 steps.
+========================================
+
+FAILURE CHAIN ANALYSIS
+======================
+
+FAILURE CHAIN 1: (3 steps)
+  Step 5 -> Step 9 -> Step 10
+  Root: Step 5 [action_failed] - The action was blocked due to a requirement for a special corporate account for intercity drop-off in Izmir, as indicated by the system error log.
+  Step 9 [content_mismatch] - The UI failed to update the total amount despite confirming the discount application. (Likely caused by Step 5) (caused by Step 5)
+  Step 10 [system_error] - The payment gateway in the İzmir region failed to respond, causing a 504 Gateway Timeout error. (Likely caused by Step 9) (caused by Step 9)
+
+Summary: 3 failures across 1 chain(s)
+
+
+SUMMARY
+=======
+Total steps:   11
+  Analyzed:    11
+  Skipped:     0
+  Passed:      8   (72.7%)
+  Failed:      3   (27.3%)
+
+Confidence Distribution (analyzed steps):
+  High   (>=0.85): 10 steps
+  Medium (>=0.60):  1 steps
+  Low    (<0.60):   0 steps
+  Avg confidence: 0.90
+
+Failure Type Breakdown:
+  action_failed          1
+  content_mismatch       1
+  system_error           1
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+case5-wikipedia-website:(CORRECT)
+DESCRIBER-DECIDER SCAN STARTED... /content/drive/MyDrive/Grad Project/case5-wikipedia-website
+[Adapter] Detected Group 411 format — normalizing wikipedia_fail.json
+Log parser: format=none, mode=empty
+
+--- Analyzing Step 0 ---
+ PASSED: The target element 'Vikipedi' is present as expected, confirming the verification was successful.
+
+--- Analyzing Step 1 ---
+ PASSED: The menu expanded successfully upon clicking, revealing additional options.
+
+--- Analyzing Step 2 ---
+ PASSED: The navigation to the 'About' page was successful.
+
+--- Analyzing Step 3 ---
+ PASSED: The click action successfully expanded the language selection dropdown.
+
+--- Analyzing Step 4 ---
+ FAILED: The target element was not present on the screen, leading to the action not being executed.
+    Expected: Clicking the 'Osmanlı padişahı 3. Murad tahta çıktı seç.' item should select it and navigate to the next step in the flow.
+    Observed: The screen remains on the Wikipedia 'Hakkında' page with no visible change or navigation.
+
+========================================
+TEST COMPLETE. Scanned 5 steps.
+========================================
+
+FAILURE CHAIN ANALYSIS
+======================
+
+ISOLATED FAILURE:
+  Step 4 [element_missing]: The target element was not present on the screen, leading to the action not being executed.
+    Expected: Clicking the 'Osmanlı padişahı 3. Murad tahta çıktı seç.' item should select it and navigate to the next step in the flow.
+    Observed: The screen remains on the Wikipedia 'Hakkında' page with no visible change or navigation.
+
+Summary: 1 failures across 1 isolated
+
+
+SUMMARY
+=======
+Total steps:   5
+  Analyzed:    5
+  Skipped:     0
+  Passed:      4   (80.0%)
+  Failed:      1   (20.0%)
+
+Confidence Distribution (analyzed steps):
+  High   (>=0.85):  5 steps
+  Medium (>=0.60):  0 steps
+  Low    (<0.60):   0 steps
+  Avg confidence: 0.90
+
+Failure Type Breakdown:
+  element_missing        1
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+

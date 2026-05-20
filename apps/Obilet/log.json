@@ -1,0 +1,92 @@
+[
+  {
+    "step": {
+      "action": "waitUntil",
+      "stepInstruction": "Wait for the Obilet splash screen to load."
+    },
+    "currScreenshot": "BASE64_DATA_HERE",
+    "prevScreenshot": "BASE64_DATA_HERE",
+    "status": "PASSED",
+    "logs": "timestamp: 2026-04-08T11:08:01.100Z | level: INFO | source: system | trace_id: trc_init_1a | thread: main-ui | screen: SplashActivity | event_type: LIFECYCLE | message: App launched."
+  },
+  {
+    "step": {
+      "action": "waitUntil",
+      "stepInstruction": "Wait for the Category Selection dashboard."
+    },
+    "currScreenshot": "BASE64_DATA_HERE",
+    "prevScreenshot": "BASE64_DATA_HERE",
+    "status": "PASSED",
+    "logs": "timestamp: 2026-04-08T11:12:05.150Z | level: INFO | source: application | trace_id: trc_init_1a | thread: main-ui | screen: HomeActivity | event_type: UI_STATE_CHANGE | message: Dashboard rendered."
+  },
+  {
+    "step": {
+      "action": "click",
+      "stepInstruction": "Switch to 'Bus' and set route Istanbul to Ankara for 10 April."
+    },
+    "currScreenshot": "BASE64_DATA_HERE",
+    "prevScreenshot": "BASE64_DATA_HERE",
+    "status": "PASSED",
+    "logs": "timestamp: 2026-04-08T11:12:15.200Z | level: INFO | source: application | trace_id: trc_search_2b | thread: main-ui | screen: HomeActivity | event_type: UI_INTERACTION | message: Selected 'Bus' tab."
+  },
+  {
+    "step": {
+      "action": "click",
+      "stepInstruction": "Click the green 'SEARCH' button."
+    },
+    "currScreenshot": "BASE64_DATA_HERE",
+    "prevScreenshot": "BASE64_DATA_HERE",
+    "status": "PASSED",
+    "logs": "timestamp: 2026-04-08T11:13:01.300Z | level: INFO | source: network | trace_id: trc_search_2b | thread: network-pool-1 | screen: HomeActivity | event_type: NETWORK_REQUEST | message: GET /api/v3/bus/search?from=34&to=06."
+  },
+  {
+    "step": {
+      "action": "click",
+      "stepInstruction": "Click the 'FILTER' button."
+    },
+    "currScreenshot": "BASE64_DATA_HERE",
+    "prevScreenshot": "BASE64_DATA_HERE",
+    "status": "PASSED",
+    "logs": "timestamp: 2026-04-08T11:14:05.400Z | level: INFO | source: application | trace_id: trc_filter_3c | thread: main-ui | screen: SearchResultsActivity | event_type: UI_INTERACTION | message: Filter modal triggered."
+  },
+  {
+    "step": {
+      "action": "click",
+      "stepInstruction": "Filter by 'Aksu', 'Anka', and 'Ben Turizm'."
+    },
+    "currScreenshot": "BASE64_DATA_HERE",
+    "prevScreenshot": "BASE64_DATA_HERE",
+    "status": "PASSED",
+    "logs": "timestamp: 2026-04-08T11:16:12.500Z | level: INFO | source: application | trace_id: trc_filter_3c | thread: main-ui | screen: FilterBottomSheet | event_type: UI_INTERACTION | message: Applied multi-company filter."
+  },
+  {
+    "step": {
+      "action": "click",
+      "stepInstruction": "Select the 22:00 AKSU trip."
+    },
+    "currScreenshot": "BASE64_DATA_HERE",
+    "prevScreenshot": "BASE64_DATA_HERE",
+    "status": "PASSED",
+    "logs": "timestamp: 2026-04-08T11:16:45.600Z | level: INFO | source: application | trace_id: trc_book_4d | thread: main-ui | screen: SearchResultsActivity | event_type: UI_INTERACTION | message: Expanded trip AKSU_2200."
+  },
+  {
+    "step": {
+      "action": "click",
+      "stepInstruction": "Select Seat 12 and click the 'Confirm and Continue' button."
+    },
+    "currScreenshot": "BASE64_DATA_HERE",
+    "prevScreenshot": "BASE64_DATA_HERE",
+    "status": "FAILED",
+    "logs": "timestamp: 2026-04-08T11:17:45.700Z | level: INFO | source: application | trace_id: trc_res_5e | thread: main-ui | screen: SeatSelectionScreen | event_type: UI_INTERACTION | message: Tapped 'Confirm and Continue' at [540, 1820].\ntimestamp: 2026-04-08T11:17:45.850Z | level: INFO | source: network | trace_id: trc_res_5e | thread: network-pool-2 | screen: SeatSelectionScreen | event_type: NETWORK_REQUEST | message: POST /api/v3/bus/reserve-seat (Seat:12).\ntimestamp: 2026-04-08T11:18:15.900Z | level: ERROR | source: network | trace_id: trc_res_5e | thread: network-pool-2 | screen: SeatSelectionScreen | event_type: NETWORK_ERROR | message: 504 Gateway Timeout. Upstream reservation service timed out."
+  },
+  {
+    "step": {
+      "action": "waitUntil",
+      "stepInstruction": "Wait for the Passenger Information form to load."
+    },
+    "currScreenshot": "BASE64_DATA_HERE",
+    "prevScreenshot": "BASE64_DATA_HERE",
+    "status": "FAILED",
+    "logs": "timestamp: 2026-04-08T11:18:16.100Z | level: ERROR | source: application | trace_id: trc_res_5e | thread: main-ui | screen: SeatSelectionScreen | event_type: UI_STALL | message: Navigation to PassengerDetailsActivity blocked by failed reservation dependency."
+  }
+]

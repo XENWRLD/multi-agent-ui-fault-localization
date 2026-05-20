@@ -1,0 +1,147 @@
+{
+  "processed_step_count": 11,
+  "status_summary": {
+    "pass": 7,
+    "fail": 4,
+    "unknown": 0,
+    "confidence": {
+      "high": 10,
+      "medium": 1,
+      "low": 0
+    }
+  },
+  "steps": [
+    {
+      "step_index": 1,
+      "status": "PASS",
+      "confidence": 0.85,
+      "confidence_label": "high",
+      "reason": "The instruction is to verify that the app is open and the main screen is visible. Both pre and post images are identical and clearly show the main screen of the app. The instruction is valid and the visual evidence supports it.",
+      "pre_ocr_text": "Rent a Car Türkiye genelinde şehirler arası üst düzey araç kiralama deneyimi. Yeni Nesil Rezervasyon Şehirler arası premium yolculuğunuzu birkaç dokunuşla hazırlayın. O Alış © Birakis Şehir seçin Şehir seçin Rotanızı Planlayın Yolculuğu ...",
+      "post_ocr_text": "Rent a Car Türkiye genelinde şehirler arası üst düzey araç kiralama deneyimi. Yeni Nesil Rezervasyon Şehirler arası premium yolculuğunuzu birkaç dokunuşla hazırlayın. O Alış © Birakis Şehir seçin Şehir seçin Rotanızı Planlayın Yolculuğu ..."
+    },
+    {
+      "step_index": 2,
+      "status": "PASS",
+      "confidence": 0.85,
+      "confidence_label": "high",
+      "reason": "The instruction to select 'İstanbul' as the pickup city and 'İzmir' as the drop-off city is valid. The pre-image shows the options to select cities, and the post-image confirms the selection of 'İstanbul' and 'İzmir'. The visual change is evident, and there are no errors in the logs.",
+      "pre_ocr_text": "Rent a Car Türkiye genelinde şehirler arası üst düzey araç kiralama deneyimi. Yeni Nesil Rezervasyon Şehirler arası premium yolculuğunuzu birkaç dokunuşla hazırlayın. O Alış © Birakis Şehir seçin Şehir seçin Rotanızı Planlayın Yolculuğu ...",
+      "post_ocr_text": "Rent a Car Türkiye genelinde şehirler arası üst düzey araç kiralama deneyimi. Yeni Nesil Rezervasyon Şehirler arası premium yolculuğunuzu birkaç dokunuşla hazırlayın. O Alış © Birakis İstanbul İzmir Rotanızı Planlayın Yolculuğu başlatmak..."
+    },
+    {
+      "step_index": 3,
+      "status": "PASS",
+      "confidence": 0.85,
+      "confidence_label": "high",
+      "reason": "The instruction to select dates '14 Nisan' and '17 Nisan' was executed correctly. The pre-image shows no dates selected, while the post-image shows the correct dates selected. Console logs confirm the selection of the specified dates.",
+      "pre_ocr_text": "< Tarih Seç Araçları listelemeden önce tarih aralığınızı belirleyin. Seyahat Tarihi Başlangıç ve dönüş tarihlerini kendiniz seçin. >) Alış Tarihi (> Bırakış Tarihi Tarih seçin Tarih seçin Tarih aralığı henüz seçilmedi Lütfen iki tarihi d...",
+      "post_ocr_text": "< Tarih Seç Araçları listelemeden önce tarih aralığınızı belirleyin. Seyahat Tarihi Başlangıç ve dönüş tarihlerini kendiniz seçin. >) Alış Tarihi (> Bırakış Tarihi 14 Nis 2026 17 Nis 2026 m 14 Nis 2026 e 17 Nis 2026 3 gün, İstanbul alış ...",
+      "console_log_text": "Alış tarihi 14 Nis 2026 olarak seçildi. Teslim tarihi 17 Nis 2026 olarak seçildi."
+    },
+    {
+      "step_index": 4,
+      "status": "PASS",
+      "confidence": 0.85,
+      "confidence_label": "high",
+      "reason": "The instruction to click 'Araçları Listele' and verify transition to the vehicle list screen is valid. The pre-image shows the 'Araçları Listele' button, and the post-image shows a different screen with vehicle options, indicating a successful transition.",
+      "pre_ocr_text": "< Tarih Seç Araçları listelemeden önce tarih aralığınızı belirleyin. Seyahat Tarihi Başlangıç ve dönüş tarihlerini kendiniz seçin. >) Alış Tarihi (> Bırakış Tarihi 14 Nis 2026 17 Nis 2026 m 14 Nis 2026 e 17 Nis 2026 3 gün, İstanbul alış ...",
+      "post_ocr_text": "< Aracınızı Seçin Bu şehirler arası premium senaryoda yalnızca bir araç müsait. Mercedes-Benz G-Class a Kilitli Sadece Kurumsal : Kısıtlı | Kirala Kurumsal Erişim Gerekli BMW M4 a Kilitli Sadece Kurumsal : Kısıtlı Kurumsal Erişim Gerekli..."
+    },
+    {
+      "step_index": 5,
+      "status": "PASS",
+      "confidence": 0.85,
+      "confidence_label": "high",
+      "reason": "The instruction is to verify that the 'Araç Listesi' screen is loaded and vehicles are listed. Both pre and post images show the same list of vehicles, confirming the screen is loaded as expected. No visual change is required for this verification step.",
+      "pre_ocr_text": "< Aracınızı Seçin Bu şehirler arası premium senaryoda yalnızca bir araç müsait. Mercedes-Benz G-Class a Kilitli Sadece Kurumsal : Kısıtlı | Kirala Kurumsal Erişim Gerekli BMW M4 a Kilitli Sadece Kurumsal : Kısıtlı Kurumsal Erişim Gerekli...",
+      "post_ocr_text": "< Aracınızı Seçin Bu şehirler arası premium senaryoda yalnızca bir araç müsait. Mercedes-Benz G-Class a Kilitli Sadece Kurumsal : Kısıtlı | Kirala Kurumsal Erişim Gerekli BMW M4 a Kilitli Sadece Kurumsal : Kısıtlı Kurumsal Erişim Gerekli..."
+    },
+    {
+      "step_index": 6,
+      "status": "FAIL",
+      "confidence": 0.9,
+      "confidence_label": "high",
+      "reason": "The 'Kirala' button was clicked, but there was no visual change in the UI. Console logs indicate an error due to a requirement for a special corporate account, preventing the action.",
+      "pre_ocr_text": "< Aracınızı Seçin Bu şehirler arası premium senaryoda yalnızca bir araç müsait. Mercedes-Benz G-Class a Kilitli Sadece Kurumsal : Kısıtlı | Kirala Kurumsal Erişim Gerekli BMW M4 a Kilitli Sadece Kurumsal : Kısıtlı Kurumsal Erişim Gerekli...",
+      "post_ocr_text": "< Aracınızı Seçin Bu şehirler arası premium senaryoda yalnızca bir araç müsait. Mercedes-Benz G-Class a Kilitli Sadece Kurumsal : Kısıtlı | Kirala Kurumsal Erişim Gerekli BMW M4 a Kilitli Sadece Kurumsal : Kısıtlı Kurumsal Erişim Gerekli...",
+      "console_log_text": "HATA: 'Mercedes-Benz G-Class' aracı, İzmir'e şehirler arası bırakış için özel bir kurumsal hesap gerektiriyor. İşlem engellendi."
+    },
+    {
+      "step_index": 7,
+      "status": "PASS",
+      "confidence": 0.75,
+      "confidence_label": "medium",
+      "reason": "The instruction to select 'Porsche 911 Carrera' is valid as it is visible in the pre-image. The post-image shows a transition to the payment screen, indicating a successful selection.",
+      "pre_ocr_text": "< Aracınızı Seçin Bu şehirler arası premium senaryoda yalnızca bir araç müsait. Mercedes-Benz G-Class a Kilitli Sadece Kurumsal : Kısıtlı | Kirala Kurumsal Erişim Gerekli BMW M4 a Kilitli Sadece Kurumsal : Kısıtlı Kurumsal Erişim Gerekli...",
+      "post_ocr_text": "< Odeme Rezervasyonunuzu inceleyin ve ödeme simülasyonunu tamamlayın. Rezervasyon Özeti 3 günlük İstanbul - İzmir yolculuğu için Porsche 911 Carrera. Kiralama Süresi 3 gün Ara Toplam £15000.00 Tam Sigorta £2000.00 Toplam Tutar £17000.00 ..."
+    },
+    {
+      "step_index": 8,
+      "status": "PASS",
+      "confidence": 0.85,
+      "confidence_label": "high",
+      "reason": "The instruction is to verify the 'Toplam Tutar' on the cart screen. Both pre and post images show the same total amount of £17000.00, which matches the expected value. No visual change is required for this verification step, and the UI state is clearly visible.",
+      "pre_ocr_text": "< Odeme Rezervasyonunuzu inceleyin ve ödeme simülasyonunu tamamlayın. Rezervasyon Özeti 3 günlük İstanbul - İzmir yolculuğu için Porsche 911 Carrera. Kiralama Süresi 3 gün Ara Toplam £15000.00 Tam Sigorta £2000.00 Toplam Tutar £17000.00 ...",
+      "post_ocr_text": "< Odeme Rezervasyonunuzu inceleyin ve ödeme simülasyonunu tamamlayın. Rezervasyon Özeti 3 günlük İstanbul - İzmir yolculuğu için Porsche 911 Carrera. Kiralama Süresi 3 gün Ara Toplam £15000.00 Tam Sigorta £2000.00 Toplam Tutar £17000.00 ..."
+    },
+    {
+      "step_index": 9,
+      "status": "FAIL",
+      "confidence": 0.8,
+      "confidence_label": "high",
+      "reason": "The instruction to type 'DISCOUNT20' was executed, but there was no meaningful visual change in the total amount, which should have been affected by the promo code. The total amount remains the same, indicating a failure in applying the discount.",
+      "pre_ocr_text": "< Odeme Rezervasyonunuzu inceleyin ve ödeme simülasyonunu tamamlayın. Rezervasyon Özeti 3 günlük İstanbul - İzmir yolculuğu için Porsche 911 Carrera. Kiralama Süresi 3 gün Ara Toplam £15000.00 Tam Sigorta £2000.00 Toplam Tutar £17000.00 ...",
+      "post_ocr_text": "< Odeme Rezervasyonunuzu inceleyin ve ödeme simülasyonunu tamamlayın. Rezervasyon Özeti 3 günlük İstanbul - İzmir yolculuğu için Porsche 911 Carrera. Kiralama Süresi 3 gün Ara Toplam £15000.00 Tam Sigorta £2000.00 Toplam Tutar 117000.00 ..."
+    },
+    {
+      "step_index": 10,
+      "status": "FAIL",
+      "confidence": 0.8,
+      "confidence_label": "high",
+      "reason": "The instruction expects the total amount to be updated with a 20% discount. However, the total amount remains unchanged at £17000.00 in the post-image. The visual change only indicates a message confirming the discount, but the actual amount does not reflect this change.",
+      "pre_ocr_text": "< Odeme Rezervasyonunuzu inceleyin ve ödeme simülasyonunu tamamlayın. Rezervasyon Özeti 3 günlük İstanbul - İzmir yolculuğu için Porsche 911 Carrera. Kiralama Süresi 3 gün Ara Toplam £15000.00 Tam Sigorta £2000.00 Toplam Tutar 117000.00 ...",
+      "post_ocr_text": "< Ödeme Rezervasyonunuzu inceleyin ve ödeme simülasyonunu tamamlayın. Rezervasyon Özeti 3 günlük İstanbul - İzmir yolculuğu için Porsche 911 Carrera. Kiralama Süresi 3 gün Ara Toplam £15000.00 Tam Sigorta £2000.00 Toplam Tutar 117000.00 ..."
+    },
+    {
+      "step_index": 11,
+      "status": "FAIL",
+      "confidence": 0.9,
+      "confidence_label": "high",
+      "reason": "The 'Onayla ve Öde' button was clicked, but there was no visual change indicating a successful payment. Network logs show a 504 Gateway Timeout error, suggesting a backend failure.",
+      "pre_ocr_text": "< Ödeme Rezervasyonunuzu inceleyin ve ödeme simülasyonunu tamamlayın. Rezervasyon Özeti 3 günlük İstanbul - İzmir yolculuğu için Porsche 911 Carrera. Kiralama Süresi 3 gün Ara Toplam £15000.00 Tam Sigorta £2000.00 Toplam Tutar 117000.00 ...",
+      "post_ocr_text": "< Ödeme Rezervasyonunuzu inceleyin ve ödeme simülasyonunu tamamlayın. Rezervasyon Özeti 3 günlük İstanbul - İzmir yolculuğu için Porsche 911 Carrera. Kiralama Süresi 3 gün Ara Toplam £15000.00 Tam Sigorta £2000.00 Toplam Tutar 117000.00 ...",
+      "network_log_text": "POST /api/v1/payment. POST /api/v1/payment - 504 Gateway Timeout: İzmir bölgesinde ödeme ağ geçidi zaman aşımına uğradı."
+    }
+  ],
+  "failures": [
+    {
+      "step_index": 6,
+      "type": "Backend Failure",
+      "reason": "The action was blocked due to a requirement for a special corporate account. (Root Cause: The system requires a special corporate account for this action, which was not provided, leading to the failure.)",
+      "confidence": 0.9,
+      "confidence_label": "high"
+    },
+    {
+      "step_index": 9,
+      "type": "UI Failure",
+      "reason": "Promo code 'DISCOUNT20' was entered but did not affect the total amount. (Root Cause: The promo code application logic might be faulty or not triggered properly.)",
+      "confidence": 0.8,
+      "confidence_label": "high"
+    },
+    {
+      "step_index": 10,
+      "type": "UI Failure",
+      "reason": "Total amount not updated after applying discount. (Root Cause: The discount application logic might not be correctly updating the total amount displayed on the UI.)",
+      "confidence": 0.8,
+      "confidence_label": "high"
+    },
+    {
+      "step_index": 11,
+      "type": "Backend Failure",
+      "reason": "Payment gateway timeout in the İzmir region. (Root Cause: The backend payment service is not responding, causing the payment process to fail.)",
+      "confidence": 0.9,
+      "confidence_label": "high"
+    }
+  ]
+}

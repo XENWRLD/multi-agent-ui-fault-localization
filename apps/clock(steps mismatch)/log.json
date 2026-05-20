@@ -1,0 +1,129 @@
+[
+  {
+    "timestamp": "2026-04-14T02:55:01",
+    "level": "INFO",
+    "step": 0,
+    "event": "app_launch",
+    "message": "Clock app launched successfully"
+  },
+  {
+    "timestamp": "2026-04-14T02:55:02",
+    "level": "INFO",
+    "step": 0,
+    "event": "ui_render",
+    "message": "Alarms screen rendered"
+  },
+
+  {
+    "timestamp": "2026-04-14T02:56:00",
+    "level": "INFO",
+    "step": 1,
+    "event": "navigation",
+    "message": "User navigated to Stopwatch tab"
+  },
+  {
+    "timestamp": "2026-04-14T02:56:01",
+    "level": "INFO",
+    "step": 1,
+    "event": "ui_render",
+    "message": "Stopwatch screen displayed with Start button"
+  },
+
+  {
+    "timestamp": "2026-04-14T02:56:05",
+    "level": "INFO",
+    "step": 2,
+    "event": "user_action",
+    "message": "Start button pressed"
+  },
+  {
+    "timestamp": "2026-04-14T02:56:06",
+    "level": "INFO",
+    "step": 2,
+    "event": "state_change",
+    "message": "Stopwatch started"
+  },
+
+  {
+    "timestamp": "2026-04-14T02:56:07",
+    "level": "DEBUG",
+    "step": 3,
+    "event": "timer_tick",
+    "message": "Elapsed time: 00:00.01"
+  },
+  {
+    "timestamp": "2026-04-14T02:56:08",
+    "level": "DEBUG",
+    "step": 3,
+    "event": "timer_tick",
+    "message": "Elapsed time: 00:01.00"
+  },
+
+  {
+    "timestamp": "2026-04-14T02:56:10",
+    "level": "INFO",
+    "step": 4,
+    "event": "user_action",
+    "message": "timer length changed to 19 minutes"
+  },
+  {
+    "timestamp": "2026-04-14T02:56:11",
+    "level": "INFO",
+    "step": 4,
+    "event": "state_change",
+    "message": "timer length changed to 31 minutes"
+  },
+
+  {
+    "timestamp": "2026-04-14T02:57:00",
+    "level": "INFO",
+    "step": 5,
+    "event": "navigation",
+    "message": "User navigated to Timers tab"
+  },
+  {
+    "timestamp": "2026-04-14T02:57:01",
+    "level": "INFO",
+    "step": 5,
+    "event": "ui_render",
+    "message": "Timer screen displayed"
+  },
+
+  {
+    "timestamp": "2026-04-14T02:57:10",
+    "level": "INFO",
+    "step": 6,
+    "event": "user_action",
+    "message": "Timer set to 31 minutes"
+  },
+  {
+    "timestamp": "2026-04-14T02:57:11",
+    "level": "INFO",
+    "step": 6,
+    "event": "state_change",
+    "message": "Timer started"
+  },
+
+  {
+    "timestamp": "2026-04-14T02:58:00",
+    "level": "DEBUG",
+    "step": 7,
+    "event": "timer_tick",
+    "message": "Remaining time: 30:54"
+  },
+
+  {
+    "timestamp": "2026-04-14T02:58:30",
+    "level": "INFO",
+    "step": 8,
+    "event": "navigation",
+    "message": "User navigated to World Clock tab"
+  },
+  {
+    "timestamp": "2026-04-14T02:58:31",
+    "level": "INFO",
+    "step": 8,
+    "event": "ui_render",
+    "message": "World Clock displayed for Istanbul"
+  }
+]

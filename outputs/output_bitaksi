@@ -1,0 +1,156 @@
+CORRECT OUTPUT:
+DESCRIBER-DECIDER SCAN STARTED... /content/drive/MyDrive/Grad Project/bitaksi_correct
+Log parser: format=flat_assertions, mode=preassigned
+  Pre-assigned entries across 10 step bucket(s).
+  [WARN] 1 trailing entries after final StepRunner marker were not assigned (likely scenario summary)
+  [WARN] log contains 10 StepRunner markers but steps.json has 9 steps — log may be from a different test run; step-to-log mapping may be semantically misaligned
+
+--- Step 0 [SKIPPED — action=waitUntil, requires_vlm=False] ---
+
+--- Analyzing Step 1 ---
+   [LOG] Step 1: 4 entries [preassigned:flat_assertions]
+   [LOG] Observer: The logs indicate that a tap was detected on the 'Where to?' element, leading to navigation to the address search screen, which was rendered successfully. The step was confirmed as passed, indicating that the action was executed as intended.
+ PASSED: The action succeeded as the search input field was activated and the keyboard appeared.
+
+--- Analyzing Step 2 ---
+   [LOG] Step 2: 4 entries [preassigned:flat_assertions]
+   [LOG] Observer: The logs indicate that a tap action was successfully detected on the 'Save Button', leading to the saving of the home address. The process completed without any errors, and the address was saved successfully.
+ PASSED: The action succeeded as the app navigated to the next screen after saving the address.
+
+--- Analyzing Step 3 ---
+   [LOG] Step 3: 2 entries [preassigned:flat_assertions]
+   [LOG] Observer: The logs indicate that Step 3 was executed successfully, with a placeholder message logged and an assertion confirming that the step passed. No errors or network failures were recorded during this step.
+ PASSED: The 'Lux' ride option was successfully selected with updated wait time.
+
+--- Analyzing Step 4 ---
+   [LOG] Step 4: 5 entries [preassigned:flat_assertions]
+   [LOG] Observer: The logs indicate that a user interaction occurred where a tap was detected on an element labeled 'Büyük Çamlıca Cami'. Following this, the selected address was confirmed, and the step passed successfully, indicating that the search result was selected without any errors.
+ PASSED: The action succeeded as the app navigated to the 'Profile information' screen and displayed the expected account details.
+
+--- Analyzing Step 5 ---
+   [LOG] Step 5: 2 entries [preassigned:flat_assertions]
+   [LOG] Observer: The logs indicate that a tap was detected on the 'Home' element, and Step 5 passed, confirming that the Home screen was opened successfully. However, there is no log entry related to the 'Save button' action specified in the step context.
+ PASSED: The action succeeded as the profile was updated and a confirmation notification was displayed.
+
+--- Analyzing Step 6 ---
+   [LOG] Step 6: 2 entries [preassigned:flat_assertions]
+   [LOG] Observer: The logs indicate that a tap was detected on the 'Save' element, and the assertion for Step 6 confirmed that the home address was saved successfully. However, there is no log entry indicating the action to click on 'Trip history'.
+ PASSED: The action successfully navigated to the 'Trip history' screen, displaying the expected content.
+
+--- Analyzing Step 7 ---
+   [LOG] Step 7: 1 entries [preassigned:flat_assertions]
+   [LOG] Observer: The logs indicate that the test step involving the action of clicking on 'Payment methods' was executed successfully, as evidenced by the assertion that Step 7 passed with the destination field reopened.
+ PASSED: The action succeeded as the app navigated to the correct screen displaying payment methods.
+
+--- Analyzing Step 8 ---
+   [LOG] Step 8: 1 entries [preassigned:flat_assertions]
+   [LOG] Observer: The logs indicate that the action to click the 'Delete' button was executed successfully, as evidenced by the assertion that Step 8 passed with the destination address selected.
+ PASSED: The action succeeded as the delete overlay was dismissed and the app returned to the main screen.
+
+========================================
+TEST COMPLETE. Scanned 9 steps.
+========================================
+
+FAILURE CHAIN ANALYSIS
+======================
+ALL PASSED.
+
+
+SUMMARY
+=======
+Total steps:   9
+  Analyzed:    8
+  Skipped:     1
+  Passed:      8   (100.0%)
+  Failed:      0   (0.0%)
+
+Confidence Distribution (analyzed steps):
+  High   (>=0.85):  8 steps
+  Medium (>=0.60):  0 steps
+  Low    (<0.60):   0 steps
+  Avg confidence: 0.94
+
+
+
+CURRENT OUTPUT:(CORRECT EXCEPT STEP3)
+DESCRIBER-DECIDER SCAN STARTED... /content/drive/MyDrive/Grad Project/bitaksi_correct
+Log parser: format=flat_assertions, mode=preassigned
+  Pre-assigned entries across 10 step bucket(s).
+  [WARN] 1 trailing entries after final StepRunner marker were not assigned (likely scenario summary)
+  [WARN] log contains 10 StepRunner markers but steps.json has 9 steps — log may be from a different test run; step-to-log mapping may be semantically misaligned
+
+--- Step 0 [SKIPPED — action=waitUntil, requires_vlm=False] ---
+
+--- Analyzing Step 1 ---
+   [LOG] Step 1: 4 entries [preassigned:flat_assertions]
+   [LOG] Observer: The logs indicate that a tap action was detected on the search input field, leading to navigation to the address search screen, which was rendered successfully. The step was confirmed as passed, indicating that the expected behavior occurred without any issues.
+ PASSED: The search input field was successfully activated for typing.
+
+--- Analyzing Step 2 ---
+   [LOG] Step 2: 4 entries [preassigned:flat_assertions]
+   [LOG] Observer: The logs indicate that a tap action was successfully detected on the 'Save Button', leading to the saving of the home address. The process completed without any errors, and the address was saved successfully.
+ PASSED: The action succeeded as the app navigated to the next logical screen after saving the address.
+
+--- Analyzing Step 3 ---
+   [LOG] Step 3: 2 entries [preassigned:flat_assertions]
+   [LOG] Observer: The logs indicate that Step 3 was executed successfully, with a placeholder message logged and an assertion confirming that the step passed. No errors or network failures were recorded during this step.
+ FAILED: The click action did not trigger any UI response or navigation.
+    Expected: Clicking the 'Lux ride option' item should select it and navigate to the next step in the flow.
+    Observed: The 'Lux' ride option remained visible with a minor change in wait time, but no navigation or selection occurred.
+
+--- Analyzing Step 4 ---
+   [LOG] Step 4: 5 entries [preassigned:flat_assertions]
+   [LOG] Observer: The logs indicate that a user interaction occurred where a tap was detected on an element labeled 'Büyük Çamlıca Cami', which was subsequently selected as the address. The step passed successfully, confirming that the search result was selected without any errors or network issues.
+ PASSED: The action successfully navigated to the 'Profile information' screen, displaying the expected content.
+
+--- Analyzing Step 5 ---
+   [LOG] Step 5: 2 entries [preassigned:flat_assertions]
+   [LOG] Observer: The logs indicate that a tap was detected on the 'Home' element, and the assertion for Step 5 passed, confirming that the Home screen was opened successfully. However, there is no log entry related to the 'Save button' action specified in the step context.
+ PASSED: The action succeeded as the profile was updated and confirmed by the message.
+
+--- Analyzing Step 6 ---
+   [LOG] Step 6: 2 entries [preassigned:flat_assertions]
+   [LOG] Observer: The logs indicate that a tap was detected on the 'Save' element, and the assertion for Step 6 confirmed that the home address was saved successfully. However, there is no log entry indicating the action of clicking on 'Trip history'.
+ PASSED: The action successfully navigated to the 'Trip history' screen, displaying the expected content.
+
+--- Analyzing Step 7 ---
+   [LOG] Step 7: 1 entries [preassigned:flat_assertions]
+   [LOG] Observer: The logs indicate that the action of clicking on the 'Payment methods' option was executed successfully, as evidenced by the assertion that Step 7 passed and the destination field was reopened.
+ PASSED: The action succeeded as the app navigated to the 'Payment methods' screen and displayed the expected content.
+
+--- Analyzing Step 8 ---
+   [LOG] Step 8: 1 entries [preassigned:flat_assertions]
+   [LOG] Observer: The logs indicate that the action to click the 'Delete' button was executed successfully, as evidenced by the assertion that Step 8 passed with the destination address selected.
+ PASSED: The 'Delete' button was clicked successfully, and the card was removed as expected.
+
+========================================
+TEST COMPLETE. Scanned 9 steps.
+========================================
+
+FAILURE CHAIN ANALYSIS
+======================
+
+ISOLATED FAILURE:
+  Step 3 [action_failed]: The click action did not trigger any UI response or navigation.
+    Expected: Clicking the 'Lux ride option' item should select it and navigate to the next step in the flow.
+    Observed: The 'Lux' ride option remained visible with a minor change in wait time, but no navigation or selection occurred.
+
+Summary: 1 failures across 1 isolated
+
+
+SUMMARY
+=======
+Total steps:   9
+  Analyzed:    8
+  Skipped:     1
+  Passed:      7   (87.5%)
+  Failed:      1   (12.5%)
+
+Confidence Distribution (analyzed steps):
+  High   (>=0.85):  8 steps
+  Medium (>=0.60):  0 steps
+  Low    (<0.60):   0 steps
+  Avg confidence: 0.95
+
+Failure Type Breakdown:
+  action_failed          1

@@ -1,0 +1,50 @@
+--- Analyzing Step 0 ---
+ PASSED: The target element 'Vikipedi' is present and unchanged, confirming the screen state is correct.
+
+--- Analyzing Step 1 ---
+ PASSED: The click action successfully expanded the sidebar menu, revealing new content.
+
+--- Analyzing Step 2 ---
+ PASSED: The action succeeded as the app navigated to the correct page and displayed the expected content.
+
+--- Analyzing Step 3 ---
+ PASSED: The action successfully expanded the language selection menu, displaying new content.
+
+--- Analyzing Step 4 ---
+ FAILED: The target element was not visible in either screen, suggesting a failure to locate or render the element.
+    Expected: Clicking the 'Osmanlı padişahı 3. Murad tahta çıktı seç.' item should select it and navigate to the next step in the flow.
+    Observed: The screen remains on the Wikipedia 'About' page in Turkish, with no visible changes or navigation occurring after the action.
+
+========================================
+TEST COMPLETE. Scanned 5 steps.
+========================================
+
+FAILURE CHAIN ANALYSIS
+======================
+
+ISOLATED FAILURE:
+  Step 4 [element_missing]: The target element was not visible in either screen, suggesting a failure to locate or render the element.
+    Expected: Clicking the 'Osmanlı padişahı 3. Murad tahta çıktı seç.' item should select it and navigate to the next step in the flow.
+    Observed: The screen remains on the Wikipedia 'About' page in Turkish, with no visible changes or navigation occurring after the action.
+
+Summary: 1 failures across 1 isolated
+
+
+SUMMARY
+=======
+Total steps:   5
+  Analyzed:    5
+  Skipped:     0
+  Passed:      4   (80.0%)
+  Failed:      1   (20.0%)
+
+Confidence Distribution (analyzed steps):
+  High   (>=0.85):  5 steps
+  Medium (>=0.60):  0 steps
+  Low    (<0.60):   0 steps
+  Avg confidence: 0.90
+
+Failure Type Breakdown:
+  element_missing        1
+
+CASE 5 ANALYSIS: Correct output

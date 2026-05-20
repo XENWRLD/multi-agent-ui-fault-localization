@@ -1,0 +1,93 @@
+CURRENT OUTPUT(CORRECT):
+OpenAI API Key: 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
+DESCRIBER-DECIDER SCAN STARTED... /content/drive/MyDrive/Grad Project/qnb
+Log parser: format=flat_indexed, mode=preassigned
+  Pre-assigned entries across 12 step bucket(s).
+  [WARN] log appeared 1-indexed (steps 1..12); shifted to 0..11 to align with steps.json
+
+--- Analyzing Step 0 ---
+   [LOG] Step 0: 1 entries [preassigned:flat_indexed]
+   [LOG] Observer: The logs indicate that the 'Kartlar' (Cards) screen was successfully opened following the click action on the menu option. There are no errors or network failures recorded during this step.
+ PASSED: The action resulted in a system overlay indicating no credit cards available, which is not a failure.
+
+--- Analyzing Step 1 ---
+   [LOG] Step 1: 2 entries [preassigned:flat_indexed]
+   [LOG] Observer: The logs indicate that the user successfully tapped on the 'Banka Kartlarım' option, which resulted in the display of the corresponding screen. There are no errors or network failures recorded during this step.
+ PASSED: The action succeeded as the app navigated to the correct screen and displayed the expected options.
+
+--- Analyzing Step 2 ---
+   [LOG] Step 2: 4 entries [preassigned:flat_indexed]
+   [LOG] Observer: The logs indicate that the user successfully navigated to the 'Banka Kartlarım' screen after tapping the 'Back Button'. The screen rendered correctly with a list of card options, and the step was confirmed as passed.
+ PASSED: The action succeeded as the app navigated to the correct screen after the click.
+
+--- Analyzing Step 3 ---
+   [LOG] Step 3: 1 entries [preassigned:flat_indexed]
+   [LOG] Observer: The logs indicate that the user performed an action by tapping on the 'Limit Geçerlilik Süresi' button. However, there is no indication of any errors or network issues during this step.
+ PASSED: The navigation to the 'Banka Kartlarım' page was successful after clicking the back button.
+
+--- Analyzing Step 4 ---
+   [LOG] Step 4: 1 entries [preassigned:flat_indexed]
+   [LOG] Observer: The logs indicate that the user action to click on the 'Günlük' option was initiated, as evidenced by the opening of the limit duration modal. However, there are no error messages or network events recorded in the logs.
+ PASSED: The 'Günlük' option was successfully selected as indicated by the overlay appearance.
+
+--- Analyzing Step 5 ---
+   [LOG] Step 5: 1 entries [preassigned:flat_indexed]
+   [LOG] Observer: The logs indicate that the user successfully selected the 'Günlük' option as part of the test step. This action was logged as an informational event without any errors or issues reported.
+ PASSED: The 'Günlük' option was successfully selected as the validity period.
+
+--- Analyzing Step 6 ---
+   [LOG] Step 6: 5 entries [preassigned:flat_indexed]
+   [LOG] Observer: The logs indicate that the user successfully navigated from the 'Banka Kartlarım' screen to the 'Kartlar' main menu. The 'Kartlar' screen was rendered with a full list of card services, and all relevant UI elements were detected without any errors. The assertion confirms that the step passed successfully.
+ PASSED: The action succeeded as the selection panel closed and the correct option was confirmed.
+
+--- Analyzing Step 7 ---
+   [LOG] Step 7: 1 entries [preassigned:flat_indexed]
+   [LOG] Observer: The logs indicate that the user focused on the 'İşlem Limitiniz' input field during the test step. There are no errors or network failures recorded in the logs.
+ PASSED: The navigation back to the 'Kartlar' menu was successful.
+
+--- Analyzing Step 8 ---
+   [LOG] Step 8: 1 entries [preassigned:flat_indexed]
+   [LOG] Observer: The logs indicate that during the test step, an input action was performed where the value '0' was entered. There are no errors or network issues reported in the logs.
+ PASSED: The navigation to the card settings page was successful.
+
+--- Analyzing Step 9 ---
+   [LOG] Step 9: 1 entries [preassigned:flat_indexed]
+   [LOG] Observer: The logs indicate that the user tapped the 'Uygula' button, but there is no record of the intended action of tapping the 'Güncelle' button. This suggests that the expected action was not performed as per the instruction.
+ PASSED: The navigation to the limit update screen was successful despite the log not recording the 'Güncelle' button tap.
+
+--- Analyzing Step 10 ---
+   [LOG] Step 10: 1 entries [preassigned:flat_indexed]
+   [LOG] Observer: The logs indicate that a confirmation popup was displayed during the execution of the test step where the user was instructed to tap on the 'İşlem Limitiniz' input field. No errors or network failures were recorded during this step.
+ PASSED: The input field was successfully activated and the numeric keypad was displayed as expected.
+
+--- Analyzing Step 11 ---
+   [LOG] Step 11: 3 entries [preassigned:flat_indexed]
+   [LOG] Observer: The logs indicate that the user tapped the 'Onayla' button, which triggered a limit update request. Subsequently, the UI rendered the card page with the updated limits, suggesting that the action was successful without any errors.
+ PASSED: The tap action on the 'Uygula' button was successful, as indicated by the appearance of the confirmation dialog.
+
+--- Analyzing Step 12 ---
+   [LOG] Step 12: no log entries found [preassigned:flat_indexed]
+ PASSED: The action succeeded as the confirmation popup was dismissed and the limit was updated.
+
+========================================
+TEST COMPLETE. Scanned 13 steps.
+========================================
+
+FAILURE CHAIN ANALYSIS
+======================
+ALL PASSED.
+
+
+SUMMARY
+=======
+Total steps:   13
+  Analyzed:    13
+  Skipped:     0
+  Passed:      13   (100.0%)
+  Failed:      0   (0.0%)
+
+Confidence Distribution (analyzed steps):
+  High   (>=0.85): 13 steps
+  Medium (>=0.60):  0 steps
+  Low    (<0.60):   0 steps
+  Avg confidence: 0.94
