@@ -104,6 +104,12 @@ Look at BOTH images. Is the target element visible?
   Report it explicitly: "Target state changed: [describe the exact visual or content
   difference, e.g. 'button changed from large red active to small gray disabled', or
   'wait time updated from 6 min to 4 min inside the Lux ride option']."
+  BUTTON DISMISSED: If the target element was PRESENT in PREV but is COMPLETELY ABSENT
+  from POST (not grayed or hidden — truly gone from the screen), and the rest of the
+  screen shows content, a list, or results (same or updated), this also counts as a
+  state change — the click activated the button and the button dismissed itself after
+  completing its function. Report it as: "Target state changed: [button name] dismissed
+  from POST after activating its function; [brief description of what is now visible]."
   Do NOT treat a state-changed or content-updated element as "no change" — any update IS the response.
 - SEMANTIC EQUIVALENCE: The target may be named differently from its visual form.
   Match by meaning, not exact text:
@@ -141,13 +147,6 @@ Describe what changed between PREV and POST.
   panel loading. Report it explicitly as: "New content appeared: [describe the new
   sections/elements and how they differ from PREV]." Do NOT conclude "no change"
   when new content sections are visible in POST.
-- TRIGGER-BUTTON DISMISSED (check third): If a button whose purpose is to submit,
-  search, filter, or reveal results — present in PREV — is ABSENT in POST, AND the
-  content area on screen shows items, results, or a list (even if a similar list was
-  already visible in PREV with fewer items), report this explicitly as: "Trigger button
-  dismissed: [button name] is gone from POST; [content area] now displays [description
-  of visible results/items]." Do NOT describe this as "no significant change" or "similar
-  to previous screen." The button's disappearance after a click is itself the UI response.
 - OVERLAY DETECTION: If a system dialog appeared (notification permission, location
   access, app rating, etc.), state that explicitly AND describe what is visible on the
   underlying screen behind it.
@@ -419,9 +418,10 @@ cards, category selectors, or price panels visible in POST that were absent in P
 produced a meaningful UI response and is SUCCESS — even if the clicked button is still visible
 in POST (it may remain as a contextual element within the expanded view).
 TRIGGER-DISMISS SUCCESS (click steps only): If ACTION TYPE is "click" AND the Observer
-reports the target button as present in PREV but absent in POST AND the SCREEN STATE SUMMARY
-describes results, items, or content being shown on screen (not an error state) — the button
-activated its purpose and dismissed itself upon completion → is_failure = false, failure_type = "none".
+reports "Target state changed: [button name] dismissed from POST after activating its
+function" (see TASK 1 BUTTON DISMISSED clause) — the click was processed and the button
+completed its action → is_failure = false, failure_type = "none".
+This is a secondary safety net; Rule 0C should fire first on "Target state changed:" language.
 {log_rules}
 
 [BEHAVIORAL COMPARISON — Required for ALL steps, including passes.]
