@@ -133,12 +133,15 @@ Look at BOTH images. Is the target element visible?
 TASK 2 — VISUAL CHANGES (POST vs PREV):
 Describe what changed between PREV and POST.
 - SCREEN CONTEXT CHANGE (check this first): If POST shows a different screen title,
-  navigation bar label, app header text, primary action button label, or top-level
-  content section than PREV — even if overall visual similarity appears high — that
-  constitutes a successful screen transition. Report it explicitly as:
-  "Screen context changed: [describe the header/title/nav difference]."
+  navigation bar label, app header text, primary action button label, address bar content,
+  or top-level content section than PREV — even if overall visual similarity appears high —
+  that constitutes a successful screen transition. Report it explicitly as:
+  "Screen context changed: [describe the header/title/nav/address difference]."
   This takes priority over general content similarity. A new screen title, header,
-  or app bar in POST means navigation succeeded — do NOT report "no significant change."
+  app bar, or address bar in POST means navigation succeeded — do NOT report "no significant
+  change." An updated address bar, status bar, or any persistent top-of-screen element
+  showing different content than PREV is a screen context change — do NOT report "no change"
+  when the top of the screen visibly differs.
 - NEW CONTENT SECTION (check second): If POST shows new UI sections, lists, cards,
   form fields, price panels, category selectors, or content blocks that were ABSENT
   in PREV — even when the navigation bar and background screen appear identical — the
@@ -405,6 +408,14 @@ When Rule 2 applies:
   already in the correct state and the observation verified it. -> expected_value = 'N/A',
   is_failure = false (Rule 3 SUCCESS). Do NOT apply Rule 2 strict matching here.
 - Punctuation-insensitive for times: 12.15 == 12:15 == 12,15.
+  Decimal separators are also interchangeable: 5250,00 == 5250.00 (comma and period are
+  equivalent as decimal separators in Turkish locale). If the Observer's report describes
+  the value as visible — even paraphrased without exact punctuation — and the described
+  amount matches the expected amount, the verification passes.
+- CRITICAL NO-VALUE GATE: If the instruction says "verify [field] is correct", "verify [field]",
+  "doğrula" with no specific numeric value, price, or quoted identifier named — there is
+  nothing to confirm beyond presence. Set expected_value = 'N/A' and skip to Rule 3 (SUCCESS
+  if element/field is visible). Do NOT infer an expected value from context or prior steps.
 - CRITICAL: The Observer MUST have explicitly confirmed the data value visible in POST.
   A UI transition alone is NOT sufficient. If Observer reported "VALUE NOT CONFIRMED IN POST"
   or did not quote the exact value -> FAILURE ('content_mismatch').
