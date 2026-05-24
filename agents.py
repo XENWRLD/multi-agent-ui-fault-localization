@@ -412,10 +412,6 @@ When Rule 2 applies:
   equivalent as decimal separators in Turkish locale). If the Observer's report describes
   the value as visible — even paraphrased without exact punctuation — and the described
   amount matches the expected amount, the verification passes.
-- CRITICAL NO-VALUE GATE: If the instruction says "verify [field] is correct", "verify [field]",
-  "doğrula" with no specific numeric value, price, or quoted identifier named — there is
-  nothing to confirm beyond presence. Set expected_value = 'N/A' and skip to Rule 3 (SUCCESS
-  if element/field is visible). Do NOT infer an expected value from context or prior steps.
 - CRITICAL: The Observer MUST have explicitly confirmed the data value visible in POST.
   A UI transition alone is NOT sufficient. If Observer reported "VALUE NOT CONFIRMED IN POST"
   or did not quote the exact value -> FAILURE ('content_mismatch').
