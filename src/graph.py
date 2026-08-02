@@ -16,7 +16,7 @@ from models import (
     extract_step_context, find_likely_cause, build_failure_chains,
     build_diagnosis_report, extract_step_logs,
 )
-from agents import vision_chain, logic_chain, log_chain
+from agents import vision_chain, logic_chain, log_chain, run_root_cause_agent
 from log_parser import ParsedLogs
 
 
@@ -87,12 +87,14 @@ def router_node(state: GraphState):
         errors = list(state.get('detected_errors', []))
         failure_map = dict(state.get('active_failure_map', {}))
         step_results = list(state.get('step_results', []))
+        rca_report = run_root_cause_agent(step_results, errors)
         report = f"\n{'='*40}\nTEST COMPLETE. Scanned {len(steps)} steps.\n{'='*40}\n"
         report += build_diagnosis_report(
             step_results=step_results,
             detected_errors=errors,
             active_failure_map=failure_map,
             total_steps=len(steps),
+            root_cause_report=rca_report,
         )
         return {"stop_execution": True, "final_report": report}
 

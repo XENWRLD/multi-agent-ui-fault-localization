@@ -32,6 +32,25 @@ class FinalDecision(BaseModel):
 
 
 # =========================================================
+# ROOT CAUSE ANALYSIS MODELS
+# =========================================================
+class ChainLink(BaseModel):
+    """One directed causal link: from_step was caused by caused_by."""
+    from_step: int
+    caused_by: int
+
+class RootCauseReport(BaseModel):
+    """Output of the Root Cause Analysis Agent."""
+    chain_links: List[ChainLink] = Field(default_factory=list)
+    root_step: int = Field(default=-1)
+    chain_summary: str = Field(default="")
+    corrupted_state: str = Field(default="")
+    downstream_impact: str = Field(default="")
+    recommended_investigation: str = Field(default="")
+    confidence: float = Field(default=0.5)
+
+
+# =========================================================
 # LOG MODELS (new — Phase 2 forward compatibility)
 # =========================================================
 class LogEntry(BaseModel):
@@ -307,13 +326,78 @@ def build_failure_chains(
     return "\n".join(lines)
 
 
+# =========================================================
+# SUSPICIOUS STEP RANKING
+# =========================================================
+
+def _resolve_root(
+    step_idx: int,
+    caused_by_map: Dict[int, int],
+    visited: set = None,
+) -> tuple:
+    """Return (root_step_index, distance) by following caused_by_map links upward."""
+    if visited is None:
+        visited = set()
+    if step_idx in visited:                        # cycle guard
+        return step_idx, 0
+    parent = caused_by_map.get(step_idx)
+    if parent is None:
+        return step_idx, 0                         # this IS the root
+    visited.add(step_idx)
+    root, depth = _resolve_root(parent, caused_by_map, visited)
+    return root, depth + 1
+
+
+def rank_suspicious_steps(
+    step_results: List[dict],
+    detected_errors: List[dict],
+) -> List[dict]:
+    """Return detected failures sorted by confidence descending, with distance to chain root.
+
+    Each entry contains: step_index, confidence, failure_type, distance_to_root,
+    root_step_index, observation, root_cause.
+    """
+    if not detected_errors:
+        return []
+
+    # caused_by_map: step_idx -> parent_step_idx (only steps that have a parent)
+    caused_by_map: Dict[int, int] = {
+        err["step_index"]: err["caused_by_step"]
+        for err in detected_errors
+        if err.get("caused_by_step") is not None
+    }
+
+    # Fast lookup for post-adjusted confidence + metadata from step_results
+    result_by_idx = {r["step_index"]: r for r in step_results if r["verdict"] == "FAIL"}
+
+    ranked = []
+    for err in detected_errors:
+        idx = err["step_index"]
+        step_data = result_by_idx.get(idx, {})
+        root_idx, distance = _resolve_root(idx, caused_by_map)
+        ranked.append({
+            "step_index":       idx,
+            "confidence":       step_data.get("confidence", 0.0),
+            "failure_type":     step_data.get("failure_type", err.get("failure_type", "?")),
+            "distance_to_root": distance,
+            "root_step_index":  root_idx,
+            "observation":      step_data.get("observation", ""),
+            "root_cause":       step_data.get("root_cause", err.get("reason", "")),
+        })
+
+    # Primary sort: confidence desc. Tie-break: distance asc (root = most actionable), then step_index asc.
+    ranked.sort(key=lambda x: (-x["confidence"], x["distance_to_root"], x["step_index"]))
+    return ranked
+
+
 def build_diagnosis_report(
     step_results: List[dict],
     detected_errors: List[dict],
     active_failure_map: Dict[str, dict],
     total_steps: int,
+    root_cause_report: Optional["RootCauseReport"] = None,
 ) -> str:
-    """Assemble the full diagnosis report: failure chains and summary."""
+    """Assemble the full diagnosis report: failure chains, root cause analysis, and summary."""
     lines = []
 
     # ── Section A: Failure chain analysis ──
@@ -321,7 +405,56 @@ def build_diagnosis_report(
     lines.append("=" * 22)
     lines.append(build_failure_chains(detected_errors, active_failure_map))
 
-    # ── Section B: Summary statistics ──
+    # ── Section B: Root cause chain analysis (LLM agent + mechanical hop counts) ──
+    lines.append("\n\nROOT CAUSE CHAIN ANALYSIS")
+    lines.append("=" * 25)
+    if not detected_errors:
+        lines.append("No failures detected — root cause analysis skipped.")
+    elif root_cause_report is None:
+        lines.append("Root cause analysis unavailable.")
+    else:
+        try:
+            rcr = root_cause_report
+            result_by_idx = {r["step_index"]: r for r in step_results}
+
+            if rcr.chain_links:
+                # Build exact hop distances using fixed _resolve_root on LLM-identified graph
+                llm_map = {link.from_step: link.caused_by for link in rcr.chain_links}
+                downstream: List[tuple] = []
+                for link in rcr.chain_links:
+                    _, dist = _resolve_root(link.from_step, llm_map)
+                    r_data = result_by_idx.get(link.from_step, {})
+                    obs = r_data.get("observation", "")
+                    if len(obs) > 55:
+                        obs = obs[:55] + "..."
+                    downstream.append((dist, link.from_step, r_data.get("failure_type", "?"), obs))
+                downstream.sort()
+
+                root_data = result_by_idx.get(rcr.root_step, {})
+                lines.append(
+                    f"Root: Step {rcr.root_step} "
+                    f"[{root_data.get('failure_type', '?')} | conf: {root_data.get('confidence', 0.0):.2f}]"
+                )
+                for dist, step_idx, ft, obs in downstream:
+                    hop_str = f"{dist} hop{'s' if dist != 1 else ''}"
+                    lines.append(f"  └─ Step {step_idx:<3} [{ft:<18} | dist: {hop_str:<8}] {obs}")
+            else:
+                lines.append("  Isolated failures — no causal chain identified.")
+
+            lines.append("")
+            if rcr.corrupted_state:
+                lines.append(f"Corrupted state:   {rcr.corrupted_state}")
+            if rcr.chain_summary:
+                lines.append(f"Chain summary:     {rcr.chain_summary}")
+            if rcr.downstream_impact:
+                lines.append(f"Downstream impact: {rcr.downstream_impact}")
+            if rcr.recommended_investigation:
+                lines.append(f"Investigate first: {rcr.recommended_investigation}")
+            lines.append(f"Confidence:        {rcr.confidence:.2f}")
+        except Exception as e:
+            lines.append(f"  (Root cause analysis rendering failed: {e})")
+
+    # ── Section C: Summary statistics ──
     analyzed = len(step_results)
     skipped  = total_steps - analyzed
     passed   = sum(1 for r in step_results if r["verdict"] == "PASS")
