@@ -89,8 +89,8 @@ Investigate first: The flight selection click handler
 
 The system auto-detects and normalizes two trace formats:
 
-- **(native)** — flat JSON array, disk-based screenshots (`step_N_prev.png` / `step_N_post.png`)
-- **(external)** — nested format with inline base64 screenshots, used by the external Group 411 benchmark cases
+- **v33 (native)** — flat JSON array, disk-based screenshots (`step_N_prev.png` / `step_N_post.png`)
+- **G411 (external)** — nested format with inline base64 screenshots, used by the external Group 411 benchmark cases
 
 It also unifies **four different log shapes** (`nested`, `flat_indexed`, `flat_assertions`, `raw`) into a single internal representation via automatic format detection.
 
@@ -149,6 +149,11 @@ set_log_source(parsed_logs)
 result = app.invoke({...})  # see src/runner.py for full initial state
 ```
 
+## Known Limitations
+
+- **No cross-step state tracking** — the system can't yet compare a numeric value (e.g. account balance) against a value derived from an earlier step. Planned fix: a `state_scratchpad` in `GraphState`.
+- **Price/discount consistency** — a promo code showing "applied" alongside an unchanged total isn't currently flagged as inconsistent.
+- **Mechanical causal scoring decays over distance** — chains spanning more than ~4 steps with differing failure types are only caught by the LLM Root Cause Agent, not in real time.
 
 Full write-up of these and other findings is in [`docs/documentation`](./docs/documentation).
 
