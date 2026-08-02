@@ -149,11 +149,6 @@ set_log_source(parsed_logs)
 result = app.invoke({...})  # see src/runner.py for full initial state
 ```
 
-## Known Limitations
-
-- **No cross-step state tracking** — the system can't yet compare a numeric value (e.g. account balance) against a value derived from an earlier step. Planned fix: a `state_scratchpad` in `GraphState`.
-- **Price/discount consistency** — a promo code showing "applied" alongside an unchanged total isn't currently flagged as inconsistent.
-- **Mechanical causal scoring decays over distance** — chains spanning more than ~4 steps with differing failure types are only caught by the LLM Root Cause Agent, not in real time.
 
 Full write-up of these and other findings is in [`docs/documentation`](./docs/documentation).
 
