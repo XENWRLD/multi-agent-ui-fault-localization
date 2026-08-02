@@ -89,8 +89,8 @@ Investigate first: The flight selection click handler
 
 The system auto-detects and normalizes two trace formats:
 
-- **v33 (native)** — flat JSON array, disk-based screenshots (`step_N_prev.png` / `step_N_post.png`)
-- **G411 (external)** — nested format with inline base64 screenshots, used by the external Group 411 benchmark cases
+- **(native)** — flat JSON array, disk-based screenshots (`step_N_prev.png` / `step_N_post.png`)
+- **(external)** — nested format with inline base64 screenshots, used by the external Group 411 benchmark cases
 
 It also unifies **four different log shapes** (`nested`, `flat_indexed`, `flat_assertions`, `raw`) into a single internal representation via automatic format detection.
 
