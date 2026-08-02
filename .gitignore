@@ -1,0 +1,9 @@
+﻿__pycache__/
+*.pyc
+.claude/
+new chain agent implementation/
+case6-10 outputs.txt
+last fix current output.txt
+output after prompt fix v1.txt
+outputs new prompt fix v2.txt
+PREVIOUS OUTPUT BEFORE FIXED PROMPT REGRESSION.txt
