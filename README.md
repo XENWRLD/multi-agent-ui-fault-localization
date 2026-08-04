@@ -21,13 +21,20 @@ The system requires **no application source code** — only screenshots, step de
 
 ## Key Results
 
-Evaluated on **12 applications / 136 execution steps** across two independent datasets:
-
-| Dataset | Apps | Steps | TP | FP | FN | Precision | Recall | F1 |
-|---|---|---|---|---|---|---|---|---|
-| Proprietary traces | 7 | 90 | 12 | 0 | 0 | 100.0% | 100.0% | **100.0%** |
-| External (Group 411) | 5 | 46 | 11 | 1 | 2 | 91.7% | 84.6% | **88.0%** |
-| **Combined** | **12** | **136** | **23** | **1** | **2** | **95.8%** | **92.0%** | **93.9%** |
+| Metric | Our Traces (10 apps) | Group 411 Traces (10 cases) | Combined (20 apps) |
+|---|---|---|---|
+| Total apps evaluated | 10 | 10 | **20** |
+| Total steps in dataset | 111 | 119 | **230** |
+| Steps skipped (non-VLM / wait) | 6 | 0 | **6** |
+| **Steps analyzed** | **105** | **119** | **224** |
+| Ground truth failures | 14 | 20 | 34 |
+| System-predicted failures | 16 | 22 | 38 |
+| True Positives (TP) | 14 | 18 | 32 |
+| False Positives (FP) | 2 | 4 | 6 |
+| False Negatives (FN) | 0 | 2 | 2 |
+| **Precision** | **87.5%** | **81.8%** | **84.2%** |
+| **Recall** | **100.0%** | **90.0%** | **94.1%** |
+| **F1 Score** | **93.3%** | **85.7%** | **88.9%** |
 
 ## Architecture
 
